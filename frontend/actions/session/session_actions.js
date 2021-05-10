@@ -27,7 +27,7 @@ export const receiveSessionErrors = (errors) => {
 }
 
 //Thunk Action Creators
-export const login = () => dispatch => {
+export const login = (user) => dispatch => {
     return APISessionUtils.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
      err => dispatch(receiveSessionErrors(err)))
@@ -40,6 +40,7 @@ export const logout = () => dispatch => {
 }
 
 export const signup = user => dispatch => {
-    return APISessionUtils.signup
-    .then(user => dispatch(receiveCurrentUser(user)))
+    return APISessionUtils.signup(user)
+    .then(user => dispatch(receiveCurrentUser(user)),
+        err => dispatch(receiveSessionErrors(err)))
 }
