@@ -30,17 +30,17 @@ export const receiveSessionErrors = (errors) => {
 export const login = (user) => dispatch => {
     return APISessionUtils.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-     err => dispatch(receiveSessionErrors(err)))
+     err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
 
 export const logout = () => dispatch => {
     return APISessionUtils.logout()
     .then(() => dispatch(logoutCurrentUser()), 
-    err => dispatch(receiveSessionErrors(err)))
+    err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
 
 export const signup = user => dispatch => {
     return APISessionUtils.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-        err => dispatch(receiveSessionErrors(err)))
+        err => dispatch(receiveSessionErrors(err.responseJSON)))
 }

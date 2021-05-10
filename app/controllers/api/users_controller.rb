@@ -7,12 +7,12 @@ class Api::UsersController < ApplicationController
     end
 
     def create
-        debugger
+        
         @user = User.new(user_params)
-        debugger
+        
 
         if @user.save
-            debugger
+            
             login(@user)
             render :show
         else
@@ -24,7 +24,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        debugger
+        
         params.require(:user).permit(:email, :password, :name, :phone_number, :date_of_birth)
     end
 
