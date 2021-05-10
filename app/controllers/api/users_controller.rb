@@ -5,8 +5,7 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login(@user)
-            #this will be the user view
-            render @user
+            render :show
         else
             render json: @users.errors.full_messages, status: 422
 
