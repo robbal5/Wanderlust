@@ -1,5 +1,11 @@
 class Api::UsersController < ApplicationController
     
+
+     def show
+        @user = User.find_by(email: params[:email])
+        render :show
+    end
+
     def create
         debugger
         @user = User.new(user_params)
