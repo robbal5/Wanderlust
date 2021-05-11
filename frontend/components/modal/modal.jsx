@@ -8,7 +8,7 @@ class Modal extends React.Component {
     }
 
     stopProp(e) {
-        debugger
+        
         e.stopPropagation();
     }
 
