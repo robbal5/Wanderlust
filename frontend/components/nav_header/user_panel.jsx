@@ -9,11 +9,13 @@ class UserPanel extends React.Component {
 
         const signedIn = () => {
             return (
-             <div className='user-panel-options'>
-                 <p className='user-panel-name'>Hey {this.props.currentUser.name}</p>
-                 <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
-                 <button className='user-pane-button'>More info</button>
-             </div>
+                <div>
+                    
+                    <div className='user-panel-options'>
+                        <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
+                        <button className='user-pane-button'>More info</button>
+                    </div>
+                </div>
             )
         }
 
@@ -27,11 +29,14 @@ class UserPanel extends React.Component {
         }
         
         return (
-            <div className='user-panel'>
-                <button className='fas fa-user-alt'></button>
+            <div className='nav-utility'>
+                {this.props.currentUser ? <p className='user-panel-name'>Good to see you, {this.props.currentUser.name.split(' ')[0]}</p> : null}
+                <div className='user-panel'>
+                    <button className='fas fa-user-alt'></button>
 
-                {this.props.currentUser ? signedIn() : noUser()}
-                
+                    {this.props.currentUser ? signedIn() : noUser()}
+                    
+                </div>
             </div>
         )
     }
