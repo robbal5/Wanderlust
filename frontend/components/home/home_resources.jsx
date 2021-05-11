@@ -11,7 +11,7 @@ class HomeResources extends React.Component {
     render() {
         
         return (
-            <div>Home Resources
+            <div>
                 <ExploreNearbyIndex />
                 <LiveAnywhere />
             </div>

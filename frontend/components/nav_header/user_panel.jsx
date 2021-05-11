@@ -9,17 +9,17 @@ class UserPanel extends React.Component {
 
         const signedIn = () => {
             return (
-             <div className='user-panel-signed-in'>
-                 <p>Hey {this.props.currentUser.name}</p>
-                 <button onClick={this.props.logout}>Logout</button>
-                 <button>More info</button>
+             <div className='user-panel-options'>
+                 <p className='user-panel-name'>Hey {this.props.currentUser.name}</p>
+                 <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
+                 <button className='user-pane-button'>More info</button>
              </div>
             )
         }
 
         const noUser = () => {
             return (
-                <nav className='login-signup'>
+                <nav className='user-panel-options'>
                     <button className='user-panel-button' onClick={() => this.props.openModal('login')}>Log in</button>
                     <button className='user-panel-button' onClick={() => this.props.openModal('signup')}>Sign Up</button>
                 </nav>
@@ -28,7 +28,10 @@ class UserPanel extends React.Component {
         
         return (
             <div className='user-panel'>
+                <button className='fas fa-user-alt'></button>
+
                 {this.props.currentUser ? signedIn() : noUser()}
+                
             </div>
         )
     }

@@ -14,8 +14,8 @@ class ExploreNearbyIndex extends React.Component {
             4: { name: 'Miami', knownFor: 'Amazing Nightlife', image: window.miami },
         }
         return (
-            <div>
-                <h2>Popular Destinations</h2>
+            <div className='explore-nearby-index'>
+                <h2 className='popular-text'>Popular Destinations</h2>
                 <div className='cities-container'>
                 {Object.values(cities).map((city, idx) => {
                     return <ExploreNearbyItem key={idx} name={city.name} knownFor={city.knownFor} image={city.image} />

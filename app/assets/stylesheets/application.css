@@ -114,6 +114,11 @@ img {
     
 }
 
+.search-bar:hover {
+     box-shadow: 2px 2px 2px gray;
+     transition: 0.2s;
+}
+
 .search-input {
     height: 30px;
     width: 85%;
@@ -123,6 +128,18 @@ img {
 /*User Panel*/
 .user-panel {
     width: 20%;
+    position: relative;
+}
+
+.user-panel:hover .user-panel-options{
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+}
+
+.user-panel-options{
+    display: none;
 }
 /*Intro On Home Page*/
 
@@ -139,7 +156,7 @@ img {
     position: absolute;
     width: 300px;
     top:100px;
-    left: 20px;
+    left: 30px;
     font-size: 40px;
     font-family: sans-serif;
     font-weight: bold;
@@ -148,7 +165,7 @@ img {
 .intro-image-button {
     position: absolute;
     top: 200px;
-    left: 40px;
+    left: 50px;
     font-size: 20px;
     font-family: sans-serif;
     border-radius: 5px;
@@ -160,6 +177,13 @@ img {
 }
 
 /*Explore Nearby*/
+.explore-nearby-index {
+    margin: 10px;
+}
+.popular-text {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
 .cities-container {
     padding-left: 50px;
     display: flex;
