@@ -3,13 +3,15 @@ import React from 'react'
 
 class IntroPane extends React.Component {
     constructor(props) {
-        constructor
+        super(props)
     }
 
     render() {
         return (
         <div className='intro-pane'>
-            <h2>Find your next adventure</h2>
+            <h2 className='intro-image-text'>Find your next adventure...</h2>
+            <button className='intro-image-button'>Get inspired</button>
+            <img src={window.introUrl} alt="forest" className='intro-image' />
         </div>
         )
     }

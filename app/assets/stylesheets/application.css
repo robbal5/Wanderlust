@@ -15,6 +15,8 @@
  */
 
 
+ /*RESET CONTENT*/
+
  /*MODAL DESIGN, SUBJECT TO MODIFY*/
  .modal-background {
   position: fixed;
@@ -39,4 +41,57 @@
 
 /*MODAL END*/
 
+/*NAV BAR*/
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-and-title {
+    cursor: pointer;
+}
+
+.logo {
+    width: 35px;
+    height: auto;
+    display: inline-block;
+}
+
+.logo-title {
+    display: inline-block;
+}
+
+/*Intro On Home Page*/
+
+.intro-pane {
+     position: relative;
+}
+.intro-image {
+    width: 100%;
+    height: auto;
+   
+}
+
+.intro-image-text {
+    position: absolute;
+    top: 50px;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+.intro-image-button {
+    position: absolute;
+    top: 145px;
+    left: 30px;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+
+}
 

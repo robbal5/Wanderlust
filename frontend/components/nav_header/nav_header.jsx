@@ -10,8 +10,12 @@ class NavHeader extends React.Component {
 
     render() {
         return(
-            <div>
-                <h2>Wanderlust </h2>
+            <div className='nav-header'>
+                <div className='logo-and-title'>
+                    <img src={window.logoUrl} alt="trees" className='logo' />
+                    <h3 className='logo-title'>Wanderlust </h3>
+                    
+                </div>
                 <SearchContainer />
                 <UserPanelContainer />
             </div>
