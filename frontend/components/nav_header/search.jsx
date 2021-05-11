@@ -7,8 +7,12 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>Search Placeholder</p>
+            <div className='search-bar'>
+                <form className='search-form' action="">
+                    
+                    <input className="search-input" type="text" placeholder="Start your search" />
+                    <button className='fa fa-search'></button>
+                </form>
             </div>
         )
     }

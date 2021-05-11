@@ -27,7 +27,9 @@ class UserPanel extends React.Component {
         }
         
         return (
-           this.props.currentUser ? signedIn() : noUser()
+            <div className='user-panel'>
+                {this.props.currentUser ? signedIn() : noUser()}
+            </div>
         )
     }
 }
