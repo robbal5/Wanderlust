@@ -127,19 +127,36 @@ img {
 
 /*User Panel*/
 .user-panel {
-    width: 20%;
+    width: 15%;
+    padding-right: 5%;
     position: relative;
+}
+.user-panel > button {
+    float: right;
+    height: 50px;
 }
 
 .user-panel:hover .user-panel-options{
-    display: block;
-    position: absolute;
-    height: 200px;
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    background-color: white;
 }
 
 .user-panel-options{
     display: none;
+    position: absolute;
+    right: 70px;
+    top: 50px;
+
+}
+
+.user-panel-button {
+    padding: 10px;
+}
+
+.user-panel-button:hover {
+    background-color: lightgray;
 }
 /*Intro On Home Page*/
 

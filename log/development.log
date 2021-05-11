@@ -3708,3 +3708,190 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-05-11 18:58:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 18:59:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:00:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:00:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 75ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:01:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:01:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:02:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:02:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:02:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 94ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:03:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:03:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 72ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:04:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:04:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 41ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:04:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:05:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:07:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 133ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:07:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:08:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:09:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:09:37 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 118ms (Views: 114.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:09:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:10:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:10:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 19:10:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-11 19:12:09 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"shannen@gmail.com", "password"=>"[FILTERED]", "name"=>"", "date_of_birth"=>"", "phone_number"=>""}}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "shannen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "shannen@gmail.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52
+  [1m[36mUser Update (7.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "uGhXX7tO51Hhp6CD1i9TnA"], ["updated_at", "2021-05-11 23:12:10.179512"], ["id", 7]]
+  ↳ app/models/user.rb:52
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:52
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 323ms (Views: 7.5ms | ActiveRecord: 24.6ms)
+
+
