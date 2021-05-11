@@ -7,7 +7,9 @@ class SessionForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            name: ''
+            name: '',
+            date_of_birth: '',
+            phone_number: ''
         }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
@@ -41,28 +43,43 @@ class SessionForm extends React.Component {
         return(
             <div>
                 <form className='main-modal' onSubmit={this.handleSubmit}>
-                    Welcome to Wanderlust 
+                    {this.props.formType[0].toUpperCase() + this.props.formType.slice(1)} 
                     <br />
-                    Please {this.props.formType} or {this.props.otherForm}
-                    <div onClick={this.props.closeModal} className="close-x"> X </div>
+                    <span onClick={this.props.closeModal} className="close-x"> X </span>
                     {this.renderErrors()}
                     <div className='login-section'>
                         <br />
                         {this.props.formType == 'signup' ? <label>Name:
-                            <input type="text" value={this.state.name} onChange={this.update('name')} className='login-input' />
+                            <input type="text" value={this.state.name} placeholder="John Smith" onChange={this.update('name')} className='login-input' />
                         </label> : null }
                        
                         <br />
                         <label>Email:
-                            <input type="text" value={this.state.email} onChange={this.update('email')} className='login-input' />
+                            <input type="email" value={this.state.email} placeholder="Jsmith@gmail.com" onChange={this.update('email')} className='login-input' />
                         </label>
                         <br />
                         <label>Password:
                             <input type="password" value={this.state.password} onChange={this.update('password')} className='login-input' />
                         </label>
                         <br />
-                        <input type="submit" className="session-submit" value={this.props.formType} />
-                        {this.props.formType == 'login' ? <button onClick={this.handleDemo}>Demo User</button>: null}
+                        {this.props.formType == 'signup' ? <div>
+                            <h6>Optional</h6>
+                            <label>Phone Number:
+                                <input type="tel" value={this.state.phone_number} onChange={this.update('phone_number')} className='login-input' />
+                            </label>
+                            <br />
+                            <label>Date of Birth:
+                                <input type="date" value={this.state.date_of_birth} onChange={this.update('date_of_birth')} className='login-input' />
+                            </label>
+                        </div> : null}
+                        
+                        
+                        <input type="submit" className="session-submit" value={this.props.formType[0].toUpperCase() + this.props.formType.slice(1)} />
+                        {this.props.formType == 'login' ? <button onClick={this.handleDemo}>Demo User</button> : null}
+                        {this.props.formType == 'signup' ? <p>Already have an account? {this.props.otherForm}</p> 
+                            : <p>Don't have an account? {this.props.otherForm}</p> }
+                        
+                        
                     </div>
                 </form>
             </div>

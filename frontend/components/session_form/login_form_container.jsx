@@ -15,10 +15,10 @@ const mDTP = (dispatch) => {
     return {
         processForm: user => dispatch(login(user)),
         otherForm: (
-            <button onClick={(e) => {
+            <span><button onClick={(e) => {
                 e.preventDefault();
                 dispatch(openModal('signup'))}
-            }>Sign up</button>
+            }>Sign up</button></span>
         ),
         closeModal: () => dispatch(closeModal()),
         loginDemoUser: () => dispatch(loginDemoUser())
