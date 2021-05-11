@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
             name: ''
         }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleSubmit(e) {
@@ -30,6 +31,10 @@ class SessionForm extends React.Component {
                 })}
             </ul>
         )
+    }
+
+    handleDemo(e) {
+        this.setState({email: 'DemoUser@gmail.com', password: 'Demouser'})
     }
 
     render() {
@@ -57,6 +62,7 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <input type="submit" className="session-submit" value={this.props.formType} />
+                        {this.props.formType == 'login' ? <button onClick={this.handleDemo}>Demo User</button>: null}
                     </div>
                 </form>
             </div>

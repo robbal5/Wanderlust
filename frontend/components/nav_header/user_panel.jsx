@@ -11,6 +11,7 @@ class UserPanel extends React.Component {
             return (
              <div className='user-panel-signed-in'>
                  <p>Hey {this.props.currentUser.name}</p>
+                 <button onClick={this.props.logout}>Logout</button>
                  <button>More info</button>
              </div>
             )

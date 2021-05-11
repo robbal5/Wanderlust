@@ -20,7 +20,8 @@ const mDTP = (dispatch) => {
                 dispatch(openModal('signup'))}
             }>Sign up</button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        loginDemoUser: () => dispatch(loginDemoUser())
     }
 }
 

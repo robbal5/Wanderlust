@@ -26,6 +26,8 @@ export const receiveSessionErrors = (errors) => {
     }
 }
 
+
+
 //Thunk Action Creators
 export const login = (user) => dispatch => {
     return APISessionUtils.login(user)
@@ -44,3 +46,4 @@ export const signup = user => dispatch => {
     .then(user => dispatch(receiveCurrentUser(user)),
         err => dispatch(receiveSessionErrors(err.responseJSON)))
 }
+
