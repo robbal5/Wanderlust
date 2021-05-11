@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development"
+    "webpack": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -26,6 +27,10 @@
   "directories": {
     "lib": "lib",
     "test": "test"
+  },
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.12.0"
   },
   "devDependencies": {},
   "keywords": [],
