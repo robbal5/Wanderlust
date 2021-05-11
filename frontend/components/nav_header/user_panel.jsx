@@ -30,7 +30,8 @@ class UserPanel extends React.Component {
         
         return (
             <div className='nav-utility'>
-                {this.props.currentUser ? <p className='user-panel-name'>Good to see you, {this.props.currentUser.name.split(' ')[0]}</p> : null}
+                
+                <p className='user-panel-name'>{this.props.currentUser ? `Good to see you, ${this.props.currentUser.name.split(' ')[0]}` : ''}</p>
                 <div className='user-panel'>
                     <button className='fas fa-user-alt'></button>
 
