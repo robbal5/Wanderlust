@@ -9,16 +9,9 @@ class HomeResources extends React.Component {
     }
 
     render() {
-        let cities = {
-            1: {name: 'New York', knownFor: 'Tourists', image: 'a'},
-            2: { name: 'San Francisco', knownFor: 'Heart of Tech', image:'a' },
-            3: { name: 'Chicago', knownFor: 'Home of Deep Dish', image: 'a '},
-            4: { name: 'Miami', knownFor: 'Amazing Nightlife', image: 'a'},
-        }
+        
         return (
             <div>Home Resources
-                <h2>Popular Destinations</h2>
-                
                 <ExploreNearbyIndex />
                 <LiveAnywhere />
             </div>

@@ -6,8 +6,13 @@ class ExploreNearbyItem extends React.Component {
     }
 
     render() {
-        return (<div>
-
+        return (
+        <div className='city-container'>
+            <img className='explore-nearby-item-image' src={this.props.image} alt="" />
+            <div className='city-text'>
+                <p className='city-name'>{this.props.name}</p>
+                <p className='city-known-for'>{this.props.knownFor}</p>
+            </div>
         </div>
         )
     }

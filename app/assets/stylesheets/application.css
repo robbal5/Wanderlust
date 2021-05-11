@@ -45,8 +45,14 @@
 
 .nav-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    position: fixed;
+    height: 75px;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    border-top: -20px;
 }
 
 .logo-and-title {
@@ -94,4 +100,42 @@
     cursor: pointer;
 
 }
+
+/*Explore Nearby*/
+.cities-container {
+    padding-left: 50px;
+    display: flex;
+}
+.city-container {
+    width: 25%;
+    cursor: pointer;
+}
+
+.city-text {
+    display: inline-block;
+    width: 100px;
+    padding-left: 20px;
+    vertical-align:top;
+   
+}
+
+.explore-nearby-item-image {
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.city-name {
+    font-weight: bolder;
+    font-family: sans-serif;
+
+}
+
+.city-known-for {
+    font-style: italic;
+}
+
+/*Session Form*/
 

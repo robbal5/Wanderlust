@@ -13,7 +13,7 @@ class NavHeader extends React.Component {
             <div className='nav-header'>
                 <div className='logo-and-title'>
                     <img src={window.logoUrl} alt="trees" className='logo' />
-                    <h3 className='logo-title'>Wanderlust </h3>
+                    <h2 className='logo-title'>Wanderlust </h2>
                     
                 </div>
                 <SearchContainer />

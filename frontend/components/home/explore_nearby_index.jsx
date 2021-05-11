@@ -7,9 +7,20 @@ class ExploreNearbyIndex extends React.Component {
     }
 
     render() {
+        let cities = {
+            1: { name: 'New York', knownFor: 'Tourists', image: window.newYork },
+            2: { name: 'San Francisco', knownFor: 'Heart of Tech', image: window.sanFrancisco },
+            3: { name: 'Chicago', knownFor: 'Home of Deep Dish', image: window.chicago },
+            4: { name: 'Miami', knownFor: 'Amazing Nightlife', image: window.miami },
+        }
         return (
             <div>
-
+                <h2>Popular Destinations</h2>
+                <div className='cities-container'>
+                {Object.values(cities).map((city, idx) => {
+                    return <ExploreNearbyItem key={idx} name={city.name} knownFor={city.knownFor} image={city.image} />
+                })}
+                </div>
             </div>
         )
     }
