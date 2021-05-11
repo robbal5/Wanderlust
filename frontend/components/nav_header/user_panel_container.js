@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import UserPanel from './user_panel'
+import {logout} from '../../actions/session/session_actions'
+import {openModal} from '../../actions/modal/modal_actions'
 
-import {signup, logout, login} from '../../actions/session/session_actions'
+
 
 const mSTP = (state, ownProps) => {
     return {
@@ -11,9 +13,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-        signup: (user) => dispatch(signup(user)),
+        openModal: modal => dispatch(openModal(modal)),
         logout: () => dispatch(logout()),
-        login: (user) => dispatch(login(user))
+        
     }
 }
 

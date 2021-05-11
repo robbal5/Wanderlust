@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import Modal from './modal'
+import {closeModal} from '../../actions/modal/modal_actions'
 
 const mSTP = (state) => {
     return {
@@ -13,4 +14,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(Modal)
+export default connect(mSTP, mDTP)(Modal);

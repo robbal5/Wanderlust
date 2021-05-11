@@ -18,10 +18,10 @@ class UserPanel extends React.Component {
 
         const noUser = () => {
             return (
-                <ul className='user-panel-sign-in'>
-                    <li className='user-panel-button'>Log in</li>
-                    <li className='user-panel-button'>Sign Up</li>
-                </ul>
+                <nav className='login-signup'>
+                    <button className='user-panel-button' onClick={() => this.props.openModal('login')}>Log in</button>
+                    <button className='user-panel-button' onClick={() => this.props.openModal('signup')}>Sign Up</button>
+                </nav>
             )
         }
         
