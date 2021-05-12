@@ -4,6 +4,7 @@ import Root from './components/root'
 import configureStore from './store/store'
 import {signup, login, logout} from './actions/session/session_actions'
 import {requestCities} from './actions/city/city_actions'
+import {requestStates} from './actions/state/state_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.login = login
     window.logout = logout
     window.requestCities = requestCities
+    window.requestStates = requestStates
     
     ReactDOM.render(<Root store={store} />, root)
 })
