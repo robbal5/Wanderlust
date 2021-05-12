@@ -10,7 +10,6 @@ class Footer extends React.Component {
             <div>
                 <div>
                     <p className='footer-name'>Designed by Robby Balistreri
-                        <a href=""><i class="fa fa-acorn" aria-hidden="true"></i></a>
                     </p>
                 </div>
             </div>
