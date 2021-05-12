@@ -1,9 +1,12 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
-#                  api_user POST   /api/user(.:format)                                                                      api/users#create {:format=>:json}
+#                  api_user GET    /api/user(.:format)                                                                      api/users#show {:format=>:json}
+#                           POST   /api/user(.:format)                                                                      api/users#create {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
+#            api_properties GET    /api/properties(.:format)                                                                api/properties#index {:format=>:json}
+#              api_property GET    /api/properties/:id(.:format)                                                            api/properties#show {:format=>:json}
 #                      root GET    /                                                                                        static_pages#root
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
@@ -17,6 +20,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do 
     resource :user, only: [:create, :show]
     resource :session, only: [:create, :destroy]
+    resources :properties, only: [:index, :show]
+    resources :cities, only: [:index]
+    resources :states, only: [:index]
   end
 
   root "static_pages#root"

@@ -3,7 +3,6 @@
 # Table name: addresses
 #
 #  id             :bigint           not null, primary key
-#  state_id       :integer          not null
 #  city_id        :integer          not null
 #  street_address :string           not null
 #  zip_code       :integer          not null
@@ -14,4 +13,12 @@
 #
 class Address < ApplicationRecord
 
+    validates :city_id, :street_address, :zip_code, :lat, :lng, presence: true
+
+    belongs_to :city 
+    has_one :property
+    has_one :state, through: :city
+
+
+    
 end

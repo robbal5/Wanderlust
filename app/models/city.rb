@@ -8,4 +8,8 @@
 #
 class City < ApplicationRecord
 
+    validates :name, :state_id, presence: true
+
+    belongs_to :state
+    has_many :addresses
 end
