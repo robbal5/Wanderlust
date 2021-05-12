@@ -1,2 +1,3 @@
-json.extract! @property, :id, :name, :description
-json.photoUrls @property.photos.map { |file| url_for(file) }
+json.partial! 'api/properties/property', property: @property
+
+#Will need to include reviews, amenities, user, reservations
