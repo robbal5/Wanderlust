@@ -9,4 +9,10 @@ class Api::PropertiesController < ApplicationController
         @property = Property.find(params[:id])
         render :show
     end
+
+    private
+
+    def property_params
+        params.require(:property).permit(photos: [])
+    end
 end
