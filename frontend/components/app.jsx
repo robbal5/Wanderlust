@@ -10,8 +10,9 @@ const App = () => {
         <div>
             <ModalContainer />
             <NavHeader />
-            <Home />
-            <p>main content</p>
+            <Switch>
+                <Route path='/' component={Home}></Route>
+            </Switch>
             <Footer />
         </div>
     )

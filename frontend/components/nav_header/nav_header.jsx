@@ -11,11 +11,13 @@ class NavHeader extends React.Component {
     render() {
         return(
             <div className='nav-header'>
-                <div className='logo-and-title'>
-                    <img src={window.logoUrl} alt="trees" className='logo' />
-                    <h2 className='logo-title'>Wanderlust </h2>
-                    
-                </div>
+                <Link to='/'>
+                    <div className='logo-and-title'>
+                        <img src={window.logoUrl} alt="trees" className='logo' />
+                        <h2 className='logo-title'>Wanderlust </h2>
+                        
+                    </div>
+                </Link>
                 <SearchContainer />
                 <UserPanelContainer />
             </div>

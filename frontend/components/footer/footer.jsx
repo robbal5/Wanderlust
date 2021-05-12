@@ -7,7 +7,13 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <h4>Placeholder for Footer</h4>
+            <div>
+                <div>
+                    <p className='footer-name'>Designed by Robby Balistreri
+                        <a href=""><i class="fa fa-acorn" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
         )
     }
 }
