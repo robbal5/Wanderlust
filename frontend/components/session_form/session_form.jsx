@@ -43,9 +43,10 @@ class SessionForm extends React.Component {
         return(
             <div>
                 <form className='main-modal' onSubmit={this.handleSubmit}>
-                    {this.props.formType[0].toUpperCase() + this.props.formType.slice(1)} 
+                    <p className='modal-header'>{this.props.formType[0].toUpperCase() + this.props.formType.slice(1)} </p>
+                    
+                    <strong onClick={this.props.closeModal} className="close-x">X</strong>
                     <br />
-                    <span onClick={this.props.closeModal} className="close-x"> X </span>
                     {this.renderErrors()}
                     <div className='login-section'>
                         <br />
@@ -54,21 +55,21 @@ class SessionForm extends React.Component {
                         </label> : null }
                        
                         <br />
-                        <label>Email:
+                        <label className='login-label'>Email:
                             <input type="email" value={this.state.email} placeholder="Jsmith@gmail.com" onChange={this.update('email')} className='login-input' />
                         </label>
                         <br />
-                        <label>Password:
+                        <label className='login-label'>Password:
                             <input type="password" value={this.state.password} onChange={this.update('password')} className='login-input' />
                         </label>
                         <br />
                         {this.props.formType == 'signup' ? <div>
                             <h6>Optional</h6>
-                            <label>Phone Number:
+                            <label className='login-label'>Phone Number:
                                 <input type="tel" value={this.state.phone_number} onChange={this.update('phone_number')} className='login-input' />
                             </label>
                             <br />
-                            <label>Date of Birth:
+                            <label className='login-label'>Date of Birth:
                                 <input type="date" value={this.state.date_of_birth} onChange={this.update('date_of_birth')} className='login-input' />
                             </label>
                         </div> : null}
