@@ -10,10 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_154711) do
+ActiveRecord::Schema.define(version: 2021_05_12_150031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "city_id", null: false
+    t.string "street_address", null: false
+    t.integer "zip_code", null: false
+    t.float "lat", null: false
+    t.float "lng", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_addresses_on_city_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "state_id", null: false
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.integer "address_id", null: false
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.integer "number_of_guests"
+    t.integer "number_of_bedrooms"
+    t.integer "number_of_beds"
+    t.integer "number_of_bathrooms"
+    t.string "type_of_place", null: false
+    t.boolean "enhanced_clean", default: false
+    t.boolean "self_check_in", default: false
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_properties_on_address_id"
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
