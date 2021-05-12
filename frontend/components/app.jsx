@@ -12,6 +12,7 @@ const App = () => {
             <NavHeader />
             <Switch>
                 <Route path='/' component={Home}></Route>
+                
             </Switch>
             <Footer />
         </div>

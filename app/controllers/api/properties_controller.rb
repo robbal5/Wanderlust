@@ -1,12 +1,12 @@
 class Api::PropertiesController < ApplicationController
 
     def index
-        @properties = Property.all 
+        @properties = Property.with_attached_photos.all
         render :index
     end
 
     def show
-        @property = Property.find(params[:id])
+        @property = Property.with_attached_photos.find(params[:id])
         render :show
     end
 
