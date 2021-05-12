@@ -5,6 +5,12 @@ class Search extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        
+        this.props.requestCities();
+        this.props.requestStates();
+    }
+
     render() {
         return (
             <div className='search-bar'>

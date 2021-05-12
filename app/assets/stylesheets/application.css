@@ -184,6 +184,7 @@ img {
 .user-panel {
     width: 30%;
     padding-right: 5%;
+    margin-left: 10px;
     position: relative;
     float: right;
     height: 50px;
