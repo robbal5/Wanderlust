@@ -1,5 +1,6 @@
 import React from 'react';
-
+import PropertyPane from './property_pane/property_pane'
+import PropertyMap from './property_map/property_map';
 class PropertiesSearch extends React.Component {
     constructor(props) {
         super(props)
@@ -8,8 +9,11 @@ class PropertiesSearch extends React.Component {
     render() {
         return (
             <div>
-                
+                <PropertyPane />
+                <PropertyMap />
             </div>
         )
     }
 }
+
+export default PropertiesSearch;

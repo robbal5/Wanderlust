@@ -6600,3 +6600,100 @@ Processing by Api::PropertiesController#show as JSON
 Completed 200 OK in 141ms (Views: 11.0ms | ActiveRecord: 43.3ms)
 
 
+Started GET "/" for ::1 at 2021-05-12 17:21:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GJpKgwtMrhINCm0N69wErA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 137ms (Views: 119.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/states" for ::1 at 2021-05-12 17:21:26 -0400
+Started GET "/api/cities" for ::1 at 2021-05-12 17:21:26 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (8.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (12.0ms)
+Completed 200 OK in 34ms (Views: 23.0ms | ActiveRecord: 8.1ms)
+
+
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (5.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (7.7ms)
+Completed 200 OK in 31ms (Views: 23.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/properties/1" for ::1 at 2021-05-12 17:21:38 -0400
+Processing by Api::PropertiesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (2.8ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/properties_controller.rb:9
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" = $3[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:9
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:9
+  Rendering api/properties/show.json.jbuilder
+  Rendered api/properties/show.json.jbuilder (1.3ms)
+Completed 200 OK in 25ms (Views: 6.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 18:06:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GJpKgwtMrhINCm0N69wErA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 128ms (Views: 116.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-12 18:06:13 -0400
+Started GET "/api/states" for ::1 at 2021-05-12 18:06:13 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (41.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (59.5ms)
+Completed 200 OK in 230ms (Views: 185.6ms | ActiveRecord: 41.3ms)
+
+
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (3.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (5.7ms)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 18:06:16 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GJpKgwtMrhINCm0N69wErA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:54
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "Jsmith@gmail.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:54
+  [1m[36mUser Update (8.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WuOIRiMmGJ7yx79NiYK6gw"], ["updated_at", "2021-05-12 22:06:16.074351"], ["id", 11]]
+  ↳ app/models/user.rb:54
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:54
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 33ms (Views: 6.8ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 18:06:32 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lksd@DSF.COM", "password"=>"[FILTERED]", "name"=>"", "date_of_birth"=>"", "phone_number"=>""}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lksd@DSF.COM"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+Completed 401 Unauthorized in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mProperty Load (1.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
