@@ -60,7 +60,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: lightblue;
-  width: 40%;
+  width: 30%;
   height: 50%;
   min-width: 250px;
   border-radius: 15px;
@@ -84,8 +84,8 @@ img {
     display: inline-block;
     cursor: pointer;
     position: absolute;
-    right: 10px;
-    top: 5px;
+    right: 8px;
+    top: 8px;
     width: 25px;
 
 }
@@ -185,10 +185,18 @@ img {
     padding-right: 5%;
     position: relative;
     float: right;
+    height: 50px;
 }
 .user-panel > button {
     float: right;
-    height: 50px;
+    border: 3px solid black;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+
 }
 
 .user-panel:hover .user-panel-options{
@@ -233,16 +241,17 @@ img {
     position: absolute;
     width: 300px;
     top:100px;
-    left: 30px;
+    left: 125px;
     font-size: 40px;
     font-family: sans-serif;
     font-weight: bold;
+    font-family: fantasy;
 }
 
 .intro-image-button {
     position: absolute;
-    top: 200px;
-    left: 50px;
+    top: 220px;
+    left: 125px;
     font-size: 16px;
     font-family: sans-serif;
     border-radius: 20px;
@@ -260,6 +269,8 @@ img {
 .popular-text {
     font-size: 30px;
     padding-bottom: 10px;
+    font-family: fantasy;
+    margin-left: 50px;
 }
 .cities-container {
     padding-left: 50px;

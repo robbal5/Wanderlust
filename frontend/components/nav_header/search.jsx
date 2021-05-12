@@ -10,7 +10,7 @@ class Search extends React.Component {
             <div className='search-bar'>
                 <form className='search-form' action="">
                     
-                    <input className="search-input" type="text" placeholder="Start your search" />
+                    <input className="search-input" type="text" placeholder="Start your search..." />
                     <button className='fa fa-search'></button>
                 </form>
             </div>

@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
                 <form className='main-modal' onSubmit={this.handleSubmit}>
                     <p className='modal-header'>{this.props.formType[0].toUpperCase() + this.props.formType.slice(1)} </p>
                     
-                    <strong onClick={this.props.closeModal} className="close-x">X</strong>
+                    <strong onClick={this.props.closeModal} className="close-x"> <i className='fa fa-times'></i> </strong>
                     <br />
                     {this.renderErrors()}
                     <div className='login-section'>
