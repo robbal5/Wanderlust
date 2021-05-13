@@ -422,3 +422,108 @@ html {
     box-shadow: 5px 5px 5px gray;
 }
 
+//Properties Pane
+
+.properties-search {
+    padding-top: 100px;
+    display: flex;
+    
+}
+
+.property-pane {
+    width: 50%;
+    min-width: 650px;
+}
+
+.properties-pane-header {
+    border-bottom: 1px solid $heading_color;
+}
+
+.properties-pane-header-text {
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.properties-pane-header-filter-form {
+    padding-bottom: 10px;
+}
+
+
+.filter-buttons {
+     display: flex;
+     justify-content: space-around;
+      width: 400px;
+      min-width: 400px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      
+}
+
+.filter-button{
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    border: black solid 1px;
+    background-color: white;
+
+    &:hover {
+        background-color: $section_color;
+    }
+}
+
+//Properties Pane Index Item
+
+.properties-pane-index-item {
+    display: flex;
+    border-bottom: 1px $heading_color solid;
+    padding: 10px 0 10px 0;
+    align-items: flex-start;
+    height: 240px;
+    
+    
+}
+.property-intro {
+    margin-top: 5px;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+
+.properties-image-container {
+    margin: 5px;
+    box-shadow: 1px 1px 1px gray;
+    border-radius: 20px;
+    height: 90%;
+    width: 300px;
+}
+
+.properties-image {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.property-intro-subtext {
+    font-size: 16px;
+    color: $heading_color;
+    padding: 10px;
+}
+
+.property-intro-line {
+    padding-left: 10px;
+    color: $heading_color;
+}
+
+.property-intro-name {
+    font-size: 24px;
+    color: $font_color;
+    padding-left: 10px;
+}
+
+.property-intro-price {
+    text-align: right;
+    padding-top: 50px;
+    font-weight: bold;
+
+}

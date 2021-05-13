@@ -13,8 +13,8 @@ class PropertiesSearch extends React.Component {
 
     render() {
         return (
-            <div>
-                <PropertyPane />
+            <div className='properties-search'>
+                <PropertyPane properties = {this.props.properties} cities={this.props.cities} addresses={this.props.addresses} />
                 <PropertyMap />
             </div>
         )

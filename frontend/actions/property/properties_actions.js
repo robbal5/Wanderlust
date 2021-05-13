@@ -5,17 +5,17 @@ export const RECEIVE_PROPERTY = 'RECEIVE_PROPERTY';
 
 //actions
 
-export const receiveProperties = (properties) => {
+export const receiveProperties = (payload) => {
     return {
         type: RECEIVE_PROPERTIES,
-        properties
+        payload
     }
 }
 
-export const receiveProperty = (property) => {
+export const receiveProperty = (payload) => {
     return {
         type: RECEIVE_PROPERTY,
-        property
+        payload
     }
 }
 

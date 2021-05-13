@@ -12,9 +12,14 @@ class PropertiesPaneHeader extends React.Component {
     render() {
         return (
                 <div className = 'properties-pane-header'>
-                    <h2 className = 'properties-pane-header-header'> Stays in the selected map area</h2>
+                    <h2 className = 'properties-pane-header-text'> Stays in CITY NAME</h2> 
                     <form className='properties-pane-header-filter-form'>
-                        <button>City</button>
+                   
+                        <div className='filter-buttons'>
+                            <button className='filter-button'>City</button>
+                            <button className='filter-button'>Type of place</button>
+                            <button className='filter-button'>Clear filters</button>
+                        </div>
                     </form>
                 </div >
                 

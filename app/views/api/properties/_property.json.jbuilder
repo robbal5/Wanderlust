@@ -1,2 +1,2 @@
-json.extract! property, :id, :name, :description, :user_id, :number_of_guests, :number_of_beds, :number_of_bedrooms, :number_of_bathrooms, :type_of_place, :enhanced_clean, :self_check_in
+json.extract! property, :id, :name, :description, :user_id, :number_of_guests, :number_of_beds, :number_of_bedrooms, :number_of_bathrooms, :price, :type_of_place, :enhanced_clean, :self_check_in, :address_id
 json.photoUrls property.photos.map { |file| url_for(file) }

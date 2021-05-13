@@ -1,4 +1,6 @@
 import React from 'react';
+import PropertiesImage from './properties_image';
+import PropertiesIntro from './properties_intro'
 
 class PropertiesPaneIndexItem extends React.Component {
     constructor(props) {
@@ -6,9 +8,11 @@ class PropertiesPaneIndexItem extends React.Component {
     }
 
     render() {
+        
         return (
-            <div>
-
+            <div className='properties-pane-index-item'>
+                <PropertiesImage imageUrls={this.props.property.photoUrls} />
+                <PropertiesIntro property={this.props.property} city={this.props.city} address={this.props.address}/>
             </div>
         )
     }

@@ -2,6 +2,7 @@ class Api::PropertiesController < ApplicationController
 
     def index
         @properties = Property.with_attached_photos.all
+        @addresses = Address.all
         render :index
     end
 
