@@ -9696,3 +9696,5 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 347ms (Views: 16.3ms | ActiveRecord: 23.6ms)
 
 
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
