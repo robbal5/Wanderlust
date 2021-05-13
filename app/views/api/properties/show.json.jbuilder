@@ -1,5 +1,5 @@
 
-json.payload do
+
     json.property do
         json.partial! 'api/properties/property', property: @property
     end
@@ -25,7 +25,7 @@ json.payload do
     end
 
     json.address do
-        json.extract! @property.address, :city_id, :street_address, :zip_code, :lat, :lng
+        json.extract! @property.address, :id, :city_id, :street_address, :zip_code, :lat, :lng
     end
 
     json.reservations do
@@ -35,6 +35,14 @@ json.payload do
             end
         end
     end
-end
+
+    json.property_amenities do
+        @property.property_amenities.each do |prop_am|
+            json.set! prop_am.id do
+                json.extract! prop_am, :id, :property_id, :amenity_id
+            end
+        end
+    end
+
 
 #Will need to include reviews, amenities, user, reservations

@@ -7,7 +7,8 @@ const PropertiesReducer = (state = {}, action) => {
         case RECEIVE_PROPERTIES:
             return action.payload.properties;
         case RECEIVE_PROPERTY:
-            return Object.assign({}, state, {[action.payload.property.id]:action.property})
+            debugger;
+            return Object.assign({}, state, {[action.payload.property.id]:action.payload.property})
         default:
             return state;
     }

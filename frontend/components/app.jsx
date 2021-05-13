@@ -5,7 +5,7 @@ import Footer from './footer/footer'
 import ModalContainer from './modal/modal_container'
 import Home from './home/home'
 import PropertiesSearchContainer from './property_search/properties_search_container'
-import PropertyPage from './property_page/property_page'
+import PropertyPageContainer from './property_page/property_page_container'
 
 const App = () => {
     return (
@@ -13,7 +13,7 @@ const App = () => {
             <ModalContainer />
             <NavHeader />
             <Switch>
-                <Route path='/properties/:property_id' component={PropertyPage} />
+                <Route path='/properties/:property_id' component={PropertyPageContainer} />
                 <Route path='/properties' exact component={PropertiesSearchContainer}></Route>
                 <Route path='/' component={Home}></Route>
                 
