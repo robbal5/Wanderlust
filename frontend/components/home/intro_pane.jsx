@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 class IntroPane extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class IntroPane extends React.Component {
         return (
         <div className='intro-pane'>
             <h2 className='intro-image-text'>Find your next adventure...</h2>
-            <button className='intro-image-button'>Get inspired</button>
+                <Link to='/properties'><button className='intro-image-button'>Get inspired</button></Link>
             <img src={window.introUrl} alt="forest" className='intro-image' />
         </div>
         )

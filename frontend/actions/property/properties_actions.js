@@ -23,7 +23,7 @@ export const receiveProperty = (property) => {
 
 export const requestProperties = () => dispatch => {
     return APIPropertyUtils.requestProperties()
-    .then(properties => receiveProperties(properties))
+    .then(properties => dispatch(receiveProperties(properties)))
 }
 
 export const requestProperty = (propertyId) => dispatch => {

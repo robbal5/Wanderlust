@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, idx) => {
-                    return <li key={idx}>{error}</li>
+                    return <li className='modal-errors' key={idx}>{error}</li>
                 })}
             </ul>
         )
@@ -50,13 +50,13 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     <div className='login-section'>
                         <br />
-                        {this.props.formType == 'signup' ? <label>Name:
-                            <input type="text" value={this.state.name} placeholder="John Smith" onChange={this.update('name')} className='login-input' />
+                        {this.props.formType == 'signup' ? <label className='login-label'>Name:
+                            <input type="text" value={this.state.name}  onChange={this.update('name')} className='login-input' />
                         </label> : null }
                        
                         <br />
                         <label className='login-label'>Email:
-                            <input type="email" value={this.state.email} placeholder="Jsmith@gmail.com" onChange={this.update('email')} className='login-input' />
+                            <input type="email" value={this.state.email}  onChange={this.update('email')} className='login-input' />
                         </label>
                         <br />
                         <label className='login-label'>Password:
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         {this.props.formType == 'signup' ? <div>
-                            <h6>Optional</h6>
+                            <h6 className='modal-optional-text'>Let us know more about you!</h6>
                             <label className='login-label'>Phone Number:
                                 <input type="tel" value={this.state.phone_number} onChange={this.update('phone_number')} className='login-input' />
                             </label>
@@ -76,9 +76,9 @@ class SessionForm extends React.Component {
                         
                         
                         <input type="submit" className="session-submit" value={this.props.formType[0].toUpperCase() + this.props.formType.slice(1)} />
-                        {this.props.formType == 'login' ? <button onClick={this.handleDemo}>Demo User</button> : null}
-                        {this.props.formType == 'signup' ? <p>Already have an account? {this.props.otherForm}</p> 
-                            : <p>Don't have an account? {this.props.otherForm}</p> }
+                        {this.props.formType == 'login' ? <button className='session-submit' onClick={this.handleDemo}>Demo User</button> : null}
+                        {this.props.formType == 'signup' ? <p className='modal-bottom-text'>Already have an account? <span>{this.props.otherForm}</span></p>
+                            : <p className='modal-bottom-text'>Don't have an account? <span>{this.props.otherForm}</span></p> }
                         
                         
                     </div>

@@ -6,6 +6,11 @@ class PropertiesSearch extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.requestProperties();
+
+    }
+
     render() {
         return (
             <div>
