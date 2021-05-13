@@ -16629,3 +16629,208 @@ Completed 200 OK in 67ms (Views: 55.7ms | ActiveRecord: 8.8ms)
 Completed 200 OK in 125ms (Views: 77.8ms | ActiveRecord: 46.6ms)
 
 
+Started GET "/" for ::1 at 2021-05-13 15:10:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9HYka0nwQFvIQVIgTncN8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 202ms (Views: 194.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-13 15:10:52 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+Started GET "/api/states" for ::1 at 2021-05-13 15:10:52 -0400
+  [1m[36mCity Load (3.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (11.0ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/properties" for ::1 at 2021-05-13 15:10:52 -0400
+Processing by Api::PropertiesController#index as JSON
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (7.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (2.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (4.5ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (56.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 1], ["record_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (15.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.7ms)
+  Rendered api/properties/_property.json.jbuilder (0.6ms)
+  [1m[36mAddress Load (4.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (123.1ms)
+Completed 200 OK in 135ms (Views: 50.2ms | ActiveRecord: 84.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--61aa68a790b67092651a7d14e00a8714515ac6b1/lakehouse.jpg" for ::1 at 2021-05-13 15:10:52 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3bf58550dd9748ff4308d5010ca63c3fbd4f1acf/artesian_main_photo.jpg" for ::1 at 2021-05-13 15:10:52 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--61aa68a790b67092651a7d14e00a8714515ac6b1", "filename"=>"lakehouse"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3bf58550dd9748ff4308d5010ca63c3fbd4f1acf", "filename"=>"artesian_main_photo"}
+[36m  S3 Storage (10.3ms) [0m[34mGenerated URL for file at key: qTH5kdoyMEL79HXm5LQpXLK4 (https://wanderlust-dev.s3.us-east-2.amazonaws.com/qTH5kdoyMEL79HXm5LQpXLK4?response-content-disposition=inline%3B%20filename%3D%22lakehouse.jpg%22%3B%20filename%2A%3DUTF-8%27%27lakehouse.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210513T191052Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cc3643ebf34989cae856c50474a6f33c5c4d749ebe5f0cd0f3ac93e37194d558)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/qTH5kdoyMEL79HXm5LQpXLK4?response-content-disposition=inline%3B%20filename%3D%22lakehouse.jpg%22%3B%20filename%2A%3DUTF-8%27%27lakehouse.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210513T191052Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cc3643ebf34989cae856c50474a6f33c5c4d749ebe5f0cd0f3ac93e37194d558
+Completed 302 Found in 22ms (ActiveRecord: 1.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: iToQk2cCMY8GHE7ji66DB8ab (https://wanderlust-dev.s3.us-east-2.amazonaws.com/iToQk2cCMY8GHE7ji66DB8ab?response-content-disposition=inline%3B%20filename%3D%22artesian_main_photo.jpg%22%3B%20filename%2A%3DUTF-8%27%27artesian_main_photo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210513T191053Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=00a853b2dc0243e6f59e0473dee392c64a7225c6c6151beb6f37569713175ccc)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/iToQk2cCMY8GHE7ji66DB8ab?response-content-disposition=inline%3B%20filename%3D%22artesian_main_photo.jpg%22%3B%20filename%2A%3DUTF-8%27%27artesian_main_photo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210513T191053Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=00a853b2dc0243e6f59e0473dee392c64a7225c6c6151beb6f37569713175ccc
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-13 15:34:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9HYka0nwQFvIQVIgTncN8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 798ms (Views: 789.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-13 15:34:16 -0400
+Started GET "/api/states" for ::1 at 2021-05-13 15:34:16 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (8.7ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (12.7ms)
+Completed 200 OK in 24ms (Views: 14.5ms | ActiveRecord: 8.7ms)
+
+
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (5.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (7.6ms)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-13 15:35:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9HYka0nwQFvIQVIgTncN8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 237ms (Views: 233.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-13 15:35:20 -0400
+Started GET "/api/states" for ::1 at 2021-05-13 15:35:20 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+Processing by Api::StatesController#index as JSON
+  [1m[36mCity Load (13.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendering api/states/index.json.jbuilder
+  Rendered api/cities/index.json.jbuilder (19.3ms)
+Completed 200 OK in 30ms (Views: 15.6ms | ActiveRecord: 13.6ms)
+
+
+  [1m[36mState Load (6.8ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (8.4ms)
+Completed 200 OK in 26ms (Views: 18.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-13 15:35:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9HYka0nwQFvIQVIgTncN8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-13 15:35:22 -0400
+Started GET "/api/states" for ::1 at 2021-05-13 15:35:22 -0400
+Processing by Api::StatesController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mState Load (5.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (7.7ms)
+Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 5.2ms)
+
+
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (6.5ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-13 15:35:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9HYka0nwQFvIQVIgTncN8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 236ms (Views: 230.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-13 15:35:40 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+Started GET "/api/states" for ::1 at 2021-05-13 15:35:40 -0400
+  [1m[36mCity Load (9.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (13.0ms)
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 9.2ms)
+
+
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (5.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (7.9ms)
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-13 15:35:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9HYka0nwQFvIQVIgTncN8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 165ms (Views: 161.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-13 15:35:59 -0400
+Started GET "/api/states" for ::1 at 2021-05-13 15:35:59 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+Processing by Api::StatesController#index as JSON
+  [1m[36mCity Load (12.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (16.5ms)
+Completed 200 OK in 31ms (Views: 17.9ms | ActiveRecord: 12.3ms)
+
+
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (13.8ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (16.0ms)
+Completed 200 OK in 27ms (Views: 12.8ms | ActiveRecord: 13.8ms)
+
+

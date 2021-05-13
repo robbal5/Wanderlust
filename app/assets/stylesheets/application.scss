@@ -198,7 +198,7 @@ html {
 
 .search-bar {
     width: 20%;
-    border: 1px solid black;
+    border: 1px solid $heading_color;
     border-radius: 10px;
     height: 30px;
     background-color: white;
@@ -206,7 +206,7 @@ html {
 }
 
 .search-bar:hover {
-     box-shadow: 2px 2px 2px $heading_color;
+     box-shadow: 1px 1px 5px $heading_color;
      transition: 0.2s;
 }
 
@@ -433,6 +433,7 @@ html {
 .property-pane {
     width: 50%;
     min-width: 650px;
+    overflow-y: scroll;
 }
 
 .properties-pane-header {
