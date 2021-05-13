@@ -20,6 +20,8 @@ validates :email, uniqueness: true
 validates :password, length: {minimum: 6}, allow_nil: true
 
 has_many :properties
+has_many :reservations
+has_many :reviews
 
 attr_reader :password
 

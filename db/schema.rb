@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_181517) do
+ActiveRecord::Schema.define(version: 2021_05_13_012104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 2021_05_12_181517) do
     t.index ["city_id"], name: "index_addresses_on_city_id"
   end
 
+  create_table "amenities", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "icon_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
     t.integer "state_id", null: false
@@ -69,6 +76,37 @@ ActiveRecord::Schema.define(version: 2021_05_12_181517) do
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_properties_on_address_id"
     t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "property_amenities", force: :cascade do |t|
+    t.integer "property_id", null: false
+    t.integer "amenity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["amenity_id"], name: "index_property_amenities_on_amenity_id"
+    t.index ["property_id"], name: "index_property_amenities_on_property_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "property_id", null: false
+    t.integer "user_id", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_reservations_on_property_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "property_id", null: false
+    t.integer "user_id", null: false
+    t.text "review", null: false
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_reviews_on_property_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "states", force: :cascade do |t|

@@ -28,8 +28,14 @@ class Property < ApplicationRecord
     has_one :state, through: :address
     has_one :city, through: :address
 
+    has_many :reservations
+    has_many :reviews
+    has_many :property_amenities
+    has_many :amenities, through: :proerty_amenities
+
     #AWS
     has_many_attached :photos
+
 
     
 
