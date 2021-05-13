@@ -487,6 +487,8 @@ html {
     margin-top: 5px;
     flex-direction: column;
     height: 100%;
+    width: 500px;
+
 }
 
 
@@ -525,6 +527,25 @@ html {
 .property-intro-price {
     text-align: right;
     padding-top: 50px;
+    margin-right: 25px;
     font-weight: bold;
+    width: 100%;
 
+}
+
+//PROPERTIES PAGE
+
+.property-page {
+    width: 80%;
+    padding-top: 100px;  
+    margin: auto;  
+}
+
+.property-header-name {
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.property-header-subitems {
+    display: flex;
 }
