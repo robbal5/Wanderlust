@@ -8,7 +8,7 @@ class PropertiesPaneHeader extends React.Component {
     render() {
         return (
             <div>
-
+                PPHeader
             </div>
         )
     }

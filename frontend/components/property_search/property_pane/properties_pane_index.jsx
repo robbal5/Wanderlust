@@ -9,6 +9,7 @@ class PropertiesPaneIndex extends React.Component {
     render() {
         return (
             <div>
+                PropertiesPaneIndex
                 <PropertiesImage />
                 <PropertiesIntro />
             </div>

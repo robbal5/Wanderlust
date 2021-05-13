@@ -6,8 +6,9 @@ class Api::PropertiesController < ApplicationController
     end
 
     def show
-        debugger;
-        @property = Property.with_attached_photos.find(params[:id])
+        
+        @property = Property.with_attached_photos.includes(:reviews, :amenities, :reservations, :user, :address).find(params[:id])
+        
         render :show
     end
 

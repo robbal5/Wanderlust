@@ -8,7 +8,7 @@ class PropertiesImage extends React.Component {
     render() {
         return (
             <div>
-
+                PropertiesImage
             </div>
         )
     }

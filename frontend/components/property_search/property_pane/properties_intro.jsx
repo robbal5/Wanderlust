@@ -8,7 +8,7 @@ class PropertiesIntro extends React.Component {
     render() {
         return (
             <div>
-
+                Properties Intro
             </div>
         )
     }

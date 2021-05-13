@@ -23,15 +23,15 @@ class Property < ApplicationRecord
     validates :address_id, :user_id, :name, :type_of_place, :price, presence: true
     validates :type_of_place, inclusion: { in: ['Entire place', 'Private room', 'Hotel room']}
 
-    has_one :user
-    has_one :address 
+    belongs_to :user
+    belongs_to :address 
     has_one :state, through: :address
     has_one :city, through: :address
 
     has_many :reservations
     has_many :reviews
     has_many :property_amenities
-    has_many :amenities, through: :proerty_amenities
+    has_many :amenities, through: :property_amenities
 
     #AWS
     has_many_attached :photos

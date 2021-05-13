@@ -8,10 +8,13 @@ class PropertyPane extends React.Component {
     }
 
     render() {
+        return(
         <div>
+            <p>Property Pane</p>
             <PropertiesPaneHeader />
             <PropertiesPaneIndex />
         </div>
+        )
     }
 }
 
