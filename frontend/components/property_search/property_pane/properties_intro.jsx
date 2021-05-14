@@ -6,6 +6,7 @@ class PropertiesIntro extends React.Component {
     }
 
     render() {
+        debugger;
         const property = this.props.property;
         if (!property){
             return null;

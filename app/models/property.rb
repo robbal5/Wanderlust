@@ -36,7 +36,24 @@ class Property < ApplicationRecord
     #AWS
     has_many_attached :photos
 
+    def self.filtered_properties(filters) 
+        debugger;
+        properties = Property.include(:address).all
+        filter_params(params).each do |key, value|
+            if !value.present?
+                if key == 'placeFilter'
+                    properties = properties.where(type_of_place: value)
+                # elsif key == 'cityFilter'
+                #     properties = properties.where(prop)
+                end
+            end
+        end
+    end
+    private
 
+    
+    
+    
     
 
 end

@@ -1,8 +1,13 @@
 class Api::PropertiesController < ApplicationController
 
     def index
-        debugger;
-        @properties = Property.with_attached_photos.all
+        
+        filters = filter_params
+        if filters.values.all?{ |value| value == ''} 
+            @properties = Property.with_attached_photos.all
+        # else
+            @properties = Property.filtered_properties(filters)
+        end
         @addresses = Address.all
         render :index
     end
@@ -18,5 +23,9 @@ class Api::PropertiesController < ApplicationController
 
     def property_params
         params.require(:property).permit(photos: [])
+    end
+
+    def filter_params 
+        params.require(:filters).permit(:placeFilter, :cityFilter)
     end
 end
