@@ -6,14 +6,15 @@ const mSTP = (state) => {
     return {
         properties: state.entities.properties,
         cities: state.entities.cities,
-        addresses: state.entities.addresses
+        addresses: state.entities.addresses,
+        filters: state.ui.filters
 
     }
 }
 
 const mDTP = (dispatch) => {
     return {
-        requestProperties: () => dispatch(requestProperties())
+        requestProperties: (filters) => dispatch(requestProperties(filters))
     }
 }
 

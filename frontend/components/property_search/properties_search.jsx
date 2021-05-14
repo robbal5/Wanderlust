@@ -7,7 +7,8 @@ class PropertiesSearch extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestProperties();
+        debugger;
+        this.props.requestProperties(this.props.filters);
 
     }
 

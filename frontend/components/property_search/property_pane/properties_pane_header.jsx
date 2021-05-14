@@ -48,7 +48,7 @@ class PropertiesPaneHeader extends React.Component {
 
     onSelection(field) {
         return (e) => {
-            debugger;
+            
             e.preventDefault()
             this.setState({
                 [field]: e.currentTarget.value
@@ -79,7 +79,7 @@ class PropertiesPaneHeader extends React.Component {
                 </nav>
             )
         }
-        debugger;
+        
         return (
             
                 <div className = 'properties-pane-header'>

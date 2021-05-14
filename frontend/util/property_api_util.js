@@ -1,8 +1,9 @@
 export const requestProperties = (filters) => {
+    debugger;
     return $.ajax({
         method: 'GET',
         url: '/api/properties',
-        filters
+        data: {filters},
     })
 }
 

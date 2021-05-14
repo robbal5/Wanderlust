@@ -1,6 +1,7 @@
 class Api::PropertiesController < ApplicationController
 
     def index
+        debugger;
         @properties = Property.with_attached_photos.all
         @addresses = Address.all
         render :index
