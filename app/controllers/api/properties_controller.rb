@@ -9,7 +9,7 @@ class Api::PropertiesController < ApplicationController
     def show
         
         @property = Property.with_attached_photos.includes(:reviews, :amenities, :reservations, :user, :address).find(params[:id])
-        
+        @users = User.all
         render :show
     end
 

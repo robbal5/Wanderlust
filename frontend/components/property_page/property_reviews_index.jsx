@@ -6,9 +6,15 @@ class PropertyReviewsIndex extends React.Component {
     }
 
     render() {
+        const{reviews} = this.props;
         return (
             <div>
-                <PropertyReviewsIndexItem />
+                <h2 className='property-reviews-header'>Reviews</h2>
+                <ul className='property-reviews-list'>
+                    {Object.values(reviews).map((review,idx) => {
+                        return <PropertyReviewsIndexItem key={idx} review={review} />
+                    })}
+                </ul>
             </div>
         )
     }
