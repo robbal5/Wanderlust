@@ -15,7 +15,7 @@ class PropertiesSearch extends React.Component {
     render() {
         return (
             <div className='properties-search'>
-                <PropertyPane removeFilter = {this.props.removeFilter} updateFilter={this.props.updateFilter} properties = {this.props.properties} cities={this.props.cities} addresses={this.props.addresses} />
+                <PropertyPane filters={this.props.filters} removeFilter = {this.props.removeFilter} updateFilter={this.props.updateFilter} properties = {this.props.properties} cities={this.props.cities} addresses={this.props.addresses} />
                 <PropertyMap />
             </div>
         )

@@ -5,7 +5,11 @@ const PropertiesReducer = (state = {}, action) => {
     debugger;
     switch (action.type) {
         case RECEIVE_PROPERTIES:
-            return action.payload.properties;
+            if (!action.payload.properties){
+                return {};
+            }else {
+                return action.payload.properties;
+            }
         // case RECEIVE_PROPERTY:
             // return Object.assign({}, state, {[action.payload.property.id]:action.payload.property})
             // return Object.assign({}, state, {currentProperty: action.payload})

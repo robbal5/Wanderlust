@@ -4,8 +4,8 @@ class PropertiesPaneHeader extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            cityFilter: '',
-            placeFilter: '',
+            cityFilter: this.props.filters['cityFilter'],
+            placeFilter: this.props.filters['placeFilter'],
             cityDropdown: false,
             placeDropdown: false,
         }
@@ -18,6 +18,10 @@ class PropertiesPaneHeader extends React.Component {
     //         updateFilter(filter, e.currentTarget.value)
     //     }
     // }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.closeClick)
+    }
 
     onClick(field) {
         return (e) => {
@@ -41,6 +45,7 @@ class PropertiesPaneHeader extends React.Component {
             }, () => {
                 document.removeEventListener('click', this.closeClick)
             })
+            e.stopPropagation();
         }
     }
 
@@ -62,7 +67,7 @@ class PropertiesPaneHeader extends React.Component {
                 [field]: e.currentTarget.value
             })
             updateFilter(field, e.currentTarget.value)
-            e.stopPropagation()
+            
         }
         
     }
