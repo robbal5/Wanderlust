@@ -39403,3 +39403,1636 @@ Processing by Api::PropertiesController#index as JSON
 Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 3.6ms)
 
 
+Started GET "/" for ::1 at 2021-05-14 15:54:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 391ms (Views: 388.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/states" for ::1 at 2021-05-14 15:54:06 -0400
+Started GET "/api/cities" for ::1 at 2021-05-14 15:54:06 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (13.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (58.5ms)
+Completed 200 OK in 78ms (Views: 64.0ms | ActiveRecord: 13.3ms)
+
+
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (10.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (47.7ms)
+Completed 200 OK in 69ms (Views: 57.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 15:57:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 318ms (Views: 315.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=New+York&filters%5BcityFilter%5D%5BknownFor%5D=Tourists&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fnew_york-2f9350ec2de6ada98db07cd7ff498e47007467f8cace12abfc9622702f17c458.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:57:23 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=San+Francisco&filters%5BcityFilter%5D%5BknownFor%5D=Heart+of+Tech&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fsan_francisco-581fb1b46dd66a180192b6e8ef1ad0461b82f988f9850f9f2024b819189beefa.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:57:23 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=Chicago&filters%5BcityFilter%5D%5BknownFor%5D=Home+of+Deep+Dish&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fchicago-f60a437db9629a8f2c7362c33a66c1d0396b6106763af856c5878ea3487326d7.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:57:23 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=Miami&filters%5BcityFilter%5D%5BknownFor%5D=Amazing+Nightlife&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fmiami-294550e75ff37abff940f15ae7e6d46af06da24d7e23354831fd0697f90464b0.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:57:23 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 15:57:23 -0400
+Processing by Api::PropertiesController#index as JSON
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"San Francisco", "knownFor"=>"Heart of Tech", "image"=>"http://localhost:3000/assets/san_francisco-581fb1b46dd66a180192b6e8ef1ad0461b82f988f9850f9f2024b819189beefa.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"New York", "knownFor"=>"Tourists", "image"=>"http://localhost:3000/assets/new_york-2f9350ec2de6ada98db07cd7ff498e47007467f8cace12abfc9622702f17c458.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (23.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (41.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mProperty Load (50.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (6.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"Chicago", "knownFor"=>"Home of Deep Dish", "image"=>"http://localhost:3000/assets/chicago-f60a437db9629a8f2c7362c33a66c1d0396b6106763af856c5878ea3487326d7.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+  Rendered api/properties/_property.json.jbuilder (1.5ms)
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (12.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"Miami", "knownFor"=>"Amazing Nightlife", "image"=>"http://localhost:3000/assets/miami-294550e75ff37abff940f15ae7e6d46af06da24d7e23354831fd0697f90464b0.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+  [1m[36mProperty Load (12.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (10.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+Processing by Api::StatesController#index as JSON
+  [1m[36mAddress Load (4.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (147.5ms)
+  [1m[36mActiveStorage::Attachment Load (9.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/states/index.json.jbuilder
+Completed 200 OK in 214ms (Views: 135.1ms | ActiveRecord: 75.0ms)
+
+
+  Rendering api/properties/index.json.jbuilder
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  [1m[36mProperty Load (3.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (2.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (125.6ms)
+Completed 200 OK in 214ms (Views: 96.2ms | ActiveRecord: 76.0ms)
+
+
+  [1m[36mState Load (10.5ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (11.8ms)
+Completed 200 OK in 24ms (Views: 12.7ms | ActiveRecord: 10.5ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (7.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (3.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mActiveStorage::Blob Load (6.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  [1m[36mAddress Load (3.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (74.4ms)
+Completed 200 OK in 86ms (Views: 53.8ms | ActiveRecord: 28.4ms)
+
+
+  Rendered api/properties/_property.json.jbuilder (1.2ms)
+  [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (44.9ms)
+Completed 200 OK in 68ms (Views: 47.8ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 15:57:23 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (3.4ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 15:58:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 864ms (Views: 860.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=New+York&filters%5BcityFilter%5D%5BknownFor%5D=Tourists&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fnew_york-2f9350ec2de6ada98db07cd7ff498e47007467f8cace12abfc9622702f17c458.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:59:44 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=Chicago&filters%5BcityFilter%5D%5BknownFor%5D=Home+of+Deep+Dish&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fchicago-f60a437db9629a8f2c7362c33a66c1d0396b6106763af856c5878ea3487326d7.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:59:44 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=San+Francisco&filters%5BcityFilter%5D%5BknownFor%5D=Heart+of+Tech&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fsan_francisco-581fb1b46dd66a180192b6e8ef1ad0461b82f988f9850f9f2024b819189beefa.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:59:44 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"San Francisco", "knownFor"=>"Heart of Tech", "image"=>"http://localhost:3000/assets/san_francisco-581fb1b46dd66a180192b6e8ef1ad0461b82f988f9850f9f2024b819189beefa.jpg"}, "placeFilter"=>""}}
+Started GET "/api/cities" for ::1 at 2021-05-14 15:59:44 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"New York", "knownFor"=>"Tourists", "image"=>"http://localhost:3000/assets/new_york-2f9350ec2de6ada98db07cd7ff498e47007467f8cace12abfc9622702f17c458.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=Miami&filters%5BcityFilter%5D%5BknownFor%5D=Amazing+Nightlife&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fmiami-294550e75ff37abff940f15ae7e6d46af06da24d7e23354831fd0697f90464b0.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 15:59:44 -0400
+Processing by Api::PropertiesController#index as JSON
+  Rendering api/properties/index.json.jbuilder
+Processing by Api::CitiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"Chicago", "knownFor"=>"Home of Deep Dish", "image"=>"http://localhost:3000/assets/chicago-f60a437db9629a8f2c7362c33a66c1d0396b6106763af856c5878ea3487326d7.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+  [1m[36mProperty Load (9.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+Unpermitted parameter: :cityFilter
+  Rendering api/properties/index.json.jbuilder
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/properties/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+Processing by Api::PropertiesController#index as JSON
+  [1m[36mProperty Load (3.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mCity Load (9.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (15.9ms)
+  [1m[36mProperty Load (13.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"Miami", "knownFor"=>"Amazing Nightlife", "image"=>"http://localhost:3000/assets/miami-294550e75ff37abff940f15ae7e6d46af06da24d7e23354831fd0697f90464b0.jpg"}, "placeFilter"=>""}}
+Completed 200 OK in 41ms (Views: 30.5ms | ActiveRecord: 9.2ms)
+
+
+  ↳ app/views/api/properties/index.json.jbuilder:2
+Unpermitted parameter: :cityFilter
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  [1m[36mActiveStorage::Attachment Load (4.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/properties/index.json.jbuilder
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (4.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (14.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mProperty Load (19.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (40.0ms)
+  Rendered api/properties/_property.json.jbuilder (6.7ms)
+  Rendered api/properties/_property.json.jbuilder (1.7ms)
+  [1m[36mActiveStorage::Blob Load (12.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (8.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (171.1ms)
+  [1m[36mActiveStorage::Attachment Load (62.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  Rendered api/properties/_property.json.jbuilder (2.2ms)
+Completed 200 OK in 236ms (Views: 173.8ms | ActiveRecord: 20.0ms)
+
+
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  [1m[36mAddress Load (4.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  [1m[36mActiveStorage::Blob Load (3.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  Rendered api/properties/_property.json.jbuilder (1.2ms)
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (222.8ms)
+Completed 200 OK in 236ms (Views: 203.8ms | ActiveRecord: 31.1ms)
+
+
+  [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/index.json.jbuilder (196.9ms)
+Completed 200 OK in 216ms (Views: 173.8ms | ActiveRecord: 32.6ms)
+
+
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (139.6ms)
+Completed 200 OK in 187ms (Views: 84.4ms | ActiveRecord: 85.9ms)
+
+
+Started GET "/api/states" for ::1 at 2021-05-14 15:59:45 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (1.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (3.9ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:00:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 363ms (Views: 361.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=New+York&filters%5BcityFilter%5D%5BknownFor%5D=Tourists&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fnew_york-2f9350ec2de6ada98db07cd7ff498e47007467f8cace12abfc9622702f17c458.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:00:35 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=Chicago&filters%5BcityFilter%5D%5BknownFor%5D=Home+of+Deep+Dish&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fchicago-f60a437db9629a8f2c7362c33a66c1d0396b6106763af856c5878ea3487326d7.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:00:35 -0400
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=San+Francisco&filters%5BcityFilter%5D%5BknownFor%5D=Heart+of+Tech&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fsan_francisco-581fb1b46dd66a180192b6e8ef1ad0461b82f988f9850f9f2024b819189beefa.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:00:35 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:00:35 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"New York", "knownFor"=>"Tourists", "image"=>"http://localhost:3000/assets/new_york-2f9350ec2de6ada98db07cd7ff498e47007467f8cace12abfc9622702f17c458.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"San Francisco", "knownFor"=>"Heart of Tech", "image"=>"http://localhost:3000/assets/san_francisco-581fb1b46dd66a180192b6e8ef1ad0461b82f988f9850f9f2024b819189beefa.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"Chicago", "knownFor"=>"Home of Deep Dish", "image"=>"http://localhost:3000/assets/chicago-f60a437db9629a8f2c7362c33a66c1d0396b6106763af856c5878ea3487326d7.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+Started GET "/api/properties?filters%5BcityFilter%5D%5Bname%5D=Miami&filters%5BcityFilter%5D%5BknownFor%5D=Amazing+Nightlife&filters%5BcityFilter%5D%5Bimage%5D=http%3A%2F%2Flocalhost%3A3000%2Fassets%2Fmiami-294550e75ff37abff940f15ae7e6d46af06da24d7e23354831fd0697f90464b0.jpg&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:00:35 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (17.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  Rendering api/states/index.json.jbuilder
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/properties/index.json.jbuilder
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mState Load (47.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (76.8ms)
+Completed 200 OK in 166ms (Views: 118.4ms | ActiveRecord: 47.4ms)
+
+
+  [1m[36mProperty Load (21.9ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mProperty Load (39.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (25.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>{"name"=>"Miami", "knownFor"=>"Amazing Nightlife", "image"=>"http://localhost:3000/assets/miami-294550e75ff37abff940f15ae7e6d46af06da24d7e23354831fd0697f90464b0.jpg"}, "placeFilter"=>""}}
+Unpermitted parameter: :cityFilter
+  [1m[36mActiveStorage::Attachment Load (51.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (3.6ms)
+  [1m[36mActiveStorage::Attachment Load (77.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/properties/index.json.jbuilder
+  Rendered api/properties/_property.json.jbuilder (15.1ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (326.8ms)
+Completed 200 OK in 376ms (Views: 323.8ms | ActiveRecord: 46.2ms)
+
+
+  [1m[36mProperty Load (30.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (60.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (1.2ms)
+  [1m[36mActiveStorage::Blob Load (57.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (9.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (237.6ms)
+Completed 200 OK in 391ms (Views: 246.2ms | ActiveRecord: 143.7ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (10.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (8.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (253.9ms)
+Completed 200 OK in 416ms (Views: 226.1ms | ActiveRecord: 183.3ms)
+
+
+  [1m[36mActiveStorage::Blob Load (5.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (8.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (102.0ms)
+Completed 200 OK in 158ms (Views: 101.8ms | ActiveRecord: 55.1ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:00:35 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (4.3ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:01:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 335ms (Views: 332.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:01:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 328ms (Views: 326.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:01:58 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:01:58 -0400
+Processing by Api::StatesController#index as JSON
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+Started GET "/api/cities" for ::1 at 2021-05-14 16:01:58 -0400
+  Rendering api/states/index.json.jbuilder
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mState Load (3.0ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (10.7ms)
+Completed 200 OK in 73ms (Views: 66.8ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mProperty Load (6.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (4.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+Processing by Api::CitiesController#index as JSON
+  [1m[36mActiveStorage::Blob Load (5.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (3.2ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 1.0ms)
+
+
+  Rendered api/properties/_property.json.jbuilder (1.5ms)
+  Rendered api/properties/_property.json.jbuilder (2.3ms)
+  [1m[36mAddress Load (2.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (48.1ms)
+Completed 200 OK in 101ms (Views: 81.2ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:01:58 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  Rendered api/properties/_property.json.jbuilder (1.5ms)
+  [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (20.2ms)
+Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:01:58 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (18.5ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:01:58 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (6.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (25.1ms)
+Completed 200 OK in 31ms (Views: 20.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:03:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 335ms (Views: 332.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/states" for ::1 at 2021-05-14 16:03:47 -0400
+Processing by Api::StatesController#index as JSON
+Started GET "/api/cities" for ::1 at 2021-05-14 16:03:47 -0400
+  Rendering api/states/index.json.jbuilder
+Processing by Api::CitiesController#index as JSON
+  [1m[36mState Load (56.7ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (58.5ms)
+Completed 200 OK in 110ms (Views: 51.6ms | ActiveRecord: 56.7ms)
+
+
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (11.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (29.3ms)
+Completed 200 OK in 94ms (Views: 78.8ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:04:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 374ms (Views: 369.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:04:09 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:04:09 -0400
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mState Load (16.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (61.4ms)
+Completed 200 OK in 76ms (Views: 58.7ms | ActiveRecord: 16.2ms)
+
+
+  [1m[36mCity Load (34.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (42.0ms)
+Completed 200 OK in 85ms (Views: 50.5ms | ActiveRecord: 34.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:04:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 405ms (Views: 403.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:04:28 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:04:28 -0400
+Processing by Api::StatesController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (5.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (7.0ms)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 5.1ms)
+
+
+  [1m[36mState Load (9.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (14.7ms)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:04:31 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (14.7ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:05:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:05:03 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:05:03 -0400
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (0.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (4.9ms)
+  Rendering api/cities/index.json.jbuilder
+Completed 200 OK in 82ms (Views: 74.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (5.1ms)
+Completed 200 OK in 193ms (Views: 191.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:05:09 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (15.1ms)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:05:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 326ms (Views: 321.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:05:26 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:05:26 -0400
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (19.0ms)
+Completed 200 OK in 153ms (Views: 152.2ms | ActiveRecord: 0.8ms)
+
+
+  Rendering api/states/index.json.jbuilder
+Started GET "/" for ::1 at 2021-05-14 16:05:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mState Load (107.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (112.6ms)
+Completed 200 OK in 285ms (Views: 177.2ms | ActiveRecord: 107.1ms)
+
+
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:05:27 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:05:27 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mState Load (10.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (13.3ms)
+Completed 200 OK in 30ms (Views: 17.9ms | ActiveRecord: 10.4ms)
+
+
+  [1m[36mCity Load (7.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (9.8ms)
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:06:57 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (5.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (21.5ms)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:07:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 330ms (Views: 328.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:07:03 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:07:03 -0400
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+Processing by Api::StatesController#index as JSON
+  [1m[36mCity Load (22.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (93.1ms)
+Completed 200 OK in 107ms (Views: 84.0ms | ActiveRecord: 22.1ms)
+
+
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (11.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (20.9ms)
+Completed 200 OK in 134ms (Views: 116.7ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/properties?filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:07:28 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (6.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (26.9ms)
+Completed 200 OK in 37ms (Views: 25.8ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:07:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 345ms (Views: 341.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/states" for ::1 at 2021-05-14 16:07:46 -0400
+Started GET "/api/cities" for ::1 at 2021-05-14 16:07:46 -0400
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mState Load (46.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (142.4ms)
+Completed 200 OK in 174ms (Views: 126.9ms | ActiveRecord: 46.2ms)
+
+
+  [1m[36mCity Load (20.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (100.8ms)
+Completed 200 OK in 218ms (Views: 185.4ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:07:48 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (1.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (6.8ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (11.6ms)
+Completed 200 OK in 31ms (Views: 14.0ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:10:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 316ms (Views: 312.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:10:10 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:10:10 -0400
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (4.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (44.8ms)
+Completed 200 OK in 72ms (Views: 64.1ms | ActiveRecord: 4.1ms)
+
+
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (11.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (25.0ms)
+Completed 200 OK in 93ms (Views: 81.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:10:46 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (2.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (2.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (7.1ms)
+  [1m[36mAddress Load (1.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (18.4ms)
+Completed 200 OK in 49ms (Views: 24.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:10:46 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (3.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--61aa68a790b67092651a7d14e00a8714515ac6b1/lakehouse.jpg" for ::1 at 2021-05-14 16:10:46 -0400
+  Rendering api/properties/index.json.jbuilder
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--61aa68a790b67092651a7d14e00a8714515ac6b1", "filename"=>"lakehouse"}
+  [1m[36mProperty Load (1.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.7ms) [0m[34mGenerated URL for file at key: qTH5kdoyMEL79HXm5LQpXLK4 (https://wanderlust-dev.s3.us-east-2.amazonaws.com/qTH5kdoyMEL79HXm5LQpXLK4?response-content-disposition=inline%3B%20filename%3D%22lakehouse.jpg%22%3B%20filename%2A%3DUTF-8%27%27lakehouse.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201046Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=89fdbb742942b3c5de16baaf48cabac256b0e894e21fc8b3476b3db6c03c133e)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/qTH5kdoyMEL79HXm5LQpXLK4?response-content-disposition=inline%3B%20filename%3D%22lakehouse.jpg%22%3B%20filename%2A%3DUTF-8%27%27lakehouse.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201046Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=89fdbb742942b3c5de16baaf48cabac256b0e894e21fc8b3476b3db6c03c133e
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (4.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (9.7ms)
+  [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (19.2ms)
+Completed 200 OK in 36ms (Views: 16.6ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:11:43 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (4.1ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (9.7ms)
+Completed 200 OK in 20ms (Views: 12.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:11:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:11:49 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:11:49 -0400
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+Processing by Api::CitiesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mState Load (23.7ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (26.3ms)
+Completed 200 OK in 38ms (Views: 14.1ms | ActiveRecord: 23.7ms)
+
+
+  [1m[36mCity Load (5.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (17.2ms)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:11:51 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (5.2ms)
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (10.6ms)
+Completed 200 OK in 27ms (Views: 13.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:11:51 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (5.0ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (25.0ms)
+Completed 200 OK in 39ms (Views: 28.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:11:56 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.6ms)
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (13.5ms)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3bf58550dd9748ff4308d5010ca63c3fbd4f1acf/artesian_main_photo.jpg" for ::1 at 2021-05-14 16:11:56 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3bf58550dd9748ff4308d5010ca63c3fbd4f1acf", "filename"=>"artesian_main_photo"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: iToQk2cCMY8GHE7ji66DB8ab (https://wanderlust-dev.s3.us-east-2.amazonaws.com/iToQk2cCMY8GHE7ji66DB8ab?response-content-disposition=inline%3B%20filename%3D%22artesian_main_photo.jpg%22%3B%20filename%2A%3DUTF-8%27%27artesian_main_photo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201156Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=aaecb2820d898482a4e7a525c3e510488db341b3008642b77c8842278eaf098f)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/iToQk2cCMY8GHE7ji66DB8ab?response-content-disposition=inline%3B%20filename%3D%22artesian_main_photo.jpg%22%3B%20filename%2A%3DUTF-8%27%27artesian_main_photo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201156Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=aaecb2820d898482a4e7a525c3e510488db341b3008642b77c8842278eaf098f
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/api/properties/1" for ::1 at 2021-05-14 16:12:01 -0400
+Processing by Api::PropertiesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" = $3[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mReview Load (4.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mPropertyAmenity Load (1.9ms)[0m  [1m[34mSELECT "property_amenities".* FROM "property_amenities" WHERE "property_amenities"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mAmenity Load (2.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  Rendering api/properties/show.json.jbuilder
+  Rendered api/properties/_property.json.jbuilder (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/show.json.jbuilder:11
+  Rendered api/properties/show.json.jbuilder (6.7ms)
+Completed 200 OK in 45ms (Views: 11.2ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8820e1343ffd364bf6ea836d79fccbce4dca2432/bedroom.jpg" for ::1 at 2021-05-14 16:12:01 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bf0288c461ec8e068ebb150d0d3eb378eaa32042/bedroom2.jpg" for ::1 at 2021-05-14 16:12:01 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd31cc86f938edee5ed48fcebffe94d1e1e9c7ee/skyline.jpg" for ::1 at 2021-05-14 16:12:01 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--24db2597f65eb93cb94187c0d65604a4334d3ec1/kitchen.jpg" for ::1 at 2021-05-14 16:12:01 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8820e1343ffd364bf6ea836d79fccbce4dca2432", "filename"=>"bedroom"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bf0288c461ec8e068ebb150d0d3eb378eaa32042", "filename"=>"bedroom2"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cd31cc86f938edee5ed48fcebffe94d1e1e9c7ee", "filename"=>"skyline"}
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: eBxfRBgYt5Uz5bZqxaBcAk6G (https://wanderlust-dev.s3.us-east-2.amazonaws.com/eBxfRBgYt5Uz5bZqxaBcAk6G?response-content-disposition=inline%3B%20filename%3D%22bedroom.jpg%22%3B%20filename%2A%3DUTF-8%27%27bedroom.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ca2d3f4ba19717082499e0958d65704bc50efb37ab6d1a5c16dc38f8aadf46e1)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/eBxfRBgYt5Uz5bZqxaBcAk6G?response-content-disposition=inline%3B%20filename%3D%22bedroom.jpg%22%3B%20filename%2A%3DUTF-8%27%27bedroom.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ca2d3f4ba19717082499e0958d65704bc50efb37ab6d1a5c16dc38f8aadf46e1
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: k23rVBAitEPjV64jucg7cAKk (https://wanderlust-dev.s3.us-east-2.amazonaws.com/k23rVBAitEPjV64jucg7cAKk?response-content-disposition=inline%3B%20filename%3D%22bedroom2.jpg%22%3B%20filename%2A%3DUTF-8%27%27bedroom2.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b10b0493d6aa27a17f82e02f5e20fd0ea7fc9a7c0c7a1d4d4bf2f928054f9455)[0m
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: GoHTZY9822k2UMHr9LgV7xBf (https://wanderlust-dev.s3.us-east-2.amazonaws.com/GoHTZY9822k2UMHr9LgV7xBf?response-content-disposition=inline%3B%20filename%3D%22skyline.jpg%22%3B%20filename%2A%3DUTF-8%27%27skyline.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4d4012ae930a70c522af64ffd1c79e0c4beffa4744266f23624c09ae731ed8d)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/k23rVBAitEPjV64jucg7cAKk?response-content-disposition=inline%3B%20filename%3D%22bedroom2.jpg%22%3B%20filename%2A%3DUTF-8%27%27bedroom2.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b10b0493d6aa27a17f82e02f5e20fd0ea7fc9a7c0c7a1d4d4bf2f928054f9455
+Completed 302 Found in 20ms (ActiveRecord: 2.4ms)
+
+
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/GoHTZY9822k2UMHr9LgV7xBf?response-content-disposition=inline%3B%20filename%3D%22skyline.jpg%22%3B%20filename%2A%3DUTF-8%27%27skyline.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4d4012ae930a70c522af64ffd1c79e0c4beffa4744266f23624c09ae731ed8d
+Completed 302 Found in 18ms (ActiveRecord: 3.0ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--24db2597f65eb93cb94187c0d65604a4334d3ec1", "filename"=>"kitchen"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.8ms) [0m[34mGenerated URL for file at key: AEvSpRsXYRTUcpyPR7C1nB9K (https://wanderlust-dev.s3.us-east-2.amazonaws.com/AEvSpRsXYRTUcpyPR7C1nB9K?response-content-disposition=inline%3B%20filename%3D%22kitchen.jpg%22%3B%20filename%2A%3DUTF-8%27%27kitchen.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7637de2073f0a26922e6c4eb8a992ef748eb60312896b8d498a4b3aca5565738)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/AEvSpRsXYRTUcpyPR7C1nB9K?response-content-disposition=inline%3B%20filename%3D%22kitchen.jpg%22%3B%20filename%2A%3DUTF-8%27%27kitchen.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T201201Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7637de2073f0a26922e6c4eb8a992ef748eb60312896b8d498a4b3aca5565738
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:12:04 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (2.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (3.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (18.0ms)
+Completed 200 OK in 25ms (Views: 16.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Chicago&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:12:07 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Chicago", "placeFilter"=>""}}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Chicago"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 4]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (16.0ms)
+  [1m[36mAddress Load (1.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (23.5ms)
+Completed 200 OK in 34ms (Views: 18.6ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/api/properties/1" for ::1 at 2021-05-14 16:12:08 -0400
+Processing by Api::PropertiesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" = $3[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mPropertyAmenity Load (1.3ms)[0m  [1m[34mSELECT "property_amenities".* FROM "property_amenities" WHERE "property_amenities"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mAmenity Load (1.3ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:17
+  Rendering api/properties/show.json.jbuilder
+  Rendered api/properties/_property.json.jbuilder (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/show.json.jbuilder:11
+  Rendered api/properties/show.json.jbuilder (6.0ms)
+Completed 200 OK in 35ms (Views: 10.7ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Chicago&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:12:10 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Chicago", "placeFilter"=>""}}
+  [1m[36mCity Load (2.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Chicago"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 4]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (13.3ms)
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (18.3ms)
+Completed 200 OK in 33ms (Views: 17.7ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:12:12 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (13.4ms)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=Hotel+room" for ::1 at 2021-05-14 16:12:15 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>"Hotel room"}}
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" IS NULL[0m
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."type_of_place" = $1[0m  [["type_of_place", "Hotel room"]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (3.7ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:12:26 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (13.0ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:12:56 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (3.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (6.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (6.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (5.7ms)
+  [1m[36mAddress Load (2.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (20.3ms)
+Completed 200 OK in 41ms (Views: 16.5ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:06 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (2.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (3.8ms)
+  [1m[36mAddress Load (2.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (15.1ms)
+Completed 200 OK in 28ms (Views: 15.8ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:13:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 314ms (Views: 312.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:13:16 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:13:16 -0400
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (11.1ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 1.1ms)
+
+
+  Rendering api/states/index.json.jbuilder
+  [1m[36mState Load (57.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (62.1ms)
+Completed 200 OK in 170ms (Views: 111.7ms | ActiveRecord: 57.6ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:20 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (2.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (2.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (7.9ms)
+  [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (17.1ms)
+Completed 200 OK in 32ms (Views: 18.6ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=New+York&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:21 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"New York", "placeFilter"=>""}}
+  [1m[36mCity Load (9.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "New York"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (8.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 1]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (9.1ms)
+  [1m[36mAddress Load (2.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (19.0ms)
+Completed 200 OK in 59ms (Views: 21.3ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=San+Francisco&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:35 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"San Francisco", "placeFilter"=>""}}
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "San Francisco"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 2]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.4ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE 1=0[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (5.7ms)
+Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=San+Francisco&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:35 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"San Francisco", "placeFilter"=>""}}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "San Francisco"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 2]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE 1=0[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (5.0ms)
+Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Chicago&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:41 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Chicago", "placeFilter"=>""}}
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Chicago"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (2.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 4]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (2.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (18.9ms)
+  [1m[36mAddress Load (1.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (29.0ms)
+Completed 200 OK in 57ms (Views: 19.6ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Chicago&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:42 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Chicago", "placeFilter"=>""}}
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Chicago"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 4]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (2.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (28.5ms)
+  [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (38.2ms)
+Completed 200 OK in 51ms (Views: 35.4ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:13:47 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (13.3ms)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:15:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 159ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:01 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:15:01 -0400
+Started GET "/api/cities" for ::1 at 2021-05-14 16:15:01 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+Processing by Api::StatesController#index as JSON
+Processing by Api::CitiesController#index as JSON
+  Rendering api/properties/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+  Rendering api/states/index.json.jbuilder
+  [1m[36mProperty Load (1.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (3.8ms)
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mState Load (2.5ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (7.3ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 2.5ms)
+
+
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mActiveStorage::Blob Load (4.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.6ms)
+  Rendered api/properties/_property.json.jbuilder (2.0ms)
+  [1m[36mAddress Load (5.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (30.4ms)
+Completed 200 OK in 52ms (Views: 39.0ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=Private+room" for ::1 at 2021-05-14 16:15:04 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>"Private room"}}
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" IS NULL[0m
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (1.0ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."type_of_place" = $1[0m  [["type_of_place", "Private room"]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (4.4ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:15:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 188ms (Views: 185.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/cities" for ::1 at 2021-05-14 16:15:28 -0400
+Processing by Api::CitiesController#index as JSON
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:28 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 16:15:28 -0400
+  Rendering api/cities/index.json.jbuilder
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+Processing by Api::StatesController#index as JSON
+  [1m[36mCity Load (3.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (9.4ms)
+Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 3.3ms)
+
+
+  Rendering api/states/index.json.jbuilder
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mState Load (1.9ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (3.3ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mProperty Load (4.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.5ms)
+  Rendered api/properties/_property.json.jbuilder (1.6ms)
+  [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (28.7ms)
+Completed 200 OK in 48ms (Views: 37.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=Hotel+room" for ::1 at 2021-05-14 16:15:32 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>"Hotel room"}}
+  [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" IS NULL[0m
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."type_of_place" = $1[0m  [["type_of_place", "Hotel room"]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (4.3ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=Entire+place" for ::1 at 2021-05-14 16:15:34 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>"Entire place"}}
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" IS NULL[0m
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."type_of_place" = $1[0m  [["type_of_place", "Entire place"]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (3.7ms)
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (10.3ms)
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (19.2ms)
+Completed 200 OK in 27ms (Views: 19.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:35 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (14.2ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Miami&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:37 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Miami", "placeFilter"=>""}}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Miami"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 3]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE 1=0[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (3.2ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:39 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.7ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (1.0ms)
+  Rendered api/properties/_property.json.jbuilder (0.8ms)
+  [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (11.9ms)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Chicago&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:43 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Chicago", "placeFilter"=>""}}
+  [1m[36mCity Load (1.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Chicago"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 4]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (10.4ms)
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (16.0ms)
+Completed 200 OK in 26ms (Views: 18.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=Chicago&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:43 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"Chicago", "placeFilter"=>""}}
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1[0m  [["name", "Chicago"]]
+  ↳ app/models/property.rb:44
+  [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."city_id" = $1[0m  [["city_id", 4]]
+  ↳ app/models/property.rb:47
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."address_id" = $1[0m  [["address_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Property"], ["name", "photos"]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/properties/_property.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (10.9ms)
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (16.0ms)
+Completed 200 OK in 25ms (Views: 17.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/api/properties?filters%5BcityFilter%5D=&filters%5BplaceFilter%5D=" for ::1 at 2021-05-14 16:15:48 -0400
+Processing by Api::PropertiesController#index as JSON
+  Parameters: {"filters"=>{"cityFilter"=>"", "placeFilter"=>""}}
+  Rendering api/properties/index.json.jbuilder
+  [1m[36mProperty Load (0.9ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (6.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" IN ($3, $4)[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 2], ["record_id", 1]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 2]]
+  ↳ app/views/api/properties/index.json.jbuilder:2
+  Rendered api/properties/_property.json.jbuilder (0.9ms)
+  Rendered api/properties/_property.json.jbuilder (0.7ms)
+  [1m[36mAddress Load (2.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/views/api/properties/index.json.jbuilder:10
+  Rendered api/properties/index.json.jbuilder (23.5ms)
+Completed 200 OK in 29ms (Views: 16.1ms | ActiveRecord: 12.3ms)
+
+

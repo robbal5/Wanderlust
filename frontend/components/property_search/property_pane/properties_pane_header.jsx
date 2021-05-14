@@ -59,7 +59,7 @@ class PropertiesPaneHeader extends React.Component {
     }
 
     onSelection(field, updateFilter) {
-        debugger;
+        
         return (e) => {
             
             e.preventDefault()

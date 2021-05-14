@@ -2,7 +2,7 @@ import {RECEIVE_PROPERTIES, RECEIVE_PROPERTY} from '../actions/property/properti
 
 const PropertiesReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger;
+    
     switch (action.type) {
         case RECEIVE_PROPERTIES:
             if (!action.payload.properties){

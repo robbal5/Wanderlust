@@ -1,6 +1,6 @@
 import React from 'react';
 import DiscoverExperiences from './discover_experiences';
-import ExploreNearbyIndex from './explore_nearby_index';
+import ExploreNearbyIndexContainer from './explore_nearby_index_container';
 import LiveAnywhere from './live_anywhere';
 
 
@@ -13,7 +13,7 @@ class HomeResources extends React.Component {
         
         return (
             <div>
-                <ExploreNearbyIndex />
+                <ExploreNearbyIndexContainer />
                 <DiscoverExperiences />
                 <LiveAnywhere />
             </div>

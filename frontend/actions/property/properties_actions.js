@@ -22,7 +22,7 @@ export const receiveProperty = (payload) => {
 //thunk action creators
 
 export const requestProperties = (filters) => dispatch => {
-    debugger;
+    
     return APIPropertyUtils.requestProperties(filters)
     .then(properties => dispatch(receiveProperties(properties)))
 }
