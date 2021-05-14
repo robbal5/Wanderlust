@@ -21,8 +21,8 @@ export const receiveProperty = (payload) => {
 
 //thunk action creators
 
-export const requestProperties = () => dispatch => {
-    return APIPropertyUtils.requestProperties()
+export const requestProperties = (filters) => dispatch => {
+    return APIPropertyUtils.requestProperties(filters)
     .then(properties => dispatch(receiveProperties(properties)))
 }
 

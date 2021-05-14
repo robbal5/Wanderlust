@@ -11,7 +11,7 @@ class UserPanel extends React.Component {
     }
 
     showDropdown(e) {
-        debugger;
+        
         e.preventDefault;
         this.setState({
             showDropdown: true
@@ -29,7 +29,7 @@ class UserPanel extends React.Component {
     }
 
     render() {
-        debugger;
+        
         const signedIn = () => {
             return (
                 <div>

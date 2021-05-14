@@ -1,7 +1,8 @@
-export const requestProperties = () => {
+export const requestProperties = (filters) => {
     return $.ajax({
         method: 'GET',
-        url: '/api/properties'
+        url: '/api/properties',
+        filters
     })
 }
 

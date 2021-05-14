@@ -471,6 +471,8 @@ html {
     padding: 5px 10px 5px 10px;
     border: black solid 1px;
     background-color: white;
+    min-width: 60px;
+    text-align: center;
 
     &:hover {
         background-color: $section_color;
@@ -675,5 +677,36 @@ html {
 .review-date {
     font-style: italic;
     margin-bottom: 10px;
+}
+
+// Property Search Filters
+
+.city-filter {
+    position: relative;
+}
+
+.place-filter {
+    position: relative;
+}
+
+
+.filter-option {
+    padding: 5px;
+    &:hover {
+        background-color: lightgray;
+    }
+}
+
+    .filter-options {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: white;
+    color: $font_color;
+    position: absolute;
+    box-shadow: 2px 2px 2px gray;
+    border-radius: 5px;
+    top: 40px;
+
 }
 
