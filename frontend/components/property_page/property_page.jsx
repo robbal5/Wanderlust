@@ -15,19 +15,23 @@ class PropertyPage extends React.Component {
     }
 
     render() {
-        if (!this.props.property) {
+        if (!this.props.currentProperty) {
             return null;
         }
         // debugger;
 
         // const id = this.props.match.params.property_id
-    
+        
+        const {currentProperty, cities, states} = this.props;
+        const city = cities[currentProperty.address.cityId]
+        
         return (
             <div className='property-page'>
-                <PropertyHeader property={this.props.property} />
-                <PropertyPhotos />
-                <PropertyDetails />
-                <PropertyReservation />
+                
+                <PropertyHeader currentProperty={currentProperty} city= {city} state = {states[city.stateId]} />
+                <PropertyPhotos photoUrls = {currentProperty.property.photoUrls} />
+                <PropertyDetails currentProperty={currentProperty}/>
+                <PropertyReservation reservations={currentProperty.reservations}/>
             </div>
         )
     }

@@ -7,8 +7,8 @@ class PropertyPhotos extends React.Component {
 
     render() {
         return(
-        <div>
-
+        <div className='property-photos-container'>
+            <img className='property-photo' src={this.props.photoUrls[0]} alt="" />
         </div>
         )
     }

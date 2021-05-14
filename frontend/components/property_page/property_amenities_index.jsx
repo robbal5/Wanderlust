@@ -9,6 +9,7 @@ class PropertyAmenitiesIndex extends React.Component {
     render() {
         return (
             <div>
+                <h2 className='property-amenities-header'>Amenities</h2>
                 <PropertyAmenitiesIndexItem />
             </div>
         )

@@ -12,12 +12,13 @@ const App = () => {
         <div>
             <ModalContainer />
             <NavHeader />
+
             <Switch>
                 <Route path='/properties/:property_id' component={PropertyPageContainer} />
                 <Route path='/properties' exact component={PropertiesSearchContainer}></Route>
                 <Route path='/' component={Home}></Route>
-                
             </Switch>
+
             <Footer />
         </div>
     )

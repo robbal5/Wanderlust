@@ -4,9 +4,11 @@ import { requestProperty } from '../../actions/property/properties_actions'
 
 const mSTP = (state, ownProps) => {
     
- 
     return {
-        property: state.session.currentProperty,
+        currentProperty: state.session.currentProperty,
+        cities: state.entities.cities,
+        states: state.entities.states
+
         // properties: state.entities.properties,
         // reviews: state.entities.reviews,
         // reservations: state.entities.reservations,

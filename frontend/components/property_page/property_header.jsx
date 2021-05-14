@@ -7,14 +7,14 @@ class PropertyHeader extends React.Component {
     }
 
     render() {
-        
+        debugger;
         return (
             <div className='property-header'>
-                {/* <h2 className='property-header-name'>{this.props.property.name}</h2> */}
+                <h2 className='property-header-name'>{this.props.currentProperty.property.name}</h2>
                 <div className='property-header-subitems'>
-                    <p>Review Rating and Link</p>
+                    <p>{Object.values(this.props.currentProperty.reviews).length} Total Reviews</p>
                     <p>Superhost</p>
-                    <p>City, State, Country</p>
+                    <p>{this.props.city.name}, {this.props.state.name}</p>
                 </div>
                 
             </div>

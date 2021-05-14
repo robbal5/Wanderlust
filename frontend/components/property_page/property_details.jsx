@@ -12,10 +12,10 @@ class PropertyDetails extends React.Component {
     render() {
         return (
             <div>
-                <PropertyMains />
-                <PropertyAmenitiesIndex />
+                <PropertyMains currentProperty={this.props.currentProperty}/>
+                <PropertyAmenitiesIndex amenities={this.props.currentProperty.amenities}/>
                 <PropertyReviewsIndex />
-                <PropertyLocation />
+                <PropertyLocation address={this.props.currentProperty.address} />
             </div>
         )
     }
