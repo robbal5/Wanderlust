@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Switch, Link, Redirect, HashRouter} from 'react-router-dom'
-import NavHeader from './nav_header/nav_header'
+import NavHeaderContainer from './nav_header/nav_header_container'
 import Footer from './footer/footer'
 import ModalContainer from './modal/modal_container'
 import Home from './home/home'
@@ -11,7 +11,7 @@ const App = () => {
     return (
         <div>
             <ModalContainer />
-            <NavHeader />
+            <NavHeaderContainer />
 
             <Switch>
                 <Route path='/properties/:property_id' component={PropertyPageContainer} />

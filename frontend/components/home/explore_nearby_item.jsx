@@ -9,10 +9,10 @@ class ExploreNearbyItem extends React.Component {
 
     onChange(city, updateFilter) {
         return e => {
-            debugger;
+            
             updateFilter('cityFilter', city)
             this.props.history.push('/properties')
-            debugger;
+            
         }
     }
 

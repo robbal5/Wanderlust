@@ -202,6 +202,7 @@ html {
     border-radius: 10px;
     height: 30px;
     background-color: white;
+    position: relative;
     
 }
 
@@ -214,6 +215,21 @@ html {
     height: 30px;
     width: 85%;
     padding-left: 3px;
+}
+
+.search-dropdown {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    top: 32px;
+    box-shadow: 1px 1px 5px gray;
+    li {
+        background-color: white;
+        padding: 10px;
+        &:hover {
+            background-color: lightgray;
+        }
+    }
 }
 
 /*User Panel*/
