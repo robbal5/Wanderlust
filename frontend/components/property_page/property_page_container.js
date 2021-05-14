@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import PropertyPage from './property_page';
 import { requestProperty } from '../../actions/property/properties_actions'
 
+
 const mSTP = (state, ownProps) => {
     
     return {
@@ -23,7 +24,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-        requestProperty: (property_id) => dispatch(requestProperty(property_id))
+        requestProperty: (property_id) => dispatch(requestProperty(property_id)),
+        
     }
 }
 

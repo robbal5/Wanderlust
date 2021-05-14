@@ -10,7 +10,7 @@ class PropertyPane extends React.Component {
     render() {
         return(
         <div className='property-pane'>
-            <PropertiesPaneHeader cities={this.props.cities} />
+            <PropertiesPaneHeader removeFilter = {this.props.removeFilter} updateFilter={this.props.updateFilter} cities={this.props.cities} />
             <PropertiesPaneIndex properties={this.props.properties} cities={this.props.cities} addresses={this.props.addresses}/>
         </div>
         )

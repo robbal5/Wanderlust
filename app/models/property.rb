@@ -45,15 +45,15 @@ class Property < ApplicationRecord
         end
         
         address_ids = Address.where(city_id: city_id).as_json.map { |address| address['id']}
-        debugger;
+        
         if city_name == ''
-            if !type_of_place
+            if type_of_place == ''
                 Property.all
             else
                 Property.where(type_of_place: type_of_place)
             end
         else
-            if !type_of_place
+            if type_of_place == ''
                 Property.where(address_id: address_ids)
             else
                 Property.where(address_id: address_ids).where(type_of_place: type_of_place)

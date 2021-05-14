@@ -1,6 +1,8 @@
 import {connect} from 'react-redux'
 import PropertiesSearch from './properties_search'
 import {requestProperties} from '../../actions/property/properties_actions'
+import { updateFilter, removeFilter } from '../../actions/filter/filter_actions'
+
 
 const mSTP = (state) => {
     return {
@@ -14,7 +16,9 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        requestProperties: (filters) => dispatch(requestProperties(filters))
+        requestProperties: (filters) => dispatch(requestProperties(filters)),
+        updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+        removeFilter: () => dispatch(removeFilter())
     }
 }
 
