@@ -36,17 +36,29 @@ class Property < ApplicationRecord
     #AWS
     has_many_attached :photos
 
-    def self.filtered_properties(filters) 
+    def self.filtered_properties(filters)
+        
+        city_name = filters['cityFilter']
+        type_of_place = filters['placeFilter']
+        if city_name != ''
+            city_id = City.where(name: city_name).as_json[0]['id']
+        end
+        
+        address_ids = Address.where(city_id: city_id).as_json.map { |address| address['id']}
         debugger;
-        properties = Property.include(:address).all
-        filter_params(params).each do |key, value|
-            if !value.present?
-                if key == 'placeFilter'
-                    properties = properties.where(type_of_place: value)
-                # elsif key == 'cityFilter'
-                #     properties = properties.where(prop)
-                end
+        if city_name == ''
+            if !type_of_place
+                Property.all
+            else
+                Property.where(type_of_place: type_of_place)
             end
+        else
+            if !type_of_place
+                Property.where(address_id: address_ids)
+            else
+                Property.where(address_id: address_ids).where(type_of_place: type_of_place)
+            end
+            
         end
     end
     private

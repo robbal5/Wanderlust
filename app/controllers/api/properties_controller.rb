@@ -5,7 +5,7 @@ class Api::PropertiesController < ApplicationController
         filters = filter_params
         if filters.values.all?{ |value| value == ''} 
             @properties = Property.with_attached_photos.all
-        # else
+        else
             @properties = Property.filtered_properties(filters)
         end
         @addresses = Address.all
