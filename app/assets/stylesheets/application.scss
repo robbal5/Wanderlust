@@ -243,17 +243,22 @@ html {
 
 }
 
-.user-panel:hover .user-panel-options{
+// .user-panel:hover .user-panel-options{
+//     display: flex;
+//     flex-direction: column;
+//     width: 150px;
+//     background-color: white;
+//     color: $font_color;
+    
+// }
+
+.user-panel-options{
+    // display: none;
     display: flex;
     flex-direction: column;
     width: 150px;
     background-color: white;
     color: $font_color;
-    
-}
-
-.user-panel-options{
-    display: none;
     position: absolute;
     right: 10px;
     top: 50px;
@@ -547,11 +552,28 @@ html {
     padding-bottom: 15px;
 }
 
+.property-header-back-button {
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    border: black solid 1px;
+    background-color: white;
+
+    &:hover {
+        background-color: $section_color;
+    }
+}
+
 .property-header-subitems {
     display: flex;
     width: 33%;
     justify-content: space-between;
+    align-items: center;
     min-width: 350px;
+}
+
+.property-header-bar {
+    display: flex; 
+    justify-content: space-between;
 }
 
 .property-photos-container {
@@ -640,6 +662,7 @@ html {
 
 .property-review {
     width: 48%;
+    height: 100px;
     
 }
 
