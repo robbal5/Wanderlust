@@ -26130,3 +26130,68 @@ Processing by Api::PropertiesController#show as JSON
 Completed 200 OK in 30ms (Views: 10.4ms | ActiveRecord: 6.5ms)
 
 
+Started GET "/" for ::1 at 2021-05-14 08:24:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4cMpA-XxvMl1Y8Gj-lHb_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 93ms (Views: 87.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/properties/1" for ::1 at 2021-05-14 08:24:51 -0400
+Started GET "/api/states" for ::1 at 2021-05-14 08:24:51 -0400
+Started GET "/api/cities" for ::1 at 2021-05-14 08:24:51 -0400
+Processing by Api::PropertiesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (2.6ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = $1 AND "active_storage_attachments"."name" = $2 AND "active_storage_attachments"."record_id" = $3[0m  [["record_type", "Property"], ["name", "photos"], ["record_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mActiveStorage::Blob Load (5.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mReview Load (4.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+Processing by Api::CitiesController#index as JSON
+Processing by Api::StatesController#index as JSON
+  Rendering api/states/index.json.jbuilder
+  Rendering api/cities/index.json.jbuilder
+  [1m[36mPropertyAmenity Load (11.4ms)[0m  [1m[34mSELECT "property_amenities".* FROM "property_amenities" WHERE "property_amenities"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mState Load (5.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/api/states/index.json.jbuilder:1
+  Rendered api/states/index.json.jbuilder (6.7ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 5.6ms)
+
+
+  [1m[36mCity Load (8.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/api/cities/index.json.jbuilder:1
+  Rendered api/cities/index.json.jbuilder (10.6ms)
+Completed 200 OK in 24ms (Views: 15.0ms | ActiveRecord: 8.3ms)
+
+
+  [1m[36mAmenity Load (9.3ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mReservation Load (1.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."property_id" = $1[0m  [["property_id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/properties_controller.rb:11
+  Rendering api/properties/show.json.jbuilder
+  Rendered api/properties/_property.json.jbuilder (1.1ms)
+  Rendered api/properties/show.json.jbuilder (6.5ms)
+Completed 200 OK in 99ms (Views: 12.7ms | ActiveRecord: 39.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3bf58550dd9748ff4308d5010ca63c3fbd4f1acf/artesian_main_photo.jpg" for ::1 at 2021-05-14 08:24:51 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3bf58550dd9748ff4308d5010ca63c3fbd4f1acf", "filename"=>"artesian_main_photo"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robertbalistreri/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (0.9ms) [0m[34mGenerated URL for file at key: iToQk2cCMY8GHE7ji66DB8ab (https://wanderlust-dev.s3.us-east-2.amazonaws.com/iToQk2cCMY8GHE7ji66DB8ab?response-content-disposition=inline%3B%20filename%3D%22artesian_main_photo.jpg%22%3B%20filename%2A%3DUTF-8%27%27artesian_main_photo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T122451Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=490ec63a5ac75deb41bbcffb56dccaa4590d23aefeca364b27026c29528a1f20)[0m
+Redirected to https://wanderlust-dev.s3.us-east-2.amazonaws.com/iToQk2cCMY8GHE7ji66DB8ab?response-content-disposition=inline%3B%20filename%3D%22artesian_main_photo.jpg%22%3B%20filename%2A%3DUTF-8%27%27artesian_main_photo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZTHW3EJFVXKNGV6H%2F20210514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210514T122451Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=490ec63a5ac75deb41bbcffb56dccaa4590d23aefeca364b27026c29528a1f20
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+

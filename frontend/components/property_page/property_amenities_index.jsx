@@ -7,6 +7,7 @@ class PropertyAmenitiesIndex extends React.Component {
     }
 
     render() {
+        const {amenities} = this.props
         return (
             <div>
                 <h2 className='property-amenities-header'>Amenities</h2>
