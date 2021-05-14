@@ -7,7 +7,7 @@ class PropertyHeader extends React.Component {
     }
 
     render() {
-        debugger;
+        
         return (
             <div className='property-header'>
                 <h2 className='property-header-name'>{this.props.currentProperty.property.name}</h2>

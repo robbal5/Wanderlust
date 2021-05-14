@@ -11,7 +11,12 @@ class PropertyAmenitiesIndex extends React.Component {
         return (
             <div>
                 <h2 className='property-amenities-header'>Amenities</h2>
-                <PropertyAmenitiesIndexItem />
+                    <ul className='property-amenities-list'>
+                        {Object.values(amenities).map( (amenity, idx) => {
+                          return  <PropertyAmenitiesIndexItem key={idx} amenity = {amenity}/>
+                        })}
+                    </ul>
+                
             </div>
         )
     }

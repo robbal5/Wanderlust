@@ -18,9 +18,7 @@ class PropertyPage extends React.Component {
         if (!this.props.currentProperty) {
             return null;
         }
-        // debugger;
-
-        // const id = this.props.match.params.property_id
+       
         
         const {currentProperty, cities, states} = this.props;
         const city = cities[currentProperty.address.cityId]

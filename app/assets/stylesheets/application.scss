@@ -554,16 +554,32 @@ html {
     min-width: 350px;
 }
 
-.property-photo {
-    height: 400px;
-    width: auto;
-    border-radius: 25px;
-}
-
 .property-photos-container {
     margin-top: 20px;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.main-property-photo {
+    height: auto;
+    width: 50%;
+}
+
+.property-side-photos {
+    width: 49.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;   
+}
+
+.side-property-photo {
+    width: 49.5%;
+    height: auto;
+}
+
+
 
 .property-mains-header {
     font-size: 24px;
@@ -589,3 +605,21 @@ html {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.property-amenities-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 100%;
+}
+.property-amenity-item {
+    width: 40%;
+    padding: 10px;
+
+}
+
+.property-amenity-item-text {
+    padding-left: 10px;
+}
+
