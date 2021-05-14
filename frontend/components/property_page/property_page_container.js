@@ -6,14 +6,15 @@ const mSTP = (state, ownProps) => {
     
  
     return {
-        properties: state.entities.properties,
-        reviews: state.entities.reviews,
-        reservations: state.entities.reservations,
-        addresses: state.entities.addresses,
-        propertyAmenities: state.entities.propertyAmenities,
-        amenities: state.entities.amenities,
-        users: state.entities.users,
-        cities: state.entities.cities
+        property: state.session.currentProperty,
+        // properties: state.entities.properties,
+        // reviews: state.entities.reviews,
+        // reservations: state.entities.reservations,
+        // addresses: state.entities.addresses,
+        // propertyAmenities: state.entities.propertyAmenities,
+        // amenities: state.entities.amenities,
+        // users: state.entities.users,
+        // cities: state.entities.cities
        
     }
 }

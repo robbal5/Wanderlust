@@ -15,16 +15,16 @@ class PropertyPage extends React.Component {
     }
 
     render() {
-        if (Object.values(this.props.properties).length < 1) {
+        if (!this.props.property) {
             return null;
         }
-        debugger;
+        // debugger;
 
-        const id = this.props.match.params.property_id
-        
+        // const id = this.props.match.params.property_id
+    
         return (
             <div className='property-page'>
-                <PropertyHeader property={this.props.properties[id]} />
+                <PropertyHeader property={this.props.property} />
                 <PropertyPhotos />
                 <PropertyDetails />
                 <PropertyReservation />

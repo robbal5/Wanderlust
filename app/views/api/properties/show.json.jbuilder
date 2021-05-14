@@ -30,8 +30,8 @@
 
     json.reservations do
         @property.reservations.each do |reservation|
-            json.set! reservation.id do
-                json.extract! reservation, :id, :property_id, :user_id, :start_date, :end_date
+    json.set! reservation.id do
+                json.extract! reservation, :id, :property_id,  :start_date, :end_date
             end
         end
     end

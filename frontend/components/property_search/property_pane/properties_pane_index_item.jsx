@@ -10,7 +10,7 @@ class PropertiesPaneIndexItem extends React.Component {
     }
 
     render() {
-        debugger;
+        
         return (
             <Link to={`/properties/${this.props.property.id}`}>
                 <div className='properties-pane-index-item'>

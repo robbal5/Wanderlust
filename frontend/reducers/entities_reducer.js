@@ -4,10 +4,10 @@ import {combineReducers} from 'redux'
 import StatesReducer from './states_reducer';
 import PropertiesReducer from './properties_reducer'
 import AddressReducer from './addresses_reducer'
-import AmenitiesReducer from './amenities_reducer';
-import PropertyAmenitiesReducer from './property_amenities_reducer';
-import ReservationsReducer from './reservations_reducer';
-import ReviewsReducer from './reviews_reducer';
+// import AmenitiesReducer from './amenities_reducer';
+// import PropertyAmenitiesReducer from './property_amenities_reducer';
+// import ReservationsReducer from './reservations_reducer';
+// import ReviewsReducer from './reviews_reducer';
 
 const EntitiesReducer = combineReducers({
     users: UsersReducer,
@@ -15,10 +15,10 @@ const EntitiesReducer = combineReducers({
     states: StatesReducer,
     properties: PropertiesReducer,
     addresses: AddressReducer,
-    amenities: AmenitiesReducer,
-    propertyAmenities: PropertyAmenitiesReducer,
-    reservations: ReservationsReducer,
-    reviews: ReviewsReducer
+    // amenities: AmenitiesReducer,
+    // propertyAmenities: PropertyAmenitiesReducer,
+    // reservations: ReservationsReducer,
+    // reviews: ReviewsReducer
 
 })
 
