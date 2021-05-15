@@ -9,7 +9,9 @@ const mSTP = (state) => {
         properties: state.entities.properties,
         cities: state.entities.cities,
         addresses: state.entities.addresses,
-        filters: state.ui.filters
+        filters: state.ui.filters,
+        mapLocation: state.ui.mapLocation
+
 
     }
 }

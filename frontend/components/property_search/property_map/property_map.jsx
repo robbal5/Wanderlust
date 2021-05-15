@@ -1,5 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router'
+import MarkerManager from '../../../util/marker_manager'
 
 class PropertyMap extends React.Component {
     constructor(props) {
