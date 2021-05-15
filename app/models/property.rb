@@ -38,9 +38,10 @@ class Property < ApplicationRecord
 
     def self.filtered_properties(filters)
         
-        city_name = filters['cityFilter']
+        city_name = filters['cityFilter'].downcase
         type_of_place = filters['placeFilter']
         if city_name != ''
+            city_name = city_name.split(' ').map { |word| word[0].upcase + word.slice(1...word.length) }.join(' ')
             city_id = City.where(name: city_name).as_json[0]['id']
         end
         

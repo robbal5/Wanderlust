@@ -20,8 +20,13 @@ class Search extends React.Component {
     }
 
     handleSubmit(e) {
+    
         e.preventDefault();
-        this.props.updateFilter('cityFilter', this.state.searchValue)
+        let search = this.state.searchValue
+        
+        search  = search.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+        
+        this.props.updateFilter('cityFilter', search)
         this.props.history.push('/properties')
         this.setState({
             searchDropdown: false,
@@ -30,9 +35,9 @@ class Search extends React.Component {
         })
     }
 
+    
     handleClick(e) {
         let clickTarget = e.target.innerText;
-        
        this.props.updateFilter('cityFilter', clickTarget)
         this.props.history.push('/properties')
         this.setState({

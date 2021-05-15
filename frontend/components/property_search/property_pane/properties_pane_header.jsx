@@ -13,11 +13,7 @@ class PropertiesPaneHeader extends React.Component {
         this.clearFilters = this.clearFilters.bind(this)
     }
 
-    // onChange = (filter, updateFilter) => {
-    //     return e => {
-    //         updateFilter(filter, e.currentTarget.value)
-    //     }
-    // }
+    
 
     componentWillUnmount() {
         document.removeEventListener('click', this.closeClick)
