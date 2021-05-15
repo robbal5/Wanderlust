@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router'
 
 class PropertyMap extends React.Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class PropertyMap extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='map' ref='map'>
                 propertyMap
             </div>
         )
@@ -15,4 +16,4 @@ class PropertyMap extends React.Component {
     
 }
 
-export default PropertyMap;
+export default withRouter(PropertyMap);
