@@ -13,7 +13,7 @@ class PropertyReviewsIndexItem extends React.Component {
         
         return (
             <li className='property-review'>
-                <h3 className='review-writer'>{review.name}</h3>
+                <h3 className='review-writer'><i className="fas fa-user-circle"> </i>{'   ' + review.name}</h3>
                 <p className='review-date'>{month} {year}</p>
                 <p className='review-text'>{review.review}</p>
             </li>

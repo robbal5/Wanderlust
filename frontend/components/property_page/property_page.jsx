@@ -12,6 +12,7 @@ class PropertyPage extends React.Component {
     componentDidMount() {
         
         this.props.requestProperty(this.props.match.params.property_id)
+        window.scrollTo(0, 0)
     }
 
     render() {

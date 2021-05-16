@@ -15,11 +15,11 @@ class PropertyHeader extends React.Component {
             <div className='property-header'>
                 <h2 className='property-header-name'>{this.props.currentProperty.property.name}</h2>
                 <div className='property-header-bar'>
-                <div className='property-header-subitems'>
-                    <p>{Object.values(this.props.currentProperty.reviews).length} Total Reviews</p>
-                    <p>Superhost</p>
-                    <p>{this.props.city.name}, {this.props.state.name}</p>    
-                </div>
+                    <div className='property-header-subitems'>
+                        <p>{Object.values(this.props.currentProperty.reviews).length} Total Reviews</p>
+                        <p>Superhost</p>
+                        <p>{this.props.city.name}, {this.props.state.name}</p>    
+                    </div>
                     <Link to="/properties"><button className='property-header-back-button'>Back to search</button></Link>
                 </div>
                 

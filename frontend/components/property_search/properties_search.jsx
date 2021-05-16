@@ -9,6 +9,7 @@ class PropertiesSearch extends React.Component {
     componentDidMount() {
         
         this.props.requestProperties(this.props.filters);
+        window.scrollTo(0, 0)
 
     }
 

@@ -601,15 +601,17 @@ html {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
+    height: 500px;
 }
 
 .main-property-photo {
-    height: auto;
-    width: 50%;
+    height: 100%;
+    width: 49.5%;
+    object-fit: cover;
 }
 
 .property-side-photos {
-    width: 49.5%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -618,7 +620,7 @@ html {
 
 .side-property-photo {
     width: 49.5%;
-    height: auto;
+    height: 50%;
 }
 
 
@@ -678,11 +680,13 @@ html {
     display: flex;
     flex-wrap: wrap;
     height: 500px;
+    align-items: flex-start;
 }
 
 .property-review {
-    width: 48%;
+    width: 40%;
     height: 100px;
+    padding-right: 10%;
     
 }
 
