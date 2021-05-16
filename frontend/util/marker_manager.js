@@ -14,6 +14,13 @@ class MarkerManager {
         })
     }
 
+    updateMarkers(addresses) {
+        const addressObj = {};
+        addresses.forEach(address => addressObj[address_id])
+
+        addresses.filter(address => !this.markers[address.id])
+    }
+
 }
 
 export default MarkerManager;
