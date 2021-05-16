@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :properties, only: [:index, :show]
     resources :cities, only: [:index]
     resources :states, only: [:index]
-    resources :amenities, only: [:index]
+    # resources :amenities, only: [:index]
 
   end
 
