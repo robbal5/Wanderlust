@@ -1,0 +1,1 @@
+json.extract! @review, :property_id, :id, :user_id, :rating, :review

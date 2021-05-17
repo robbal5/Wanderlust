@@ -9,7 +9,7 @@ class PropertyAmenitiesIndex extends React.Component {
     render() {
         const {amenities} = this.props
         return (
-            <div>
+            <div className='property-amenities-section'>
                 <h2 className='property-amenities-header'>Amenities</h2>
                     <ul className='property-amenities-list'>
                         {Object.values(amenities).map( (amenity, idx) => {

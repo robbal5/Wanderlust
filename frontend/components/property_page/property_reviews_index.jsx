@@ -5,6 +5,12 @@ class PropertyReviewsIndex extends React.Component {
         super(props)
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.reviews != this.props.reviews) {
+
+        }
+    }
+
     render() {
         const{reviews} = this.props;
         return (
@@ -14,7 +20,7 @@ class PropertyReviewsIndex extends React.Component {
                     <button className='create-review-button' onClick={ this.props.currentUser ? () => this.props.openModal('review') : () => this.props.openModal('login')}>Write a review</button>
                 </div>
                 <ul className='property-reviews-list'>
-                    {Object.values(reviews).map((review,idx) => {
+                    {Object.values(reviews).slice(0,6).map((review,idx) => {
                         return <PropertyReviewsIndexItem key={idx} review={review} />
                     })}
                 </ul>

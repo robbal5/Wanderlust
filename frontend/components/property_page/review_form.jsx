@@ -40,11 +40,11 @@ class ReviewForm extends React.Component {
         return (
             <div>
                 <form className='main-modal login-section' onSubmit={this.handleSubmit}>
-                    <p className='modal-header'>Review of {this.props.property.name}</p>
+                    <p className='modal-header review-modal-header'>Review of {this.props.property.name}</p>
                     <strong onClick={this.props.closeModal} className="close-x"> <i className='fa fa-times'></i> </strong>
                     <br />
                     <label className='login-label'>Review:
-                        <textarea onChange={this.update('review')} value={this.state.review} className='create-review-text' ></textarea>
+                        <textarea onChange={this.update('review')} value={this.state.review} className='create-review-text login-input' ></textarea>
                     </label>
                     <label className='login-label'>Rating:
                             <input type="number" min='1' max='5' value={this.state.rating} onChange={this.update('rating')} className='login-input' />

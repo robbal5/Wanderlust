@@ -16,6 +16,7 @@
 
 @import './extras/colors';
  /*RESET CONTENT*/
+ //RESET FROM AA TIMES Provided solution - App Academy
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
@@ -65,7 +66,7 @@ html {
   transform: translate(-50%, -50%);
   background-color: $background_color;
   width: 30%;
-  height: 50%;
+  min-height: 50%;
   min-width: 250px;
   border-radius: 15px;
 }
@@ -74,13 +75,15 @@ html {
 }
 
 .modal-header {
+    box-sizing: border-box;
     text-align: center;
     font-size: 20px;
     text-decoration: underline;
     text-decoration-color: black;
     display: inline-block;
-    width: 100%;
+    width: 80%;
     color: $heading_color;
+    padding: 5px 15px 5px 15px;
 }
 
 .close-x {
@@ -109,6 +112,7 @@ html {
 }
 
 .login-input {
+    box-sizing: border-box;
     background-color: white;
     width: 100%;
     margin: 5px;
@@ -630,7 +634,9 @@ html {
 }
 
 
-
+.property-mains-section {
+    width: 50%
+}
 .property-mains-header {
     font-size: 24px;
     font-weight: 700;
@@ -638,14 +644,18 @@ html {
 
 .property-room-details {
     padding: 15px 0 25px 0;
-    width: 50%;
+    width: 100%;
 }
 
 .property-description {
-    width: 80%;
+    width: 100%;
     padding: 30px 0 30px 0;
     border-top: 1px solid lightgray;
     max-width: 650px;
+}
+
+.property-amenities-section {
+    width: 50%;
 }
 
 .property-amenities-header {
@@ -764,10 +774,17 @@ html {
 
 .create-review-text {
     height: 100px;
+    padding: 20px;
     background-color: white;
     border-radius: 20px;
     font-weight: 100;
     font-size: 14px;
+}
+
+.review-modal-header {
+    text-decoration: none;
+    border-bottom: 1px lightgray solid;
+    margin-bottom: 15px;
 }
 
 
