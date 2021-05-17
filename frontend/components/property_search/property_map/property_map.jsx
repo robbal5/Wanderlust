@@ -7,14 +7,16 @@ class PropertyMap extends React.Component {
         super(props)
     }
 
-    // componentDidMount() {
-    //     this.map = new google.maps.Map(this.mapNode, this.props.mapLocation)
-    //     this.MarkerManager = new MarkerManager(this.map)
-    // }
+    componentDidMount() {
+        debugger;
+        const map = this.refs.map
+        this.map = new google.maps.Map(this.mapNode, this.props.mapLocation)
+        this.MarkerManager = new MarkerManager(this.map)
+    }
 
     render() {
         return(
-            <div className='map' ref='map'>
+            <div className='map' ref={map => this.mapNode = map}>
                 propertyMap
             </div>
              
