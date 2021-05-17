@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'aws-sdk-s3'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'open-uri'
 
 
 # Use ActiveStorage variant
@@ -74,8 +76,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-  gem 'open-uri'
+  
   gem 'guard-rspec'
   gem 'launchy'
   gem 'shoulda-matchers'
