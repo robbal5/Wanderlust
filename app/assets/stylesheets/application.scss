@@ -811,3 +811,45 @@ html {
     width: 1000%;
     height: 1000px;
 }
+
+.marker-info {
+    width: 250px;;
+    height: 204px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    box-sizing: border-box;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.marker-header {
+    font-weight: 400;
+    font-size: 15px;
+    color: black;
+    margin-top: 10px;
+}
+
+.marker-baseline {
+    font-size: 14px;
+    width: 100%;
+    color: black;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    p {
+        width: 40%;
+        
+    }
+}
+
+.marker-photo {
+    height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+}
+
+

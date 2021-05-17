@@ -5,24 +5,19 @@ import MarkerManager from '../../../util/marker_manager'
 class PropertyMap extends React.Component {
     constructor(props) {
         super(props)
+
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
-        debugger;
         
-        // const mapOptions = {
-        //     center: {
-        //         lat: 37.773972,
-        //         lng: -122.431297
-        //     }, // San Francisco coords
-        //     zoom: 13
-        // };
+ 
         const mapOptions = {...this.props.mapLocation};
         
         
         const map = this.refs.map
         this.map = new google.maps.Map(map, mapOptions)
-        this.MarkerManager = new MarkerManager(this.map)
+        this.MarkerManager = new MarkerManager(this.map, this.handleClick)
         const {properties, addresses} = this.props
         this.MarkerManager.updateMarkers(properties, addresses)
     }
@@ -35,6 +30,10 @@ class PropertyMap extends React.Component {
         this.map.setZoom(newZoom)
         const { properties, addresses } = this.props
         this.MarkerManager.updateMarkers(properties, addresses)
+    }
+
+    handleClick(propertyId) {
+        this.props.history.push(`/properties/${propertyId}`)
     }
 
     render() {
