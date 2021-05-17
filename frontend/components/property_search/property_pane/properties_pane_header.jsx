@@ -11,6 +11,7 @@ class PropertiesPaneHeader extends React.Component {
         }
 
         this.clearFilters = this.clearFilters.bind(this)
+        this.onSelection = this.onSelection.bind(this)
     }
 
     
@@ -59,10 +60,13 @@ class PropertiesPaneHeader extends React.Component {
         return (e) => {
             
             e.preventDefault()
+            let search = e.currentTarget.value
             this.setState({
-                [field]: e.currentTarget.value
+                [field]: search
             })
             updateFilter(field, e.currentTarget.value)
+            let city = Object.values(this.props.cities).filter(option => option.name == search)[0]
+            this.props.updateFilter('cityFilter', search, 13, city.lat, city.lng)
             
         }
         

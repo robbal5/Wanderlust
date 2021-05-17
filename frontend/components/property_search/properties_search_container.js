@@ -19,7 +19,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         requestProperties: (filters) => dispatch(requestProperties(filters)),
-        updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+        updateFilter: (filter, value, zoom, lat, lng) => dispatch(updateFilter(filter, value, zoom, lat, lng)),
         removeFilter: () => dispatch(removeFilter())
     }
 }
