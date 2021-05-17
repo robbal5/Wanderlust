@@ -231,12 +231,12 @@ photo_urls = [
 
 
 #PHOTOS
-Property.all.each do |property|
-    5.times do |i|
-        file = URI.open(photo_urls.sample)
-        property.photos.attach(io: file, filename: "photo_#{i}.jpg")
-    end
-end
+# Property.all.each do |property|
+#     5.times do |i|
+#         file = URI.open(photo_urls.sample)
+#         property.photos.attach(io: file, filename: "photo_#{i}.jpg")
+#     end
+# end
 
 
 
