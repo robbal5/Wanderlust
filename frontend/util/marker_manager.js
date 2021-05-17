@@ -9,10 +9,20 @@ class MarkerManager {
     createMarkerFromAddress(newProp) {
         debugger
         const position = new google.maps.LatLng(newProp.address.lat, newProp.address.lng)
+        const content = '<div class="marker-info">' + `<h1 class='marker-header'>${newProp.property.name}</h1>` + '</div>'
+        const infoWindow = new google.maps.InfoWindow({
+            content: content
+        })
         const marker = new google.maps.Marker({
             position,
             propertyId: newProp.id,
             map: this.map
+        })
+        marker.addListener('mouseover', () => {
+            infoWindow.open(this.map, marker)
+        })
+        marker.addListener('mouseout', () => {
+            infoWindow.close(this.map, marker)
         })
         debugger
 
@@ -28,7 +38,7 @@ class MarkerManager {
         propertiesArray.forEach(property => {
             const currentAddress = addressesArray.find(add => add.id == property.addressId)
             debugger;
-            const newProp = {id: property.id, address: currentAddress}
+            const newProp = {id: property.id, property: property, address: currentAddress}
             if (!this.markers[newProp.id]) {
                 this.createMarkerFromAddress(newProp)
             }
