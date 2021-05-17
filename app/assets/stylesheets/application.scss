@@ -705,6 +705,16 @@ html {
     }
 }
 
+.review-stars {
+    padding-bottom: 10px;
+    i {
+        padding: 2px;
+        color: orange;
+        // stroke:  black 5px;
+        text-shadow: 0 0 1px #000;
+    
+    }
+}
 
 
 .property-reviews-header {
@@ -786,6 +796,12 @@ html {
     border-bottom: 1px lightgray solid;
     margin-bottom: 15px;
 }
+
+.review-stars-container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 
 
 //PROPERTY MAP

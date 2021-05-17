@@ -8,8 +8,8 @@ class PropertyMap extends React.Component {
     }
 
     // componentDidMount() {
-    //     this.map = new google.maps.Map(mapDOMNode, this.props.mapLocation)
-    //     this.MarkerManager = new MarkerMAnager(this.map)
+    //     this.map = new google.maps.Map(this.mapNode, this.props.mapLocation)
+    //     this.MarkerManager = new MarkerManager(this.map)
     // }
 
     render() {
@@ -17,6 +17,7 @@ class PropertyMap extends React.Component {
             <div className='map' ref='map'>
                 propertyMap
             </div>
+             
         )
     }
     

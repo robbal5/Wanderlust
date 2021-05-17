@@ -10,11 +10,17 @@ class PropertyReviewsIndexItem extends React.Component {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         const year = review.createdAt.split('-')[0];
         const month = months[parseInt(review.createdAt.split('-')[1])-1]
-        
+        const rating = []
+        for (let i = 0; i<review.rating; i++) {
+            rating.push(i)
+        }
         return (
             <li className='property-review'>
                 <h3 className='review-writer'><i className="fas fa-user-circle"> </i>{'   ' + review.name}</h3>
                 <p className='review-date'>{month} {year}</p>
+                <p className='review-stars'>
+                    {rating.map(x => <i className='fa fa-star'></i>)}
+                </p>
                 <p className='review-text'>{review.review}</p>
             </li>
         )
