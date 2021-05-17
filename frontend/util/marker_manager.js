@@ -1,24 +1,48 @@
 
 class MarkerManager {
-    constructor(map) {
+    constructor(map, handleClick) {
         this.map = map;
+        this.handleClick = handleClick
         this.markers = {}
     }
 
-    createMarkerFromAddress(address) {
-        const position = new google.maps.LatLng(address.lat, address.lng)
+    createMarkerFromAddress(newProp) {
+        debugger
+        const position = new google.maps.LatLng(newProp.address.lat, newProp.address.lng)
         const marker = new google.maps.Marker({
             position,
-            propertyId: address.propertyId,
+            propertyId: newProp.id,
             map: this.map
         })
+        debugger
+
+        // marker.addListener('click', () => this.handleClick(property))
+        this.markers[marker.propertyId] = marker
+        debugger
     }
 
-    updateMarkers(addresses) {
-        const addressObj = {};
-        addresses.forEach(address => addressObj[address_id])
+    updateMarkers(properties, addresses) {
+        debugger;
+        const propertiesArray = Object.values(properties)
+        const addressesArray = Object.values(addresses)
+        propertiesArray.forEach(property => {
+            const currentAddress = addressesArray.find(add => add.id == property.addressId)
+            debugger;
+            const newProp = {id: property.id, address: currentAddress}
+            if (!this.markers[newProp.id]) {
+                this.createMarkerFromAddress(newProp)
+            }
+        })
 
-        addresses.filter(address => !this.markers[address.id])
+        Object.keys(this.markers).filter(propId => !properties[propId])
+            .forEach(propId => this.removeMarker(this.markers[propId]))
+
+    }
+
+    removeMarker(marker) {
+        debugger;
+        this.markers[marker.propertyId].setMap(null);
+        delete this.markers[marker.propertyId]
     }
 
 }

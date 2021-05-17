@@ -9,6 +9,7 @@ class PropertyMap extends React.Component {
 
     componentDidMount() {
         debugger;
+        
         // const mapOptions = {
         //     center: {
         //         lat: 37.773972,
@@ -22,14 +23,18 @@ class PropertyMap extends React.Component {
         const map = this.refs.map
         this.map = new google.maps.Map(map, mapOptions)
         this.MarkerManager = new MarkerManager(this.map)
+        const {properties, addresses} = this.props
+        this.MarkerManager.updateMarkers(properties, addresses)
     }
 
     componentDidUpdate() {
-        debugger;
+        
         const newCenter = {...this.props.mapLocation.center}
         const newZoom = this.props.mapLocation.zoom
         this.map.setCenter(newCenter)
         this.map.setZoom(newZoom)
+        const { properties, addresses } = this.props
+        this.MarkerManager.updateMarkers(properties, addresses)
     }
 
     render() {

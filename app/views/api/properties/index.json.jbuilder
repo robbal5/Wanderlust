@@ -9,7 +9,7 @@ end
 json.addresses do
     @addresses.each do |address|
         json.set! address.id do
-            json.extract! address, :city_id, :street_address, :zip_code, :lat, :lng
+            json.extract! address, :city_id, :street_address, :zip_code, :lat, :lng, :id
         end
     end
 end

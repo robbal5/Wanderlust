@@ -26,7 +26,7 @@ class Search extends React.Component {
         
         search  = search.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
         let city = Object.values(this.props.cities).filter(option => option.name == search)[0]
-        this.props.updateFilter('cityFilter', search, 13, city.lat, city.lng)
+        this.props.updateFilter('cityFilter', search, 12, city.lat, city.lng)
         this.props.history.push('/properties')
         this.setState({
             searchDropdown: false,
@@ -37,10 +37,10 @@ class Search extends React.Component {
 
     
     handleClick(e) {
-        debugger;
+        
         let clickTarget = e.target.innerText;
         let city = Object.values(this.props.cities).filter(option => option.name == clickTarget)[0]
-        this.props.updateFilter('cityFilter', clickTarget, 13, city.lat, city.lng)
+        this.props.updateFilter('cityFilter', clickTarget, 12, city.lat, city.lng)
         this.props.history.push('/properties')
         this.setState({
             searchDropdown: false,
