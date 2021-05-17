@@ -192,9 +192,9 @@ html {
 
 .logo-title {
     display: inline-block;
-    font-size: 25px;
+    font-size: 30px;
     padding-left: 5px;
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -295,7 +295,7 @@ html {
     background-color: lightgray;
 }
 .user-panel-name {
- width: 200px;
+ width: 220px;
  font-style: italic;
 }
 /*Intro On Home Page*/
@@ -311,18 +311,18 @@ html {
 
 .intro-image-text {
     position: absolute;
-    width: 300px;
+    width: 350px;
     top:100px;
     left: 125px;
     font-size: 40px;
     font-family: sans-serif;
     font-weight: bold;
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .intro-image-button {
     position: absolute;
-    top: 220px;
+    top: 210px;
     left: 125px;
     font-size: 16px;
     font-family: sans-serif;
@@ -342,7 +342,7 @@ html {
 .popular-text {
     font-size: 30px;
     padding-bottom: 10px;
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin-left: 50px;
 }
 .cities-container {
@@ -394,13 +394,13 @@ html {
 
 .discover-experiences-header {
     position: absolute;
-    width: 400px;
+    width: 450px;
     top:20px;
-    left: 60%;
+    left: 55%;
     font-size: 40px;
     font-family: sans-serif;
     font-weight: bold;
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /*Live Anywhere*/
@@ -417,7 +417,7 @@ html {
 .live-anywhere-header {
     font-size: 30px;
     padding-bottom: 10px;
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin-left: 50px;
 }
 .live-anywhere-container {
@@ -431,11 +431,10 @@ html {
     display: inline-block;
     width: 200px;
     vertical-align:top;
-    font-weight: bolder;
     font-size: 24px;
     margin-top: 10px;
     margin-left: 5px;
-    font-family: sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .live-anywhere-image {
@@ -450,7 +449,8 @@ html {
 //Properties Pane
 
 .properties-pane-index {
-    height: 500px;
+    // height: 500px;
+    
 }
 
 .properties-search {
@@ -464,7 +464,8 @@ html {
     width: 50%;
     min-width: 650px;
     overflow-y: scroll;
-    min-height: 800px;
+    // min-height: 800px;
+    height: 95vh;
 }
 
 .properties-pane-header {
@@ -631,7 +632,7 @@ html {
 
 .side-property-photo {
     width: 49.5%;
-    height: 50%;
+    height: 49.5%;
 }
 
 
@@ -809,7 +810,7 @@ html {
 
 .map {
     width: 1000%;
-    height: 1000px;
+    height: 95vh;
 }
 
 .marker-info {
