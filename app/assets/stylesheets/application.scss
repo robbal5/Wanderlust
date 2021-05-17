@@ -456,6 +456,7 @@ html {
 .properties-search {
     padding-top: 100px;
     display: flex;
+    height: 100%;
     
 }
 
@@ -807,6 +808,6 @@ html {
 //PROPERTY MAP
 
 .map {
-    width: 500px;
-    height: 500px;
+    width: 1000%;
+    height: 1000px;
 }

@@ -7,19 +7,24 @@ class ExploreNearbyItem extends React.Component {
         this.onChange = this.onChange.bind(this)
     }
 
-    onChange(city, updateFilter) {
+
+
+    onChange(city, updateFilter, zoom, lat, lng) {
         return e => {
             
-            updateFilter('cityFilter', city)
+            updateFilter('cityFilter', city, zoom, lat, lng)
+
             this.props.history.push('/properties')
             
         }
     }
 
     render() {
+        
+        
         const {name, updateFilter} = this.props
         return (
-        <div onClick={this.onChange(name, updateFilter)} className='city-container'>
+        <div onClick={this.onChange(name, updateFilter, 13, this.props.lat, this.props.lng)} className='city-container'>
             <img className='explore-nearby-item-image' src={this.props.image} alt="" />
             <div className='city-text'>
                 <p className='city-name'>{this.props.name}</p>

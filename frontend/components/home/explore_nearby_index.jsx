@@ -9,17 +9,18 @@ class ExploreNearbyIndex extends React.Component {
 
     render() {
         let cities = {
-            1: { name: 'New York', knownFor: 'Tourists', image: window.newYork },
-            2: { name: 'San Francisco', knownFor: 'Heart of Tech', image: window.sanFrancisco },
-            3: { name: 'Chicago', knownFor: 'Home of Deep Dish', image: window.chicago },
-            4: { name: 'Miami', knownFor: 'Amazing Nightlife', image: window.miami },
+            1: { name: 'New York', knownFor: 'Tourists', image: window.newYork, lat: 40.73331, lng: -79.9893 },
+            2: { name: 'San Francisco', knownFor: 'Heart of Tech', image: window.sanFrancisco, lat: 37.78632, lng: -122.42043 },
+            3: { name: 'Chicago', knownFor: 'Home of Deep Dish', image: window.chicago, lat: 41.8865, lng: -87.64264 },
+            4: { name: 'Miami', knownFor: 'Amazing Nightlife', image: window.miami, lat: 25.76802, lng: -80.19409 },
         }
+        
         return (
             <div className='explore-nearby-index'>
                 <h2 className='popular-text'>Popular Destinations</h2>
                 <div className='cities-container'>
                 {Object.values(cities).map((city, idx) => {
-                    return <ExploreNearbyItem updateFilter={this.props.updateFilter} key={idx} name={city.name} knownFor={city.knownFor} image={city.image} />
+                    return <ExploreNearbyItem updateFilter={this.props.updateFilter} key={idx} name={city.name} knownFor={city.knownFor} image={city.image} lat={city.lat} lng={city.lng} />
                 })}
                 </div>
             </div>

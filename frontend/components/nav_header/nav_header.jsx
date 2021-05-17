@@ -10,6 +10,7 @@ class NavHeader extends React.Component {
     }
 
     handleClick(e) {
+        
         e.preventDefault()
         this.props.removeFilter()
         this.props.history.push('/')
