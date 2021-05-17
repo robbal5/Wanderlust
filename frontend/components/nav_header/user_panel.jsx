@@ -36,7 +36,7 @@ class UserPanel extends React.Component {
                     
                     <div className='user-panel-options'>
                         <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
-                        <button className='user-pane-button'>More info</button>
+                        <button className='user-panel-button'>Reservations</button>
                     </div>
                 </div>
             )

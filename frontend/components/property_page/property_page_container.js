@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import PropertyPage from './property_page';
 import { requestProperty } from '../../actions/property/properties_actions'
+import {openModal} from '../../actions/modal/modal_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -8,16 +9,8 @@ const mSTP = (state, ownProps) => {
     return {
         currentProperty: state.session.currentProperty,
         cities: state.entities.cities,
-        states: state.entities.states
-
-        // properties: state.entities.properties,
-        // reviews: state.entities.reviews,
-        // reservations: state.entities.reservations,
-        // addresses: state.entities.addresses,
-        // propertyAmenities: state.entities.propertyAmenities,
-        // amenities: state.entities.amenities,
-        // users: state.entities.users,
-        // cities: state.entities.cities
+        states: state.entities.states,
+        currentUser: state.session.id
        
     }
 }
@@ -25,6 +18,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     return {
         requestProperty: (property_id) => dispatch(requestProperty(property_id)),
+        openModal: modal => dispatch(openModal(modal)),
         
     }
 }

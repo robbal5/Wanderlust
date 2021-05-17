@@ -570,10 +570,12 @@ html {
     font-size: 30px;
     font-family: sans-serif;
     padding-bottom: 15px;
+    border-bottom: 1px lightgray solid;
 }
 
 .property-header-back-button {
     border-radius: 20px;
+    margin-top: 5px;
     padding: 5px 10px 5px 10px;
     border: black solid 1px;
     background-color: white;
@@ -668,6 +670,26 @@ html {
 }
 
 //Property Reviews
+.property-reviews-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-review-button {
+      border-radius: 20px;
+    margin-top: 5px;
+    padding: 5px 10px 5px 10px;
+    border: black solid 1px;
+    background-color: white;
+    margin-right: 50px;
+
+    &:hover {
+        background-color: $section_color;
+    }
+}
+
+
 
 .property-reviews-header {
     font-size: 24px;
@@ -730,6 +752,16 @@ html {
     border-radius: 5px;
     top: 40px;
 
+}
+
+//Review Modal
+
+.create-review-text {
+    height: 100px;
+    background-color: white;
+    border-radius: 20px;
+    font-weight: 100;
+    font-size: 14px;
 }
 
 

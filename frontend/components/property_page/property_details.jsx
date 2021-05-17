@@ -14,7 +14,7 @@ class PropertyDetails extends React.Component {
             <div>
                 <PropertyMains currentProperty={this.props.currentProperty}/>
                 <PropertyAmenitiesIndex amenities={this.props.currentProperty.amenities}/>
-                <PropertyReviewsIndex  reviews={this.props.currentProperty.reviews}/>
+                <PropertyReviewsIndex currentUser={this.props.currentUser} openModal = {this.props.openModal} reviews={this.props.currentProperty.reviews}/>
                 <PropertyLocation address={this.props.currentProperty.address} />
             </div>
         )

@@ -40,6 +40,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        
         return(
             <div>
                 <form className='main-modal' onSubmit={this.handleSubmit}>

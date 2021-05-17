@@ -9,7 +9,10 @@ class PropertyReviewsIndex extends React.Component {
         const{reviews} = this.props;
         return (
             <div>
-                <h2 className='property-reviews-header'>Reviews</h2>
+                <div className='property-reviews-header-container'>
+                    <h2 className='property-reviews-header'>Reviews</h2>
+                    <button className='create-review-button' onClick={ this.props.currentUser ? () => this.props.openModal('review') : () => this.props.openModal('login')}>Write a review</button>
+                </div>
                 <ul className='property-reviews-list'>
                     {Object.values(reviews).map((review,idx) => {
                         return <PropertyReviewsIndexItem key={idx} review={review} />
