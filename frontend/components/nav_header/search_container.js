@@ -17,7 +17,7 @@ const mDTP = (dispatch) => {
     return {
         requestCities: () => dispatch(requestCities()),
         requestStates: () => dispatch(requestStates()),
-        updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+        updateFilter: (filter, value, zoom, lat, lng) => dispatch(updateFilter(filter, value, zoom, lat, lng))
        
     }
 }
