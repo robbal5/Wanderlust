@@ -19,7 +19,7 @@ class PropertyReviewsIndexItem extends React.Component {
                 <h3 className='review-writer'><i className="fas fa-user-circle"> </i>{'   ' + review.name}</h3>
                 <p className='review-date'>{month} {year}</p>
                 <p className='review-stars'>
-                    {rating.map(x => <i className='fa fa-star'></i>)}
+                    {rating.map(x => <i key={x} className='fa fa-star'></i>)}
                 </p>
                 <p className='review-text'>{review.review}</p>
             </li>

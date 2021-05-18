@@ -3,6 +3,7 @@ import PropertyMains from './property_mains';
 import PropertyAmenitiesIndex from './property_amenities_index';
 import PropertyReviewsIndex from './property_reviews_index';
 import PropertyLocation from './property_location';
+import PropertyCalendar from './property_calendar'
 
 class PropertyDetails extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class PropertyDetails extends React.Component {
         return (
             <div>
                 <PropertyMains currentProperty={this.props.currentProperty}/>
+                <PropertyCalendar />
                 <PropertyAmenitiesIndex amenities={this.props.currentProperty.amenities}/>
                 <PropertyReviewsIndex currentUser={this.props.currentUser} openModal = {this.props.openModal} reviews={this.props.currentProperty.reviews}/>
                 <PropertyLocation address={this.props.currentProperty.address} />

@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ //SOURCE: https://github.com/wojtekmaj/react-calendar
+ @import 'react-calendar/dist/Calendar.css';
+//
 @import './extras/colors';
  /*RESET CONTENT*/
  //RESET FROM AA TIMES Provided solution - App Academy
@@ -658,7 +661,9 @@ html {
 
 
 .property-mains-section {
-    width: 50%
+    width: 49%;
+    display: inline-block;
+    
 }
 .property-mains-header {
     font-size: 24px;
@@ -874,3 +879,19 @@ html {
 }
 
 
+//Property calendar
+
+.property-calendar-container {
+    width: 50%;
+    display: inline-block;
+}
+
+.property-reservation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-number-of-guests-select {
+    width: 50px;
+    height: 25px;
+}
