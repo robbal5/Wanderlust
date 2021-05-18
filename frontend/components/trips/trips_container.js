@@ -1,4 +1,4 @@
-import Trips from './review_form'
+import Trips from './trips'
 import { connect } from 'react-redux'
 import {fetchReservations} from '../../actions/reservations/reservation_actions'
 
@@ -16,4 +16,6 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(Trips)
+const TripsContainer = connect(mSTP, mDTP)(Trips);
+
+export default TripsContainer;

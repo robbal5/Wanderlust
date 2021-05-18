@@ -2,6 +2,10 @@ class Api::ReservationsController < ApplicationController
 
     def index
         @reservations = User.find(params[:user_id]).reservations
+        @properties = @reservations.pluck(:property_id)
+        @properties.map! do |prop_id|
+            Property.find(prop_id)
+        end
         render :index
     end    
 

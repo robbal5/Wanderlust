@@ -6,8 +6,7 @@ import ModalContainer from './modal/modal_container'
 import Home from './home/home'
 import PropertiesSearchContainer from './property_search/properties_search_container'
 import PropertyPageContainer from './property_page/property_page_container'
-import Trips from './trips/trips'
-
+import TripsContainer from './trips/trips_container'
 const App = () => {
     return (
         <div>
@@ -15,7 +14,7 @@ const App = () => {
             <NavHeaderContainer />
 
             <Switch>
-                <Route path= '/trips' component={Trips} />
+                <Route path= '/trips' component={TripsContainer} />
                 <Route path='/properties/:property_id' component={PropertyPageContainer} />
                 <Route path='/properties' exact component={PropertiesSearchContainer}></Route>
                 <Route path='/' component={Home}></Route>
@@ -26,5 +25,5 @@ const App = () => {
     )
 }
 
-export default App;
+export default App; 
 
