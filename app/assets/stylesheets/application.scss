@@ -895,3 +895,12 @@ html {
     width: 50px;
     height: 25px;
 }
+
+// .tile-class {
+   
+// }
+
+.react-calendar__tile:disabled {
+  text-decoration: line-through;
+  text-decoration-color: gray;
+}

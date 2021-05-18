@@ -5,22 +5,63 @@ class PropertyCalendar extends React.Component {
     constructor(props) {
         super(props)
         this.state= {
-            startDate: '',
-            endDate: '',
-            duration: '',
+            startDate: null,
+            endDate: null,
+            duration: null,
             guests: 1
         }
         this.onDayClick = this.onDayClick.bind(this);
+        this.handleDisable = this.handleDisable.bind(this);
     }
 
+    //new Date(year, month, day) Numbers
+
     onDayClick(value, e) {
-        this.setState({
-            startDate: value
-        })
+        debugger;
+        const year = value.getFullYear();
+        const month = value.getMonth();
+        const day = value.getDate();
+        const date = new Date(year, month, day)
+        if(this.state.startDate > date) {
+            this.setState({
+                startDate: date,
+                endDate: null
+            })
+        }
+       else if (this.state.startDate){
+            this.setState({
+                endDate: date
+            })
+        }
+        else {
+            this.setState({
+                startDate: date
+            })
+        }
+    }
+
+    handleDisable = (e) => {
+       debugger;
+        const reservations =Object.values(this.props.reservations);
+        let disabled = false;
+        for (let i = 0; i<reservations.length; i++) {
+            let res = reservations[i];
+            const startResDate = new Date(res.startDate);
+            const endResDate = new Date(res.endDate);
+            if (startResDate < e.date && endResDate > e.date) {
+                disabled = true;
+                break;
+            }
+        }
+        if (e.date < new Date()) {
+            disabled = true;
+        }
+        return disabled;
     }
 
     render() {
-        return(
+        const {startDate, endDate} = this.state;
+         return(
             <div className='property-reservation-container'>
                 <form className='property-reservation-form'>
                     <label className='property-reservation-input-label'>Number of guests:
@@ -31,14 +72,17 @@ class PropertyCalendar extends React.Component {
                         </select>
                     </label>
                     <label className='property-reservation-input-label'>Start date:
-                        <input disabled type="text" value={this.state.startDate} />
+                        <input disabled type="text" value={startDate ? `${startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
                     </label>
                     <label className='property-reservation-input-label'>End date:
-                        <input disabled type="text" value={this.state.endDate } />
+                        <input disabled type="text" value={endDate ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
                     </label>
+                    <input type="submit" value='Create Reservation!' disabled = {endDate ? false : true} />
                 </form>
                 <div className='property-calendar-container'>
-                    <Calendar onClickDay={this.onDayClick} />
+                    <Calendar onClickDay={this.onDayClick}
+                            tileDisabled={this.handleDisable}
+                            tileClassName='tile-class'/>
                 </div>
             </div>
         )
