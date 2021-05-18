@@ -206,7 +206,7 @@ html {
 
 .search-bar {
     width: 20%;
-    border: 1px solid $heading_color;
+    border: 1px solid gray;
     border-radius: 10px;
     height: 30px;
     background-color: white;
@@ -281,6 +281,7 @@ html {
 
 .user-panel-options{
     // display: none;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -300,10 +301,12 @@ html {
 }
 
 .user-panel-button:hover {
-    background-color: lightgray;
+    color:$section_color;
+    font-weight: 500;
 }
 .user-panel-name {
- width: 220px;
+    text-align: right;
+ width: 300px;
  font-style: italic;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -615,7 +618,7 @@ html {
 
 .property-header-subitems {
     display: flex;
-    width: 33%;
+    width: 40%;
     justify-content: space-between;
     align-items: center;
     min-width: 350px;
