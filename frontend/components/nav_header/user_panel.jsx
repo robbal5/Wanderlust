@@ -8,6 +8,7 @@ class UserPanel extends React.Component {
         }
         this.showDropdown = this.showDropdown.bind(this)
         this.closeDropdown = this.closeDropdown.bind(this)
+        this.getReservations = this.getReservations.bind(this)
     }
 
     showDropdown(e) {
@@ -28,6 +29,11 @@ class UserPanel extends React.Component {
         })
     }
 
+    getReservations(e) {
+        debugger;
+        e.preventDefault();
+        this.props.fetchReservations(this.props.currentUser.id)
+    }
     render() {
         
         const signedIn = () => {
@@ -36,7 +42,7 @@ class UserPanel extends React.Component {
                     
                     <div className='user-panel-options'>
                         <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
-                        <button className='user-panel-button'>Reservations</button>
+                        <button className='user-panel-button' onClick={this.getReservations}>Reservations</button>
                     </div>
                 </div>
             )

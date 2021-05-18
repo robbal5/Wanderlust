@@ -1,7 +1,7 @@
 class Api::ReservationsController < ApplicationController 
 
     def index
-        @reservations = User.find(params[:user_id]).reservation
+        @reservations = User.find(params[:user_id]).reservations
         render :index
     end    
 
@@ -20,6 +20,7 @@ class Api::ReservationsController < ApplicationController
             render :show
         else
             render json: ['Update failed, please fill out all necessary information'], status: 401
+        end
     end
 
     def destroy

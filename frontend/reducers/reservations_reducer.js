@@ -1,13 +1,23 @@
-// import { RECEIVE_PROPERTY } from '../actions/property/properties_actions'
+import { RECEIVE_RESERVATIONS, RECEIVE_RESERVATION, DELETE_RESERVATION, CHANGE_RESERVATION  } from '../actions/reservations/reservation_actions'
 
-// const ReservationsReducer = (state = {}, action) => {
-//     Object.freeze(state);
-//     switch (action.type) {
-//         case RECEIVE_PROPERTY:
-//             return Object.assign({}, state, action.payload.reservations)
-//         default:
-//             return state;
-//     }
-// }
+const ReservationsReducer = (state = {}, action) => {
+    Object.freeze(state);
+    let newState = { ...state };
+    switch (action.type) {
+        case RECEIVE_RESERVATION:
+            return Object.assign({}, state, action.reservation)
+        case RECEIVE_RESERVATIONS:
+            return action.reservations 
+        
+        case DELETE_RESERVATION:
+            delete newState[action.reservation.id]
+            return newState
+        case CHANGE_RESERVATION:
+            newState[action.reservation.id] = action.reservation;
+            return newState
+        default:
+            return state;
+    }
+}
 
-// export default ReservationsReducer;
+export default ReservationsReducer;

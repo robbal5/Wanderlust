@@ -35,8 +35,8 @@ export const changeReservation = (reservation) => {
 }
 
 
-export const fetchReservations = () => (dispatch) => {
-    return APIReservationUtil.fetchReservations()
+export const fetchReservations = (userId) => (dispatch) => {
+    return APIReservationUtil.fetchReservations(userId)
     .then(reserves => dispatch(receiveReservations(reserves)))
 }
 export const createReservation = (reservation) => (dispatch) => {

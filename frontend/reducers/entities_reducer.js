@@ -6,7 +6,7 @@ import PropertiesReducer from './properties_reducer'
 import AddressReducer from './addresses_reducer'
 // import AmenitiesReducer from './amenities_reducer';
 // import PropertyAmenitiesReducer from './property_amenities_reducer';
-// import ReservationsReducer from './reservations_reducer';
+import ReservationsReducer from './reservations_reducer';
 // import ReviewsReducer from './reviews_reducer';
 
 const EntitiesReducer = combineReducers({
@@ -17,7 +17,7 @@ const EntitiesReducer = combineReducers({
     addresses: AddressReducer,
     // amenities: AmenitiesReducer,
     // propertyAmenities: PropertyAmenitiesReducer,
-    // reservations: ReservationsReducer,
+    reservations: ReservationsReducer,
     // reviews: ReviewsReducer
 
 })
