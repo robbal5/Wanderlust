@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router'
 
 class UserPanel extends React.Component {
     constructor(props) {
@@ -30,9 +31,10 @@ class UserPanel extends React.Component {
     }
 
     getReservations(e) {
-        debugger;
+        
         e.preventDefault();
         this.props.fetchReservations(this.props.currentUser.id)
+        this.props.history.push('/trips')
     }
     render() {
         
@@ -71,4 +73,4 @@ class UserPanel extends React.Component {
     }
 }
 
-export default UserPanel;
+export default withRouter(UserPanel);

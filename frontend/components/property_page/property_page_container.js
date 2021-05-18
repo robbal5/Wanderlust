@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import PropertyPage from './property_page';
 import { requestProperty } from '../../actions/property/properties_actions'
 import {openModal} from '../../actions/modal/modal_actions'
+import {createReservation} from '../../actions/reservations/reservation_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -19,6 +20,7 @@ const mDTP = (dispatch) => {
     return {
         requestProperty: (property_id) => dispatch(requestProperty(property_id)),
         openModal: modal => dispatch(openModal(modal)),
+        createReservation: reservation => dispatch(createReservation(reservation))
         
     }
 }

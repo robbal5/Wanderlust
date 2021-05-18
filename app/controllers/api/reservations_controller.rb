@@ -6,7 +6,8 @@ class Api::ReservationsController < ApplicationController
     end    
 
     def create
-        @reservation = Reservation.new(review_params)
+        debugger;
+        @reservation = Reservation.new(reservation_params)
         if @reservation.save!
             render :show
         else

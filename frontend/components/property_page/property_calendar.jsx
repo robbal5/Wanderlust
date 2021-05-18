@@ -26,6 +26,8 @@ class PropertyCalendar extends React.Component {
                 start_date: this.state.startDate,
                 end_date: this.state.endDate
         }
+        debugger;
+        this.props.createReservation(reservation);
 
     }
     onDayClick(value, e) {

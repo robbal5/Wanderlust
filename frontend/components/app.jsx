@@ -6,6 +6,7 @@ import ModalContainer from './modal/modal_container'
 import Home from './home/home'
 import PropertiesSearchContainer from './property_search/properties_search_container'
 import PropertyPageContainer from './property_page/property_page_container'
+import Trips from './trips/trips'
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <NavHeaderContainer />
 
             <Switch>
+                <Route path= '/trips' component={Trips} />
                 <Route path='/properties/:property_id' component={PropertyPageContainer} />
                 <Route path='/properties' exact component={PropertiesSearchContainer}></Route>
                 <Route path='/' component={Home}></Route>
