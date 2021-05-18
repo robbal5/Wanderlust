@@ -1,13 +1,31 @@
 class Api::ReservationsController < ApplicationController 
 
+    def index
+        @reservations = User.find(params[:user_id]).reservation
+        render :index
+    end    
+
     def create
-        
-        @review = Reservation.new(review_params)
-        if @review.save!
+        @reservation = Reservation.new(review_params)
+        if @reservation.save!
             render :show
         else
-            render json: ['Please fill out all necessary review information'], status: 401
+            render json: ['Please fill out all necessary information'], status: 401
         end
+    end
+
+    def update
+        @reservation = Reservation.find(params[:id])
+        if @reservation.update(reservation_params)
+            render :show
+        else
+            render json: ['Update failed, please fill out all necessary information'], status: 401
+    end
+
+    def destroy
+        @reservation = Reservation.find(params[:id])
+        @reservation.destroy
+        render :show
     end
 
     private
