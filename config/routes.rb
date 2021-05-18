@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     
     resources :users do
        resources :reviews, only: [:create, :index]
-      resources :reservations, only: [:create, :index]
+      resources :reservations, only: [:create, :index, :update, :destroy]
     end
     resource :session, only: [:create, :destroy]
     resources :properties, only: [:index, :show]

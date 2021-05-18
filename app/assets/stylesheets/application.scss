@@ -904,3 +904,10 @@ html {
   text-decoration: line-through;
   text-decoration-color: gray;
 }
+
+.property-reservation-submit {
+    background-color: purple;
+    &:disabled {
+        background-color: green;
+    }
+}
