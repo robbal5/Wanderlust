@@ -6,7 +6,7 @@ class Api::ReservationsController < ApplicationController
     end    
 
     def create
-        debugger;
+        
         @reservation = Reservation.new(reservation_params)
         if @reservation.save!
             render :show
@@ -33,7 +33,7 @@ class Api::ReservationsController < ApplicationController
     private
 
    def reservation_params
-    params.require(:reservation).permit(:user_id, :property_id, :start_date, :end_date)
+    params.require(:reservation).permit(:guests, :user_id, :property_id, :start_date, :end_date)
    end
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Calendar from 'react-calendar'
+import {withRouter} from 'react-router'
 
 class PropertyCalendar extends React.Component {
     constructor(props) {
@@ -13,21 +14,30 @@ class PropertyCalendar extends React.Component {
         this.onDayClick = this.onDayClick.bind(this);
         this.handleDisable = this.handleDisable.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.changeGuest = this.changeGuest.bind(this)
     }
 
     //new Date(year, month, day) Numbers
 
+    changeGuest(e) { 
+        this.setState({
+            guests: parseInt(e.target.value)
+        })
+    }
+
     onSubmit(e) {
-        debugger;
+        
         e.preventDefault()
         let reservation = {
             property_id: this.props.property.id,
                 user_id: this.props.currentUser,
                 start_date: this.state.startDate,
-                end_date: this.state.endDate
+                end_date: this.state.endDate,
+                guests: this.state.guests
         }
-        debugger;
+        
         this.props.createReservation(reservation);
+        this.props.history.push('/trips')
 
     }
     onDayClick(value, e) {
@@ -56,14 +66,18 @@ class PropertyCalendar extends React.Component {
     }
 
     handleDisable = (e) => {
-       
-        const reservations =Object.values(this.props.reservations);
+        let reservations;
+       if (this.props.reservations) {
+        reservations =Object.values(this.props.reservations);
+       } else {
+           return false;
+       }
         let disabled = false;
         for (let i = 0; i<reservations.length; i++) {
             let res = reservations[i];
             const startResDate = new Date(res.startDate);
             const endResDate = new Date(res.endDate);
-            if (startResDate < e.date && endResDate > e.date) {
+            if (startResDate <= e.date && endResDate >= e.date) {
                 disabled = true;
                 break;
             }
@@ -80,16 +94,16 @@ class PropertyCalendar extends React.Component {
             <div className='property-reservation-container'>
                 <form onSubmit={this.onSubmit} className='property-reservation-form'>
                     <label className='property-reservation-input-label'>Number of guests:
-                        <select className='reservation-number-of-guests-select'>
+                        <select onChange={this.changeGuest} className='reservation-number-of-guests-select'>
                             {[1,2,3,4,5,6,7,8].map(i => {
-                                return <option value="i">{i}</option>
+                                return <option key={i} value={i}>{i}</option>
                             })}
                         </select>
                     </label>
-                    <label className='property-reservation-input-label'>Start date:
+                    <label className='property-reservation-input-label'>Check-in date:
                         <input disabled type="text" value={startDate ? `${startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
                     </label>
-                    <label className='property-reservation-input-label'>End date:
+                    <label className='property-reservation-input-label'>Check-out date:
                         <input disabled type="text" value={endDate ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
                     </label>
                     <input className='property-reservation-submit' type="submit" value='Create Reservation!' disabled = {endDate ? false : true} />
@@ -104,4 +118,4 @@ class PropertyCalendar extends React.Component {
     }
 }
 
-export default PropertyCalendar;
+export default withRouter(PropertyCalendar);
