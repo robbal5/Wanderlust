@@ -9,10 +9,10 @@ class ExploreNearbyIndex extends React.Component {
 
     render() {
         let cities = {
-            1: { name: 'New York', knownFor: 'Tourists', image: window.newYork, lat: 40.73331, lng: -79.9893 },
-            2: { name: 'San Francisco', knownFor: 'Heart of Tech', image: window.sanFrancisco, lat: 37.78632, lng: -122.42043 },
-            3: { name: 'Chicago', knownFor: 'Home of Deep Dish', image: window.chicago, lat: 41.8865, lng: -87.64264 },
-            4: { name: 'Miami', knownFor: 'Amazing Nightlife', image: window.miami, lat: 25.76802, lng: -80.19409 },
+            1: { name: 'New York', knownFor: 'The Big Apple', image: window.newYork, lat: 40.73331, lng: -79.9893 },
+            2: { name: 'San Francisco', knownFor: 'The Golden City', image: window.sanFrancisco, lat: 37.78632, lng: -122.42043 },
+            3: { name: 'Chicago', knownFor: 'The Windy City', image: window.chicago, lat: 41.8865, lng: -87.64264 },
+            4: { name: 'Miami', knownFor: 'The Magic City', image: window.miami, lat: 25.76802, lng: -80.19409 },
         }
         
         return (
