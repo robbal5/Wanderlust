@@ -1,5 +1,6 @@
 import React from 'react';
 import TripIndex from './trip_index'
+import {withRouter} from 'react-router'
 
 class Trips extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Trips extends React.Component {
             view: 'upcoming'
         }
         this.onHeaderClick = this.onHeaderClick.bind(this);
+        this.onButtonClick = this.onButtonClick.bind(this);
     }
 
     componentDidMount() {
@@ -20,6 +22,10 @@ class Trips extends React.Component {
                 view: field
             })
         }
+    }
+
+    onButtonClick(e) {
+        this.props.history.push('/properties')
     }
 
 
@@ -37,7 +43,10 @@ class Trips extends React.Component {
         if (Object.values(this.props.reservations).length < 1) {
             return (
                 <div className='trips-page'>
-                    <h1>Trips</h1>
+                    <nav className='trips-header-nav'>
+                        <h1>Trips</h1>
+                        <button onClick={this.onButtonClick} className='trips-header-nav-button'>Explore Wanderlust</button>
+                    </nav>
                     <nav className='trips-nav'>
                         <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
                         <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
@@ -48,7 +57,10 @@ class Trips extends React.Component {
         }
         return (
             <div className='trips-page'>
-                <h1>Trips</h1>
+                <nav className='trips-header-nav'>
+                    <h1>Trips</h1>
+                    <button onClick={this.onButtonClick} className='trips-header-nav-button'>Explore Wanderlust</button>
+                </nav>
                 <nav className='trips-nav'>
                     <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
                     <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
@@ -64,4 +76,4 @@ class Trips extends React.Component {
     }
 }
 
-export default Trips;
+export default withRouter(Trips);

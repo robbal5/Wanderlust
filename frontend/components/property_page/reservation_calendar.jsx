@@ -23,10 +23,10 @@ class ReservationCalendar extends React.Component {
             startDate: e.selection.startDate,
             endDate: e.selection.endDate
         })
-        debugger;
+        
     }
     // handleDisable = (e) => {
-    //     debugger;
+    //     
     //     let reservations;
     //     if (this.props.reservations) {
     //         reservations = Object.values(this.props.reservations);

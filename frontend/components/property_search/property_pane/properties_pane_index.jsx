@@ -4,11 +4,18 @@ class PropertiesPaneIndex extends React.Component {
     constructor(props) {
         super(props)
     }
+    
 
     render() {
-        
+        debugger;
         const properties = this.props.properties
         const addresses = this.props.addresses
+
+        if (Object.values(addresses).length < 1) {
+            return (
+                <h1>LOADING YOUR DREAM HOMES :)</h1>
+            )
+        }
         if (Object.values(properties).length < 1) {
             return (
                 <h1>No search results match the specified criteria, please clear and try again!</h1>

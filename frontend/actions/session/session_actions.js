@@ -36,7 +36,7 @@ export const login = (user) => dispatch => {
 }
 
 export const logout = () => dispatch => {
-    debugger;
+    
     return APISessionUtils.logout()
     .then(() => dispatch(logoutCurrentUser()), 
     err => dispatch(receiveSessionErrors(err.responseJSON)))

@@ -89,7 +89,7 @@ class Search extends React.Component {
                     <input onChange={this.handleChange} 
                             className="search-input" 
                             type="text" 
-                            placeholder="Start your search..." 
+                            placeholder="Find a city you'll love..." 
                             value={this.state.searchValue} />
                     <button className='fa fa-search'></button>
                 </form>
