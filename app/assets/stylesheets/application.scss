@@ -486,8 +486,9 @@ html {
 }
 
 .property-pane {
-    width: 50%;
-    min-width: 750px;
+    // width: 50%;
+    min-width: 500px;
+    max-width: 800px;
     overflow-y: scroll;
     // min-height: 800px;
     height: 95vh;
@@ -576,16 +577,17 @@ html {
     padding: 10px;
 }
 
-.property-intro-line {
-    padding-left: 10px;
-    color: $heading_color;
-}
+
 
 .property-intro-name {
-    font-size: 24px;
+    font-size: 22px;
     color: $font_color;
     padding-left: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 5px;
+    border-bottom: 1px lightgray solid;
+    width: 90%;
+    margin-bottom: 10px;
 }
 
 .property-intro-price {
@@ -649,6 +651,8 @@ html {
 .main-property-photo {
     height: 100%;
     width: 49.5%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     object-fit: cover;
 }
 
@@ -658,6 +662,13 @@ html {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;   
+
+    img:nth-child(2) {
+        border-top-right-radius: 25px;
+    }
+    img:nth-child(4) {
+        border-bottom-right-radius: 25px;
+    }
 }
 
 .side-property-photo {
@@ -842,7 +853,7 @@ html {
 //PROPERTY MAP
 
 .map {
-    width: 1000%;
+    width: 60%;
     height: 95vh;
 }
 
@@ -896,12 +907,12 @@ html {
 }
 
 .property-mains-and-amenities {
-    width: 45%;
+    width: 50%;
 }
 //Property calendar
 
 .reservation-container {
-    width: 45%;
+    width: 50%;
     display: inline-block;
 
 } 
@@ -941,7 +952,7 @@ html {
 }
 
 .reservation-number-of-guests-select {
-    width: 50px;
+    width: 40px;
     height: 25px;
 }
 
@@ -1027,15 +1038,20 @@ html {
     cursor: pointer;
     box-sizing: border-box;
 
-    &:hover{
+    
+
+    .trip-selection {
+        &:hover{
         color: $section_color;
+    }
     }
 
     .trip-container-subs {
         display: flex;
         justify-content: space-between;
-        width: 70%;
+        width: 90%;
         margin: auto;
+        margin-bottom: 5px;
 
         p {
             width: 70%;
@@ -1049,12 +1065,12 @@ html {
 
     h1 {
         padding-top: 10px;
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
 
     p {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     img {
@@ -1063,6 +1079,23 @@ html {
         margin: auto;
         border-radius: 20px;
         max-width: 300px;
+    }
+}
+
+.trip-index-delete {
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    border: gray solid 1px;
+    background-color: white;
+    min-width: 60px;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    float: right;
+    margin-right: 5%;
+    &:hover {
+        background-color: $section_color;
+        color: black;
     }
 }
 
@@ -1078,4 +1111,5 @@ html {
     font-weight: 700;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 20px;
+    ;
 }

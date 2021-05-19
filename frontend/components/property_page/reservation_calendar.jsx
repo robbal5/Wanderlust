@@ -47,27 +47,31 @@ class ReservationCalendar extends React.Component {
     }
 
     dateRange(d1, d2) {
+        
         let firstDate = new Date(d1);
         let secondDate = new Date(d2);
+        let firstDateValue = firstDate.getDate() - 1;
+        let midValue1 = firstDate.setDate(firstDateValue)
+        firstDate = new Date(midValue1)
         let dates = [];
         while (firstDate < secondDate) {
             dates.push(firstDate)
-            nextDay = firstDate.getDate() + 1
-            midValue = firstDate.setDate(nextDay)
-            firstDate = new Date(midValue)
+            let nextDay = firstDate.getDate() + 1
+            let midValue2 = firstDate.setDate(nextDay)
+            firstDate = new Date(midValue2)
         }
         return dates; 
     }
 
     render() {
-        debugger;
-            const disabledDates = [];
+        
+            let disabledDates = [];
             if (this.props.reservations){
             Object.values(this.props.reservations).forEach (reservation => {
-                debugger;
+                
                 let start = reservation.startDate;
                 let end = reservation.endDate;
-                disabledDates.concat(this.dateRange(start, end))
+                disabledDates = disabledDates.concat(this.dateRange(start, end))
             })
         }  
         
@@ -114,6 +118,7 @@ class ReservationCalendar extends React.Component {
                 minDate={new Date()}
                 shownDate={new Date(currDate.setMonth(currDate.getMonth() + 1))}
                 rangeColor={['purple']}
+                disabledDates={disabledDates}
                 // disabledDay={this.handleDisable}
                 // focusedRange={[this.state.startDate, this.state.endDate]}
 

@@ -66,8 +66,8 @@ class Trips extends React.Component {
                     <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
                 </nav>
                 <div className='trips-index-container'>
-                    {filtered_reservations.map((reservation) => {
-                        return <TripIndex reservation = {reservation} property={this.props.properties[reservation.propertyId]} />
+                    {filtered_reservations.map((reservation, idx) => {
+                        return <TripIndex key={idx} reservation = {reservation} property={this.props.properties[reservation.propertyId]} />
                     })}
                 </div>
 

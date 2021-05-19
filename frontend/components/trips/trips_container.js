@@ -1,6 +1,6 @@
 import Trips from './trips'
 import { connect } from 'react-redux'
-import {fetchReservations} from '../../actions/reservations/reservation_actions'
+import {fetchReservations, removeReservation} from '../../actions/reservations/reservation_actions'
 
 const mSTP = (state) => {
     return {
@@ -12,7 +12,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        fetchReservations: (userId) => dispatch(fetchReservations(userId))
+        fetchReservations: (userId) => dispatch(fetchReservations(userId)),
+        removeReservation: (reservation) => dispatch(removeReservation(reservation))
     }
 }
 

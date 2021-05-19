@@ -29,6 +29,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def destroy
+        debugger;
         @reservation = Reservation.find(params[:id])
         @reservation.destroy
         render :show

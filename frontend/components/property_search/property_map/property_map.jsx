@@ -19,7 +19,9 @@ class PropertyMap extends React.Component {
         this.map = new google.maps.Map(map, mapOptions)
         this.MarkerManager = new MarkerManager(this.map, this.handleClick)
         const {properties, addresses} = this.props
-        this.MarkerManager.updateMarkers(properties, addresses)
+        if (Object.values(addresses).length > 1) {
+            this.MarkerManager.updateMarkers(properties, addresses)
+        }
     }
 
     componentDidUpdate() {
@@ -37,6 +39,12 @@ class PropertyMap extends React.Component {
     }
 
     render() {
+        // debugger;
+        // if (Object.values(this.props.addresses).length < 1) {
+        //     return <div>
+        //         Initiating Global search
+        //     </div>
+        // }
         return(
             <div className='map' ref='map'>
                 propertyMap
