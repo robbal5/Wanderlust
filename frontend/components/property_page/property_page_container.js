@@ -27,10 +27,4 @@ const mDTP = (dispatch) => {
 
 export default connect(mSTP, mDTP)(PropertyPage);
 
- // property: property,
-        // reservations: state.entities.reservations.filter(res => res.property_id == id),
-        // reviews: state.entities.reviews.filter(review => review.property_id == id),
-        // amenities: state.entities.propertyAmenities.filter(res => res.property_id == id).map(pa => state.entities.amenities[pa.amenity_id]),
-        // user: state.entities.user[property.user_id],
-        // address: address,
-        // city: state.entites.cities[address.city_id]
+
