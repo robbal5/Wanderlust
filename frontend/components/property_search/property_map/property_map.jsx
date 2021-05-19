@@ -39,12 +39,7 @@ class PropertyMap extends React.Component {
     }
 
     render() {
-        // debugger;
-        // if (Object.values(this.props.addresses).length < 1) {
-        //     return <div>
-        //         Initiating Global search
-        //     </div>
-        // }
+
         return(
             <div className='map' ref='map'>
                 propertyMap

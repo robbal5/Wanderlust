@@ -22,7 +22,7 @@ class PropertyReviewsIndex extends React.Component {
                 </div>
                 <ul className='property-reviews-list'>
                     {Object.values(reviews).slice(0,6).map((review,idx) => {
-                        return <PropertyReviewsIndexItem key={idx} review={review} />
+                        return <PropertyReviewsIndexItem key={idx} review={review} currentUser={this.props.currentUser} />
                     })}
                 </ul>
             </div>

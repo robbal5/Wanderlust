@@ -23,7 +23,8 @@ export const createReservation = (reservation) => {
 }
 
 export const removeReservation = (reservation) => {
-    return $.ajaz({
+    
+    return $.ajax({
         method: 'DELETE',
         url: `/api/users/${reservation.userId}/reservations/${reservation.id}`
     })

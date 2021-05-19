@@ -16,6 +16,7 @@ class Trips extends React.Component {
         this.props.fetchReservations(this.props.currentUser)
     }
 
+
     onHeaderClick(field) {
         return e => {
             this.setState({
@@ -26,6 +27,7 @@ class Trips extends React.Component {
 
     onButtonClick(e) {
         this.props.history.push('/properties')
+        this.setState({state : this.state})
     }
 
 
@@ -67,7 +69,7 @@ class Trips extends React.Component {
                 </nav>
                 <div className='trips-index-container'>
                     {filtered_reservations.map((reservation, idx) => {
-                        return <TripIndex key={idx} reservation = {reservation} property={this.props.properties[reservation.propertyId]} />
+                        return <TripIndex status={this.state.view} removeReservation={this.props.removeReservation} key={reservation.id} reservation = {reservation} property={this.props.properties[reservation.propertyId]} />
                     })}
                 </div>
 

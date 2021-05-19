@@ -4,9 +4,11 @@ const ReservationsReducer = (state = {}, action) => {
     
     Object.freeze(state);
     let newState = { ...state };
+    debugger;
     switch (action.type) {
+        
         case RECEIVE_RESERVATION:
-            return Object.assign({}, state, action.reservation)
+            return Object.assign({}, state, action.reservation.reservation)
         case RECEIVE_RESERVATIONS:
             if (action.payload.reservations){
                 return action.payload.reservations 
@@ -16,7 +18,8 @@ const ReservationsReducer = (state = {}, action) => {
             }
         
         case DELETE_RESERVATION:
-            delete newState[action.reservation.id]
+            
+            delete newState[action.reservation.reservation.id]
             return newState
         case CHANGE_RESERVATION:
             newState[action.reservation.id] = action.reservation;

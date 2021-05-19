@@ -7,7 +7,7 @@
     json.reviews do
         @property.reviews.each do |review|
             json.set! review.id do
-                json.extract! review, :id, :review, :rating, :created_at
+                json.extract! review, :id, :review, :rating, :created_at, :user_id
                 json.extract! @users.find_by(id: review.user_id), :name
             end
         end

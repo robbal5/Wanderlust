@@ -9,21 +9,28 @@ class ReservationCalendar extends React.Component {
         this.state = {
             startDate: currDate,
             endDate: currDate,
-            guests: 1
+            guests: 1,
+            created: false
         }
 
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleDisable = this.handleDisable.bind(this);
+        this.changeGuest = this.changeGuest.bind(this);
     }
 
     handleSelect(e) {
-        console.log(e)
+        
         this.setState({
             startDate: e.selection.startDate,
             endDate: e.selection.endDate
         })
         
+    }
+
+    changeGuest(e) {
+        this.setState({
+            guests: parseInt(e.target.value)
+        })
     }
 
     handleSubmit(e) {
@@ -38,7 +45,14 @@ class ReservationCalendar extends React.Component {
             }
 
             this.props.createReservation(reservation);
-            this.props.history.push('/trips')
+            // this.props.history.push('/trips')
+            const currDate = new Date()
+            this.setState({
+                startDate: currDate,
+                endDate: currDate,
+                created: true,
+                guests: 1
+            })
         } else {
             e.stopPropagation();
             this.props.openModal('login')
@@ -75,7 +89,7 @@ class ReservationCalendar extends React.Component {
             })
         }  
         
-            debugger;
+            
             const initialState = (this.state.startDate == this.state.endDate)
             const currDate = new Date()
             const selectionRange = {
@@ -90,7 +104,7 @@ class ReservationCalendar extends React.Component {
             <h1 className='create-reservation-header'>Book a stay today!</h1>
             <form onSubmit={this.handleSubmit} className='property-reservation-form'>
                 <label className='property-reservation-input-label'>Number of guests:
-                        <select onChange={this.changeGuest} className='reservation-number-of-guests-select'>
+                        <select onChange={this.changeGuest} className='reservation-number-of-guests-select' value={this.state.guests}>
                         {[1, 2, 3, 4, 5, 6, 7, 8].map(i => {
                             return <option key={i} value={i}>{i}</option>
                         })}
@@ -105,6 +119,7 @@ class ReservationCalendar extends React.Component {
                 <label className='property-reservation-input-label'>
                     <input className='property-reservation-submit' type="submit" value='Book Today!' disabled={endDate==startDate ? true : false} />
                 </label>
+                {this.state.created ? <p>Amazing, we can't wait to see you!</p> : null }
             </form>
             <DateRange
                 ranges={[selectionRange]}

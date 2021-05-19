@@ -50,6 +50,7 @@ export const updateReservation = (reservation) => (dispatch) => {
 }
 
 export const removeReservation = (reservation) => dispatch => {
+    
     return APIReservationUtil.removeReservation(reservation)
     .then(reservation => dispatch(deleteReservation(reservation)))
 }

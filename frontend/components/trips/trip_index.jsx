@@ -13,12 +13,15 @@ class TripIndex extends React.Component {
     }
 
     onClick() {
+        
         this.props.history.push(`/properties/${this.props.property.id}`)
     }
 
     handleDelete(e) {
+        
         this.props.removeReservation(this.props.reservation)
         e.stopPropagation()
+        
     }
 
     render() {
@@ -38,7 +41,8 @@ class TripIndex extends React.Component {
                             <p>{reservation.guests ? reservation.guests + (reservation.guests > 1 ? ' guests': ' guest') : 'No guest restriction'}</p>
                         </div>
                     </div>
-                    <button className='trip-index-delete' onClick={this.handleDelete}>Delete</button>
+                {this.props.status == 'upcoming' ? <button className='trip-index-delete' onClick={this.handleDelete}>Delete</button> : null }
+                    
                 </div>
             
         )

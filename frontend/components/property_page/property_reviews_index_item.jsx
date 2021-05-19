@@ -6,6 +6,8 @@ class PropertyReviewsIndexItem extends React.Component {
     }
 
     render() {
+        
+        
         const {review} = this.props
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         const year = review.createdAt.split('-')[0];
@@ -16,7 +18,10 @@ class PropertyReviewsIndexItem extends React.Component {
         }
         return (
             <li className='property-review'>
-                <h3 className='review-writer'><i className="fas fa-user-circle"> </i>{'   ' + review.name}</h3>
+                <div className='review-header'>
+                    <h3 className='review-writer'><i className="fas fa-user-circle"> </i>{'   ' + review.name}</h3>
+                    {this.props.currentUser == review.userId ? <p className='review-edit'>Edit</p> : null}
+                </div>
                 <p className='review-date'>{month} {year}</p>
                 <p className='review-stars'>
                     {rating.map(x => <i key={x} className='fa fa-star'></i>)}

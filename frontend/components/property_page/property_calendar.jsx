@@ -98,7 +98,7 @@ class PropertyCalendar extends React.Component {
             <div className='property-reservation-container'>
                 <form onSubmit={this.onSubmit} className='property-reservation-form'>
                     <label className='property-reservation-input-label'>Number of guests:
-                        <select onChange={this.changeGuest} className='reservation-number-of-guests-select'>
+                        <select onChange={this.changeGuest} className='reservation-number-of-guests-select' value={this.state.guests}>
                             {[1,2,3,4,5,6,7,8].map(i => {
                                 return <option key={i} value={i}>{i}</option>
                             })}
