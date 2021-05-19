@@ -7,24 +7,26 @@ class Trips extends React.Component {
         this.state = {
             view: 'upcoming'
         }
-        this.onClick = this.onClick.bind(this);
+        this.onHeaderClick = this.onHeaderClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchReservations(this.props.currentUser)
     }
 
-    onClick(field) {
+    onHeaderClick(field) {
         return e => {
             this.setState({
                 view: field
             })
         }
     }
+
+
     
 
     render() {
-        debugger;
+        
         if (Object.values(this.props.reservations).length < 1){
             return <div>NO TRIPS</div>
         }
@@ -37,8 +39,8 @@ class Trips extends React.Component {
             <div className='trips-page'>
                 <h1>Trips</h1>
                 <nav className='trips-nav'>
-                    <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onClick('upcoming')}>Upcoming</button>
-                    <button className={`trips-nav-button ${past_class}`} onClick={this.onClick('past')}>Past</button>
+                    <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
+                    <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
                 </nav>
                 <div className='trips-index-container'>
                     {filtered_reservations.map((reservation) => {

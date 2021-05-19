@@ -5,10 +5,10 @@ export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION'
 export const DELETE_RESERVATION = 'DELETE_RESERVATION'
 export const CHANGE_RESERVATION = 'CHANGE_RESERVATION'
 
-export const receiveReservations = (reservations) => {
+export const receiveReservations = (payload) => {
     return {
         type: RECEIVE_RESERVATIONS,
-        reservations
+        payload
     }
 }
 

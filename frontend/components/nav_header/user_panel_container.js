@@ -3,6 +3,7 @@ import UserPanel from './user_panel'
 import {logout} from '../../actions/session/session_actions'
 import {openModal} from '../../actions/modal/modal_actions'
 import { fetchReservations } from '../../actions/reservations/reservation_actions'
+import {withRouter} from 'react-router'
 
 
 
@@ -12,13 +13,15 @@ const mSTP = (state, ownProps) => {
     }
 }
 
-const mDTP = (dispatch) => {
+const mDTP = (dispatch, ownProps) => {
     return {
         openModal: modal => dispatch(openModal(modal)),
-        logout: () => dispatch(logout()),
+        logout: () => {
+            dispatch(logout())
+        },
         fetchReservations: (userId) => dispatch(fetchReservations(userId))
         
     }
 }
 
-export default connect(mSTP, mDTP)(UserPanel);
+export default withRouter(connect(mSTP, mDTP)(UserPanel));

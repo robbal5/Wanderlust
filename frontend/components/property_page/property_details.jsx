@@ -12,10 +12,14 @@ class PropertyDetails extends React.Component {
 
     render() {
         return (
-            <div>
-                <PropertyMains currentProperty={this.props.currentProperty}/>
-                <PropertyCalendar createReservation={this.props.createReservation} currentUser = {this.props.currentUser} property = {this.props.currentProperty.property} reservations={this.props.currentProperty.reservations} />
-                <PropertyAmenitiesIndex amenities={this.props.currentProperty.amenities}/>
+            <div >
+                <div className="property-details-section">
+                    <div className='property-mains-and-amenities'>
+                    <PropertyMains currentProperty={this.props.currentProperty}/>
+                    <PropertyAmenitiesIndex amenities={this.props.currentProperty.amenities} />
+                    </div>
+                    <PropertyCalendar openModal={this.props.openModal} createReservation={this.props.createReservation} currentUser = {this.props.currentUser} property = {this.props.currentProperty.property} reservations={this.props.currentProperty.reservations} />
+                </div>
                 <PropertyReviewsIndex currentUser={this.props.currentUser} openModal = {this.props.openModal} reviews={this.props.currentProperty.reviews}/>
                 <PropertyLocation address={this.props.currentProperty.address} />
             </div>

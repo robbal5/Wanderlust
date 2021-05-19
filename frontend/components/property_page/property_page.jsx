@@ -29,7 +29,7 @@ class PropertyPage extends React.Component {
                 
                 <PropertyHeader currentProperty={currentProperty} city= {city} state = {states[city.stateId]} />
                 <PropertyPhotos photoUrls = {currentProperty.property.photoUrls} />
-                <PropertyDetails createReservation={createReservation} currentUser={currentUser} openModal= {openModal} currentProperty={currentProperty}/>
+                <PropertyDetails openModal={openModal} createReservation={createReservation} currentUser={currentUser} openModal= {openModal} currentProperty={currentProperty}/>
                 <PropertyReservation reservations={currentProperty.reservations}/>
             </div>
         )

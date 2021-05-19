@@ -10,10 +10,16 @@ const PropertyMapReducer = (state = defaultLocation, action) => {
     Object.freeze(state);
     switch (action.type) {
         case CHANGE_LOCATION:
-            return {
-                center: action.center,
-                zoom: action.zoom
+            if (action.center.lat) {
+                return {
+                    center: action.center,
+                    zoom: action.zoom
+                }
             }
+            else {
+                return defaultLocation;
+            }
+
         case RESET_LOCATION:
             return defaultLocation;
         default:

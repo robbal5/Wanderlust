@@ -24,9 +24,10 @@ export const updateFilter = (filter, value, zoom, lat, lng) => (dispatch, getSta
     
     if (filter == 'cityFilter') {
         value = ['Chicago', 'Miami', 'New York', 'San Francisco'].includes(value) ? value : '';
+        dispatch(changeLocation({ lat, lng }, zoom));
     }
     dispatch(changeFilter(filter, value));
-    dispatch(changeLocation({lat, lng}, zoom))
+    
     return requestProperties(getState().ui.filters)(dispatch);
 }
 

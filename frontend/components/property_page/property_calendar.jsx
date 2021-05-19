@@ -26,7 +26,7 @@ class PropertyCalendar extends React.Component {
     }
 
     onSubmit(e) {
-        
+        if (this.props.currentUser) {
         e.preventDefault()
         let reservation = {
             property_id: this.props.property.id,
@@ -38,6 +38,10 @@ class PropertyCalendar extends React.Component {
         
         this.props.createReservation(reservation);
         this.props.history.push('/trips')
+    } else {
+        e.stopPropagation();
+        this.props.openModal('login')
+    }
 
     }
     onDayClick(value, e) {

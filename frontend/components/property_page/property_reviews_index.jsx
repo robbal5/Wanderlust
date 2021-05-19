@@ -3,6 +3,7 @@ import PropertyReviewsIndexItem from './property_reviews_index_item'
 class PropertyReviewsIndex extends React.Component {
     constructor(props) {
         super(props)
+        
     }
 
     componentDidUpdate(prevProps) {
