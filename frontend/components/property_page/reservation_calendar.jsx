@@ -25,29 +25,6 @@ class ReservationCalendar extends React.Component {
         })
         
     }
-    // handleDisable = (e) => {
-    //     
-    //     let reservations;
-    //     if (this.props.reservations) {
-    //         reservations = Object.values(this.props.reservations);
-    //     } else {
-    //         return false;
-    //     }
-    //     let disabled = false;
-    //     for (let i = 0; i < reservations.length; i++) {
-    //         let res = reservations[i];
-    //         const startResDate = new Date(res.startDate);
-    //         const endResDate = new Date(res.endDate);
-    //         if (startResDate <= e.date && endResDate >= e.date) {
-    //             disabled = true;
-    //             break;
-    //         }
-    //     }
-    //     if (e.date < new Date()) {
-    //         disabled = true;
-    //     }
-    //     return disabled;
-    // }
 
     handleSubmit(e) {
         if (this.props.currentUser) {
@@ -69,7 +46,32 @@ class ReservationCalendar extends React.Component {
 
     }
 
+    dateRange(d1, d2) {
+        let firstDate = new Date(d1);
+        let secondDate = new Date(d2);
+        let dates = [];
+        while (firstDate < secondDate) {
+            dates.push(firstDate)
+            nextDay = firstDate.getDate() + 1
+            midValue = firstDate.setDate(nextDay)
+            firstDate = new Date(midValue)
+        }
+        return dates; 
+    }
+
     render() {
+        debugger;
+            const disabledDates = [];
+            if (this.props.reservations){
+            Object.values(this.props.reservations).forEach (reservation => {
+                debugger;
+                let start = reservation.startDate;
+                let end = reservation.endDate;
+                disabledDates.concat(this.dateRange(start, end))
+            })
+        }  
+        
+            debugger;
             const initialState = (this.state.startDate == this.state.endDate)
             const currDate = new Date()
             const selectionRange = {
