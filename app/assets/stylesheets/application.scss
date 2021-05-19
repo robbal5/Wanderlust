@@ -552,6 +552,7 @@ html {
     flex-direction: column;
     height: 100%;
     width: 500px;
+    position: relative;
 
 }
 
@@ -592,10 +593,11 @@ html {
 
 .property-intro-price {
     text-align: right;
-    padding-top: 50px;
-    margin-right: 25px;
     font-weight: bold;
-    width: 100%;
+    width: 95%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
 
 }
 
@@ -972,6 +974,12 @@ html {
 
 .react-calendar {
     margin: auto;
+}
+
+.booking-confirmation {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
 }
 
 

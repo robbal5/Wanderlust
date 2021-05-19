@@ -119,7 +119,7 @@ class ReservationCalendar extends React.Component {
                 <label className='property-reservation-input-label'>
                     <input className='property-reservation-submit' type="submit" value='Book Today!' disabled={endDate==startDate ? true : false} />
                 </label>
-                {this.state.created ? <p>Amazing, we can't wait to see you!</p> : null }
+                {this.state.created ? <p className='booking-confirmation'>Your booking has been confirmed, we can't wait to see you!</p> : null }
             </form>
             <DateRange
                 ranges={[selectionRange]}

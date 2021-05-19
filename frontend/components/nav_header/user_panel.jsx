@@ -1,5 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router'
+import {Link} from 'react-router-dom'
 
 class UserPanel extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class UserPanel extends React.Component {
                 <div>
                     
                     <div className='user-panel-options'>
-                        <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
+                        <Link to="/"> <button className='user-panel-button' onClick={this.props.logout}>Logout</button></Link>
                         <button className='user-panel-button' onClick={this.getReservations}>Reservations</button>
                     </div>
                 </div>

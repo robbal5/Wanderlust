@@ -20,12 +20,18 @@ class Search extends React.Component {
     }
 
     handleSubmit(e) {
-    
+        debugger;
         e.preventDefault();
         let search = this.state.searchValue
         
         search  = search.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
-        let city = Object.values(this.props.cities).filter(option => option.name == search)[0]
+        let cities = Object.values(this.props.cities).filter(city => city.name.startsWith(search))
+        // let city = Object.values(this.props.cities).filter(option => option.name == search)[0]
+        let city = null
+        if (cities.length > 0){
+            city = cities[0]
+            search = city.name
+        }
         if (!city) {
             this.props.updateFilter('cityFilter', search)
         } else {
