@@ -41,7 +41,7 @@ class PropertyCalendar extends React.Component {
     } else {
         e.stopPropagation();
         this.props.openModal('login')
-    }
+        }
 
     }
     onDayClick(value, e) {
@@ -108,7 +108,7 @@ class PropertyCalendar extends React.Component {
                         <input disabled type="text" value={startDate ? `${startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
                     </label>
                     <label className='property-reservation-input-label'>Check-out date:
-                        <input disabled type="text" value={endDate ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
+                        {/* <input disabled type="text" value={endDate ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} /> */}
                     </label>
                     <input className='property-reservation-submit' type="submit" value='Create Reservation!' disabled = {endDate ? false : true} />
                 </form>

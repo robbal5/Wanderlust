@@ -14,6 +14,10 @@
  *= require_self
  */
 
+
+ //SOURCE: https://www.npmjs.com/package/react-date-range
+ @import 'react-date-range/dist/styles.css'; // main style file
+@import 'react-date-range/dist/theme/default.css'; // theme css file
  //SOURCE: https://github.com/wojtekmaj/react-calendar
  @import 'react-calendar/dist/Calendar.css';
 //
@@ -639,6 +643,7 @@ html {
     display: flex;
     justify-content: space-between;
     height: 500px;
+    
 }
 
 .main-property-photo {
@@ -669,6 +674,7 @@ html {
 .property-mains-header {
     font-size: 24px;
     font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .property-room-details {
@@ -694,6 +700,7 @@ html {
     margin-bottom: 20px;
     border-bottom: 1px lightgray solid;
     padding-bottom: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .property-amenities-list {
@@ -727,7 +734,6 @@ html {
     padding: 5px 10px 5px 10px;
     border: gray solid 1px;
     background-color: white;
-    margin-right: 50px;
 
     &:hover {
         background-color: $section_color;
@@ -750,6 +756,7 @@ html {
     font-weight: 700;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .property-reviews-list {
@@ -882,22 +889,25 @@ html {
 
 .property-details-section {
     display: flex;
-    align-items: flex-start;
+    align-items: space-between;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .property-mains-and-amenities {
-    width: 50%;
+    width: 45%;
 }
 //Property calendar
 
-.property-reservation-container {
-    width: 50%;
+.reservation-container {
+    width: 45%;
     display: inline-block;
 
 } 
 .property-reservation-input-label {
-    margin-left: 10%;
+    width: 100%;
     padding: 5px 0px 5px 0px;
+    position: relative;
 }
 
 .property-reservation-form {
@@ -914,8 +924,10 @@ html {
     border: gray solid 1px;
     background-color: white;
     min-width: 60px;
-    text-align: center;
-    margin-left: 50%;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    // margin-left: 50%;
 
     &:hover {
         background-color: $section_color;
@@ -1005,6 +1017,7 @@ html {
     }
 
     h1 {
+        padding-top: 10px;
         font-size: 20px;
         text-align: center;
     }
@@ -1018,5 +1031,20 @@ html {
         height: 200px;
         margin: auto;
         border-radius: 20px;
+        max-width: 300px;
     }
+}
+
+.rdrCalendarWrapper {
+    padding-left: 5%;
+    width: 95%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.create-reservation-header {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
 }
