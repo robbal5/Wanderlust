@@ -36,7 +36,7 @@ class Trips extends React.Component {
     render() {
         
        
-
+        
         let upcoming_class = this.state.view == 'upcoming' ? 'selected' : 'not-selected';
         let past_class = this.state.view == 'past' ? 'selected' : 'not-selected';
         let filtered_reservations = this.state.view == 'upcoming' ? Object.values(this.props.reservations).filter(res => new Date(res.endDate) > new Date()) :
