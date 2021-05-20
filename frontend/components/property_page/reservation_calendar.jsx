@@ -20,6 +20,7 @@ class ReservationCalendar extends React.Component {
         this.changeGuest = this.changeGuest.bind(this);
         this.bookingMenu = this.bookingMenu.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
+        this.handleBackClick = this.handleBackClick.bind(this);
     }
 
     handleSelect(e) {
@@ -40,38 +41,44 @@ class ReservationCalendar extends React.Component {
         })
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
+    handleBackClick(e) {
         this.setState({
-            booking: true
+            booking: false
         })
     }
 
-    handleConfirm(e) {
+    handleSubmit(e) {
         if (this.props.currentUser) {
             e.preventDefault()
-            let reservation = {
-                property_id: this.props.property.id,
-                user_id: this.props.currentUser,
-                start_date: this.state.startDate,
-                end_date: this.state.endDate,
-                guests: this.state.guests
-            }
-
-            this.props.createReservation(reservation);
-            // this.props.history.push('/trips')
-            const currDate = new Date()
             this.setState({
-                startDate: currDate,
-                endDate: currDate,
-                created: true,
-                guests: 1
+                booking: true
             })
         } else {
             e.stopPropagation();
             this.props.openModal('login')
         }
+    }
 
+    handleConfirm(e) {
+       
+        e.preventDefault()
+        let reservation = {
+            property_id: this.props.property.id,
+            user_id: this.props.currentUser,
+            start_date: this.state.startDate,
+            end_date: this.state.endDate,
+            guests: this.state.guests
+        }
+
+        this.props.createReservation(reservation);
+        this.props.history.push('/trips')
+        const currDate = new Date()
+        this.setState({
+            startDate: currDate,
+            endDate: currDate,
+            created: true,
+            guests: 1
+        })
     }
 
     dateRange(d1, d2) {
@@ -96,31 +103,39 @@ class ReservationCalendar extends React.Component {
         if (this.state.booking) {
             return (
                 <div className='booking-menu'>
-                    <p>${this.props.property.price} / night</p>
-                    <div className='booking-details'>
-                        <div className='booking-dates'>
-                            <div className='booking-check-in-date'>
-                                <label>Check-in 
-                                    <p>{startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()}</p>
-                                </label>
+                    <div className='booking-menu-top'>
+                        <p className='booking-top-price'>${this.props.property.price} / night</p>
+                        <p onClick={this.handleBackClick} className='booking-menu-back-button'>Back</p>
+                    </div>
+                    <div>
+                        <div className='booking-details'>
+                            <div className='booking-dates'>
+                                    <div className='booking-date'>
+                                        <label>CHECK-IN</label>
+                                        <p>{startDate.getMonth()}/{startDate.getDate()}/{startDate.getFullYear()}</p> 
+                                    </div>
+                                    <div className='booking-date'>
+                                        <label >CHECK-OUT</label>
+                                        <p>{endDate.getMonth()}/{endDate.getDate()}/{endDate.getFullYear()}</p>
+                                       
+                                    </div>
                             </div>
-                            <div className='booking-check-out-date'>
-                                <label>Check-out
-                                    <p>{endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()}</p>
-                                </label>
+                            <div className='booking-guests'>
+                                <label>GUESTS</label>
+                                <p>{guests}{guests > 1 ? ' guests' : ' guest'}</p>
+                                
                             </div>
-                        </div>
-                        <div className='booking-guests'>
-                            <label>Guests
-                                <p>{guests} + {guests > 1 ? ' guests' : ' guest'}</p>
-                            </label>
-                        </div>
+                            </div>
 
                         <button onClick={this.handleConfirm} className='booking-menu-reserve-button'>Reserve</button>
                         <div className='booking-pricing'>
                             <div>
                                 <p>${this.props.property.price} x {duration} nights</p>
                                 <p>${parseInt(this.props.property.price)*parseInt(duration)}</p>
+                            </div>
+                            <div>
+                                <p>$5 x {guests}{guests > 1 ? ' guests' : ' guest'}</p>
+                                <p>${guests * 5}</p>
                             </div>
                             <div>
                                 <p>Cleaning fee</p>
@@ -132,7 +147,7 @@ class ReservationCalendar extends React.Component {
                             </div>
                             <div className='pricing-total'>
                                 <p>Total</p>
-                                <p>${10 + 20 + parseInt(this.props.property.price)*parseInt(duration)}</p>
+                                <p>${10 + 20 + parseInt(this.props.property.price)*parseInt(duration) + parseInt(guests)*5}</p>
                             </div>
                         </div>
                     </div>
@@ -175,21 +190,21 @@ class ReservationCalendar extends React.Component {
             <div className='reservation-container'>
                 <h1 className='create-reservation-header'>Book a stay today!</h1>
                 <form onSubmit={this.handleSubmit} className='property-reservation-form'>
-                    <label className='property-reservation-input-label'>Number of guests:
-                            <select onChange={this.changeGuest} className='reservation-number-of-guests-select' value={this.state.guests}>
+                    <label className='property-reservation-input-label'>Check-in date:
+                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
+                    </label>
+                    <label className='property-reservation-input-label'>Check-out date:
+                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
+                    </label>
+                    <label className='property-reservation-input-label'>Duration: 
+                        <input className='property-reservation-input' disabled type="text" value={this.state.duration + ' Days'} />
+                    </label>
+                    <label className='property-reservation-input-label'>Number of guests:  
+                            <select className='property-reservation-input' onChange={this.changeGuest} className='reservation-number-of-guests-select' value={this.state.guests}>
                             {[1, 2, 3, 4, 5, 6, 7, 8].map(i => {
                                 return <option key={i} value={i}>{i}</option>
                             })}
                         </select>
-                    </label>
-                    <label className='property-reservation-input-label'>Check-in date:
-                            <input disabled type="text" value={!initialState ? `${startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
-                    </label>
-                    <label className='property-reservation-input-label'>Check-out date:
-                            <input disabled type="text" value={!initialState ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
-                    </label>
-                    <label className='property-reservation-input-label'>Duration: 
-                        <p>{this.state.duration} Days</p>
                     </label>
                     <label className='property-reservation-input-label'>
                         <input className='property-reservation-submit' type="submit" value='Book Today!' disabled={endDate==startDate ? true : false} />
