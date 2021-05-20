@@ -32,7 +32,7 @@ class ReservationCalendar extends React.Component {
             endDate: endDate,
             duration: dayDiff
         })
-        debugger;
+        
     }
 
     changeGuest(e) {
@@ -112,11 +112,11 @@ class ReservationCalendar extends React.Component {
                             <div className='booking-dates'>
                                     <div className='booking-date'>
                                         <label>CHECK-IN</label>
-                                        <p>{startDate.getMonth()}/{startDate.getDate()}/{startDate.getFullYear()}</p> 
+                                        <p>{startDate.getMonth() + 1}/{startDate.getDate()}/{startDate.getFullYear()}</p> 
                                     </div>
                                     <div className='booking-date'>
                                         <label >CHECK-OUT</label>
-                                        <p>{endDate.getMonth()}/{endDate.getDate()}/{endDate.getFullYear()}</p>
+                                        <p>{endDate.getMonth() + 1}/{endDate.getDate()}/{endDate.getFullYear()}</p>
                                        
                                     </div>
                             </div>
@@ -191,13 +191,13 @@ class ReservationCalendar extends React.Component {
                 <h1 className='create-reservation-header'>Book a stay today!</h1>
                 <form onSubmit={this.handleSubmit} className='property-reservation-form'>
                     <label className='property-reservation-input-label'>Check-in date:
-                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${startDate.getMonth()}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
+                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
                     </label>
                     <label className='property-reservation-input-label'>Check-out date:
-                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${endDate.getMonth()}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
+                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
                     </label>
                     <label className='property-reservation-input-label'>Duration: 
-                        <input className='property-reservation-input' disabled type="text" value={this.state.duration + ' Days'} />
+                        <input className='property-reservation-input' disabled type="text" value={this.state.duration + ' Nights'} />
                     </label>
                     <label className='property-reservation-input-label'>Number of guests:  
                             <select className='property-reservation-input' onChange={this.changeGuest} className='reservation-number-of-guests-select' value={this.state.guests}>

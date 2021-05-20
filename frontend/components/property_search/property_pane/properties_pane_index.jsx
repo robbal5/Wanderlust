@@ -7,11 +7,11 @@ class PropertiesPaneIndex extends React.Component {
     
 
     render() {
-        
+        debugger;
         const properties = this.props.properties
         const addresses = this.props.addresses
 
-        if (Object.values(addresses).length < 1) {
+        if (Object.values(addresses).length < Object.values(properties).length) {
             return (
                 <h1>LOADING YOUR DREAM HOMES :)</h1>
             )

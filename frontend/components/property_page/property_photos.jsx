@@ -11,7 +11,7 @@ class PropertyPhotos extends React.Component {
         <div className='property-photos-container'>
             <img className='main-property-photo' src={this.props.photoUrls[0]} alt="" />
             <div className='property-side-photos'>
-                    {photoUrls.slice(1).map((photo, idx) => <img key={idx} className='side-property-photo' src={photo} alt="" /> )}
+                    {photoUrls.slice(1,5).map((photo, idx) => <img key={idx} className='side-property-photo' src={photo} alt="" /> )}
             </div>
         </div>
         )
