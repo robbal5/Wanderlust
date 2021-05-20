@@ -42,6 +42,16 @@ amenities = ['Appliances', 'Iron', 'Dishwasher', 'Utilities',
 # newark = City.create(name: 'Newark', state_id: new_york.id)
 # charlotte = City.create(name: 'Charlotte', state_id: illinois.id)
 # middleton = City.create(name: 'Middleton', state_id: florida.id)
+# columbus = City.create(name: 'Columbus', state_id: florida.id)
+# colorado_springs = City.create(name: 'Colorado Springs', state_id: florida.id)
+# cleveland = City.create(name: 'Cleveland', state_id: florida.id)
+# newark = City.create(name: 'Newark', state_id: new_york.id)
+# nashville = City.create(name: 'Nashville', state_id: florida.id)
+# madison = City.create(name: 'Madison', state_id: florida.id)
+# mexico_city = City.create(name: 'Mexico City', state_id: florida.id)
+# seattle = City.create(name: 'Seattle', state_id: california.id)
+# sacramento = City.create(name: 'Sacramento', state_id: california.id)
+
 
 #USERS
 # users = [];

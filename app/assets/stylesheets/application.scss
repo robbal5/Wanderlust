@@ -539,7 +539,7 @@ div.user-panel-options{
 // }
 
 .properties-search {
-    padding-top: 75px;
+    padding-top: 85px;
     display: flex;
     height: 100%;
     
@@ -937,7 +937,8 @@ div.user-panel-options{
 
 .map {
     width: 60%;
-    height: 95vh;
+    height: 85vh;
+    padding-top: 85px;
 }
 
 .marker-info {
@@ -949,6 +950,7 @@ div.user-panel-options{
     box-sizing: border-box;
     align-items: center;
     padding-left: 5px;
+    position: relative;
 }
 
 .marker-header {
@@ -959,16 +961,24 @@ div.user-panel-options{
 }
 
 .marker-baseline {
+    position:absolute;
+    bottom: 0;
     font-size: 14px;
-    width: 100%;
+    width: 95%;
     color: black;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     p {
-        width: 40%;
+        width: 50%;
         
+    }
+    p:first-child {
+        font-weight: bold;
+    }
+    p:last-child {
+        text-align: right;
     }
 }
 
