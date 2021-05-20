@@ -14,7 +14,7 @@ class PropertyReviewsIndexItem extends React.Component {
         const month = months[parseInt(review.createdAt.split('-')[1])-1]
         const rating = []
         for (let i = 0; i<review.rating; i++) {
-            rating.push(i)
+            rating.push(i) 
         }
         return (
             <li className='property-review'>

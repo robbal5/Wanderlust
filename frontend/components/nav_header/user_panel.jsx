@@ -44,7 +44,7 @@ class UserPanel extends React.Component {
                 <div>
                     
                     <div className='user-panel-options'>
-                        <Link to="/"> <button className='user-panel-button' onClick={this.props.logout}>Logout</button></Link>
+                         <button className='user-panel-button' onClick={this.props.logout}>Logout</button>
                         <button className='user-panel-button' onClick={this.getReservations}>Reservations</button>
                     </div>
                 </div>
@@ -63,12 +63,14 @@ class UserPanel extends React.Component {
         return (
             <div className='nav-utility'>
                 
-                <p className='user-panel-name'>{this.props.currentUser ? `Good to see you, ${this.props.currentUser.name.split(' ')[0]}` : ''}</p>
+                {/* <p className='user-panel-name'>{this.props.currentUser ? `Good to see you, ${this.props.currentUser.name.split(' ')[0]}` : ''}</p> */}
                 <div className='user-panel'>
-                    <button className='fas fa-user-alt' onClick={this.showDropdown}></button>
-                    {this.state.showDropdown ? (this.props.currentUser ? signedIn() : noUser()) : null}              
-                    
+                    <a href="https://www.linkedin.com/in/robert-s-balistreri/"><i className="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href="https://github.com/robbal5/Wanderlust"><i className="fab fa-github fa-2x"></i></a>
+                    <button className={this.props.currentUser ? 'fas fa-user-alt colored' : 'fas fa-user-alt'} onClick={this.showDropdown}></button>
+            
                 </div>
+                {this.state.showDropdown ? (this.props.currentUser ? signedIn() : noUser()) : null}
             </div>
         )
     }

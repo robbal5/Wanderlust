@@ -7,7 +7,7 @@ class PropertiesPaneIndex extends React.Component {
     
 
     render() {
-        debugger;
+        
         const properties = this.props.properties
         const addresses = this.props.addresses
 
