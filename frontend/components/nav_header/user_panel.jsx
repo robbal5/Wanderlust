@@ -15,7 +15,7 @@ class UserPanel extends React.Component {
 
     showDropdown(e) {
         
-        e.preventDefault;
+        e.preventDefault();
         this.setState({
             showDropdown: true
         }, document.addEventListener('click', this.closeDropdown) )
@@ -23,7 +23,7 @@ class UserPanel extends React.Component {
     }
 
     closeDropdown(e) {
-        e.preventDefault;
+        e.preventDefault();
         this.setState({
             showDropdown: false
         }, () => {

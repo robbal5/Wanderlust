@@ -26,7 +26,7 @@ class PropertiesPaneHeader extends React.Component {
                 cityDropdown: false,
                 placeDropdown: false,
             })
-            e.preventDefault;
+            e.preventDefault();
             this.setState({[field]: true},
             document.addEventListener('click', this.closeClick(field))
             )
@@ -36,7 +36,7 @@ class PropertiesPaneHeader extends React.Component {
 
     closeClick(field) {
         return (e) => {
-            e.preventDefault;
+            e.preventDefault();
             this.setState({
                 [field]: false
             }, () => {
