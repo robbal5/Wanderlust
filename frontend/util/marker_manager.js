@@ -20,13 +20,17 @@ class MarkerManager {
         const marker = new google.maps.Marker({
             position,
             propertyId: newProp.id,
-            map: this.map
+            map: this.map,
+            
         })
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
         marker.addListener('mouseover', () => {
             infoWindow.open(this.map, marker)
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
         })
         marker.addListener('mouseout', () => {
             infoWindow.close(this.map, marker)
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
         })
         marker.addListener('click', (e) => {
             this.handleClick(marker.propertyId)

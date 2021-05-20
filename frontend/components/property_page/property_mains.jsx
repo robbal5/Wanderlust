@@ -16,9 +16,9 @@ class PropertyMains extends React.Component {
                 </p>
                 <p className='property-room-details'>
                     {'  ' + numberOfGuests} {numberOfGuests > 1 ? ' guests' : ' guest'}
-                    {' - ' + numberOfBedrooms} {numberOfBedrooms > 1 ? ' bedrooms' : ' bedroom'}
-                    {' - ' + numberOfBeds} {numberOfBeds > 1 ? ' beds' : ' bed'}
-                    {' - ' + numberOfBathrooms} {numberOfBathrooms > 1 ? ' bathrooms' : ' bathroom'}
+                    {' | ' + numberOfBedrooms} {numberOfBedrooms > 1 ? ' bedrooms' : ' bedroom'}
+                    {' | ' + numberOfBeds} {numberOfBeds > 1 ? ' beds' : ' bed'}
+                    {' | ' + numberOfBathrooms} {numberOfBathrooms > 1 ? ' bathrooms' : ' bathroom'}
                 </p>
                 <p className='property-description'>{currentProperty.property.description}</p>
 
