@@ -799,7 +799,7 @@ div.user-panel-options{
 .property-reviews-header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-end;
     border-bottom: 1px lightgray solid;
 }
 
@@ -809,6 +809,7 @@ div.user-panel-options{
     padding: 5px 10px 5px 10px;
     border: gray solid 1px;
     background-color: white;
+    margin-bottom: 10px;
 
     &:hover {
         background-color: $section_color;
@@ -821,6 +822,8 @@ div.user-panel-options{
 
 .review-stars {
     padding-bottom: 10px;
+    color: orange;
+    text-shadow: 0 0 1px #000;
     i {
         padding: 2px;
         color: orange;
