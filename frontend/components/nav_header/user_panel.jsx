@@ -53,10 +53,12 @@ class UserPanel extends React.Component {
 
         const noUser = () => {
             return (
-                <nav className='user-panel-options'>
-                    <button className='user-panel-button' onClick={() => this.props.openModal('login')}>Log in</button>
-                    <button className='user-panel-button' onClick={() => this.props.openModal('signup')}>Sign up</button>
-                </nav>
+                <div>
+                    <div className='user-panel-options'>
+                        <button className='user-panel-button' onClick={() => this.props.openModal('login')}>Log in</button>
+                        <button className='user-panel-button' onClick={() => this.props.openModal('signup')}>Sign up</button>
+                    </div>
+                </div>
             )
         }
         
@@ -65,8 +67,8 @@ class UserPanel extends React.Component {
                 
                 {/* <p className='user-panel-name'>{this.props.currentUser ? `Good to see you, ${this.props.currentUser.name.split(' ')[0]}` : ''}</p> */}
                 <div className='user-panel'>
-                    <a href="https://www.linkedin.com/in/robert-s-balistreri/"><i className="fab fa-linkedin-in fa-2x"></i></a>
-                    <a href="https://github.com/robbal5/Wanderlust"><i className="fab fa-github fa-2x"></i></a>
+                    <a target='_blank' href="https://www.linkedin.com/in/robert-s-balistreri/"><i className="fab fa-linkedin-in fa-2x"></i></a>
+                    <a target='_blank' href="https://github.com/robbal5/Wanderlust"><i className="fab fa-github fa-2x"></i></a>
                     <button className={this.props.currentUser ? 'fas fa-user-alt colored' : 'fas fa-user-alt'} onClick={this.showDropdown}></button>
             
                 </div>
