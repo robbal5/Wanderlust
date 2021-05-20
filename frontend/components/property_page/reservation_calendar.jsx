@@ -54,6 +54,7 @@ class ReservationCalendar extends React.Component {
                 booking: true
             })
         } else {
+            e.preventDefault();
             e.stopPropagation();
             this.props.openModal('login')
         }
