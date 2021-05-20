@@ -9,171 +9,172 @@
 require 'open-uri'
 require 'faker'
 
-# User.delete_all #WORKS
-# Property.delete_all #WORKS
-# Amenity.delete_all #WORKS
-# PropertyAmenity.delete_all #WORKS
-# Review.delete_all #WORKS
-# Reservation.delete_all
-# Address.delete_all #WORKS
-# City.delete_all #WORKS
-# State.delete_all #WORKS
+User.delete_all #WORKS
+Property.delete_all #WORKS
+Amenity.delete_all #WORKS
+PropertyAmenity.delete_all #WORKS
+Review.delete_all #WORKS
+Reservation.delete_all
+Address.delete_all #WORKS
+City.delete_all #WORKS
+State.delete_all #WORKS
  
 
-amenities = ['Appliances', 'Iron', 'Dishwasher', 'Utilities', 
+amenities = ['Appliances', 'Iron', 'Dishwasher', 'Microwave', 
 'Free parking', 'Kitchen', 'Wifi', 'Fireplace', 
 'Hangers', 'TV', 'Cable', 'Washer', 'Dryer', 
 'Iron', 'Air Conditioning', 'Smoke Alarm', 
-'Heating', 'Cookware', 'Patio', 'Rooftop',
+'Heating', 'Cookware', 'Patio', 'Rooftop', 'Pool', 'Outdoor grill', 
+'Sauna', 'Master bathroom', 'Ping pong table', 'DirecTV', 'Hot Tub', 'jacuzzi',
 'Smoke free', 'Deep fryer', 'Library']
 
-#States
-# florida = State.create(name: 'Florida')
-# illinois = State.create(name: 'Illinois')
-# new_york = State.create(name: 'New York')
-# california = State.create(name: 'California')
+# States
+florida = State.create(name: 'Florida')
+illinois = State.create(name: 'Illinois')
+new_york = State.create(name: 'New York')
+california = State.create(name: 'California')
 
 #Cities
-# chicago = City.create(name: 'Chicago', state_id: illinois.id, lat: 41.88325, lng: -87.71274)
-# new_york_city = City.create(name: 'New York', state_id: new_york.id, lat: 40.742556, lng: -73.99018)
-# san_francisco = City.create(name: 'San Francisco', state_id: california.id, lat: 37.73546, lng: -122.44649)
-# san_diego = City.create(name: 'San Diego', state_id: california.id)
-# miami = City.create(name: 'Miami', state_id: florida.id, lat: 25.78548, lng: -80.2648)
-# newark = City.create(name: 'Newark', state_id: new_york.id)
-# charlotte = City.create(name: 'Charlotte', state_id: illinois.id)
-# middleton = City.create(name: 'Middleton', state_id: florida.id)
-# columbus = City.create(name: 'Columbus', state_id: florida.id)
-# colorado_springs = City.create(name: 'Colorado Springs', state_id: florida.id)
-# cleveland = City.create(name: 'Cleveland', state_id: florida.id)
-# newark = City.create(name: 'Newark', state_id: new_york.id)
-# nashville = City.create(name: 'Nashville', state_id: florida.id)
-# madison = City.create(name: 'Madison', state_id: florida.id)
-# mexico_city = City.create(name: 'Mexico City', state_id: florida.id)
-# seattle = City.create(name: 'Seattle', state_id: california.id)
-# sacramento = City.create(name: 'Sacramento', state_id: california.id)
+chicago = City.create(name: 'Chicago', state_id: illinois.id, lat: 41.88325, lng: -87.71274)
+new_york_city = City.create(name: 'New York', state_id: new_york.id, lat: 40.742556, lng: -73.99018)
+san_francisco = City.create(name: 'San Francisco', state_id: california.id, lat: 37.73546, lng: -122.44649)
+san_diego = City.create(name: 'San Diego', state_id: california.id)
+miami = City.create(name: 'Miami', state_id: florida.id, lat: 25.78548, lng: -80.2648)
+newark = City.create(name: 'Newark', state_id: new_york.id)
+charlotte = City.create(name: 'Charlotte', state_id: illinois.id)
+middleton = City.create(name: 'Middleton', state_id: florida.id)
+columbus = City.create(name: 'Columbus', state_id: florida.id)
+colorado_springs = City.create(name: 'Colorado Springs', state_id: florida.id)
+cleveland = City.create(name: 'Cleveland', state_id: florida.id)
+newark = City.create(name: 'Newark', state_id: new_york.id)
+nashville = City.create(name: 'Nashville', state_id: florida.id)
+madison = City.create(name: 'Madison', state_id: florida.id)
+mexico_city = City.create(name: 'Mexico City', state_id: florida.id)
+seattle = City.create(name: 'Seattle', state_id: california.id)
+sacramento = City.create(name: 'Sacramento', state_id: california.id)
 
 
 #USERS
-# users = [];
-# 20.times do |i|
-#     user = User.new
-#     user.email = Faker::Internet.email
-#     user.password = 'password'
-#     user.name = Faker::Name.name
-#     user.phone_number = 123456789
-#     user.date_of_birth = DateTime.now()
-#     users << user
-# end
-# users.each do |person|
-#     person.save
-# end
+users = [];
+20.times do |i|
+    user = User.new
+    user.email = Faker::Internet.email
+    user.password = 'password'
+    user.name = Faker::Name.name
+    user.phone_number = 123456789
+    user.date_of_birth = DateTime.now()
+    users << user
+end
+users.each do |person|
+    person.save
+end
 
 #Amenities
 
-# amenities.each do |amenity|
-#     Amenity.create({name: amenity})
-# end
+amenities.each do |amenity|
+    Amenity.create({name: amenity})
+end
 
 #Addresses
 addresses = []
 
 #Chicago
-# 5.times do
-#     address = Address.new
+6.times do
+    address = Address.new
     
-#     address.city_id = chicago.id
-#     address.street_address = Faker::Address.street_address
-#     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/20
-#     address.lat = 41.88325 + (rand_dec * [1,-1].sample)
-#     address.lng = -87.71274 + (rand_dec * [1,-1].sample)
-#     addresses << address
-# end
+    address.city_id = chicago.id
+    address.street_address = Faker::Address.street_address
+    address.zip_code = Faker::Address.zip_code
+    rand_dec = rand/20
+    address.lat = 41.88325 + (rand_dec * [1,-1].sample)
+    address.lng = -87.71274 + (rand_dec * [1,-1].sample)
+    addresses << address
+end
 #San Francisco
-# 5.times do
-#     address = Address.new
-#     address.city_id = san_francisco.id
-#     address.street_address = Faker::Address.street_address
-#     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/20
-#     address.lat = 37.73546 + (rand_dec * [1,-1].sample)
-#     address.lng = -122.44649 + (rand_dec * [1,-1].sample)
-#     addresses << address
-# end
+6.times do
+    address = Address.new
+    address.city_id = san_francisco.id
+    address.street_address = Faker::Address.street_address
+    address.zip_code = Faker::Address.zip_code
+    rand_dec = rand/20
+    address.lat = 37.73546 + (rand_dec * [1,-1].sample)
+    address.lng = -122.44649 + (rand_dec * [1,-1].sample)
+    addresses << address
+end
 
 #Miami
-# 5.times do
-#     address = Address.new
-#     address.city_id = miami.id
-#     address.street_address = Faker::Address.street_address
-#     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/20
-#     address.lat = 25.78548 + (rand_dec * [1,-1].sample)
-#     address.lng = -80.2648 + (rand_dec * [1,-1].sample)
-#     addresses << address
-# end
+6.times do
+    address = Address.new
+    address.city_id = miami.id
+    address.street_address = Faker::Address.street_address
+    address.zip_code = Faker::Address.zip_code
+    rand_dec = rand/20
+    address.lat = 25.78548 + (rand_dec * [1,-1].sample)
+    address.lng = -80.2648 + (rand_dec * [1,-1].sample)
+    addresses << address
+end
 
 #New York
-# 5.times do
-#     address = Address.new
-#     address.city_id = new_york_city.id
-#     address.street_address = Faker::Address.street_address
-#     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/20
-#     address.lat = 40.742556 + (rand_dec * [1,-1].sample)
-#     address.lng = -73.99018 + (rand_dec * [1,-1].sample)
-#     addresses << address
-# end
+6.times do
+    address = Address.new
+    address.city_id = new_york_city.id
+    address.street_address = Faker::Address.street_address
+    address.zip_code = Faker::Address.zip_code
+    rand_dec = rand/20
+    address.lat = 40.742556 + (rand_dec * [1,-1].sample)
+    address.lng = -73.99018 + (rand_dec * [1,-1].sample)
+    addresses << address
+end
 
-# addresses.each do |address|
-#     address.save
-# end
+addresses.each do |address|
+    address.save
+end
 
 #Properties
-# address_ids = Address.pluck(:id)
-# user_ids = User.pluck(:id)
-# adjectives = ['Beautiful', 'Stunning', 'Gorgeous', 'Lovely', 'Spacious', 'City-center', 'Lively']
-# places = ['Home', 'Place', 'Spot', 'Destination', 'House', 'Walk-up', 'Apartment', 'Condo', 'Condominium', 'Oasis']
-# properties = []
-# numbers =  (1..5).to_a
-# address_ids.each do |idx|
-#     property = Property.new
-#     property.address_id = idx
-#     property.user_id = user_ids.sample
-#     property.name = adjectives.sample + ' ' + places.sample + ' in ' + Faker::Address.community
-#     property.number_of_guests = numbers.sample * 2
-#     property.number_of_bedrooms = numbers.sample
-#     property.number_of_beds = numbers.sample
-#     property.number_of_bathrooms = numbers.sample
-#     property.type_of_place = ['Entire place', 'Hotel room', 'Private room'].sample
-#     property.enhanced_clean = [true, false].sample
-#     property.self_check_in = [true, false].sample
-#     property.price = (rand * 200).floor
-#     properties << property
-# end
+address_ids = Address.pluck(:id)
+user_ids = User.pluck(:id)
+adjectives = ['Beautiful', 'Stunning', 'Gorgeous', 'Lovely', 'Spacious', 'City-center', 'Lively', 'Spacious', 'Quaint']
+places = ['Home', 'Place', 'Spot', 'Destination', 'House', 'Walk-up', 'Apartment', 'Condo', 'Condominium', 'Oasis']
+properties = []
+numbers =  (1..5).to_a
+address_ids.each do |idx|
+    property = Property.new
+    property.address_id = idx
+    property.user_id = user_ids.sample
+    property.name = adjectives.sample + ' ' + places.sample + ' in ' + Faker::Address.community
+    property.number_of_guests = numbers.sample * 2
+    property.number_of_bedrooms = numbers.sample
+    property.number_of_beds = numbers.sample
+    property.number_of_bathrooms = numbers.sample
+    property.type_of_place = ['Entire place', 'Hotel room', 'Private room'].sample
+    property.enhanced_clean = [true, false].sample
+    property.self_check_in = [true, false].sample
+    property.price = (rand * 200).floor
+    properties << property
+end
 
-# properties.each do |prop| 
-#    prop.save
-# end 
+properties.each do |prop| 
+   prop.save
+end 
 
 property_ids = Property.pluck(:id)
 amenity_ids = Amenity.pluck(:id)
 
-# description = 'Great top floor place along a bustline part of the neighborhood. Lovely bedrooms and living spaces, along with kitchen and accompanying amenities. Coin operated laundry with access to the rooftop. Warm home to visit for all.
-# Very fun part of town with exciting bars and well known restaurants. Great neighborhood with plenty to keep you busy during your stay.
-# Quick walk to the public transit gets you Downtown or out to the airport.'
+description = 'Great top floor place along a bus line part of the neighborhood. Lovely bedrooms and living spaces, along with kitchen and accompanying amenities. Coin operated laundry with access to the rooftop. Warm home to visit for all.
+Very fun part of town with exciting bars and well known restaurants. Great neighborhood with plenty to keep you busy during your stay.
+Quick walk to the public transit gets you Downtown or out to the airport.'
 
-# Property.all.each do |prop|
-#     prop.description = description
-#     prop.save
-# end
+Property.all.each do |prop|
+    prop.description = description
+    prop.save
+end
  
 # PropAmenities
-# property_ids.each do |p_id|
-#     10.times do
-#         PropertyAmenity.create({property_id:p_id, amenity_id: amenity_ids.sample})
-#     end
-# end
+property_ids.each do |p_id|
+    10.times do
+        PropertyAmenity.create({property_id:p_id, amenity_id: amenity_ids.sample})
+    end
+end
 
 sentences = ['Loved our stay! ', 'Very clean and well kept. ', 'We wanted to stay forever. ', 'Great access to the surrounding areas. ',
             'Very spacious. ', 'Great stay with the family. ', 'Would highly recommend to others. ', 'Great value. ', 
@@ -181,22 +182,22 @@ sentences = ['Loved our stay! ', 'Very clean and well kept. ', 'We wanted to sta
             'Very comfortable living space. ', 'More than we bargained for. ', 'Amazing place for all ages. ']
 
 
-# reviews = []
-# property_ids.each do |p_id|
-#     5.times do
-#         review = Review.new
-#         review.property_id = p_id
-#         review.user_id = User.pluck(:id).sample
-#         review.review = sentences.sample + sentences.sample + sentences.sample
-#         review.rating = [4,5].sample
-#         reviews << review
-#     end
-# end
+reviews = []
+property_ids.each do |p_id|
+    5.times do
+        review = Review.new
+        review.property_id = p_id
+        review.user_id = User.pluck(:id).sample
+        review.review = sentences.sample + sentences.sample + sentences.sample
+        review.rating = [4,5].sample
+        reviews << review
+    end
+end
 
 
-# reviews.each do |rev|
-#     rev.save
-# end
+reviews.each do |rev|
+    rev.save
+end
 
 # # reservations
 # months = (1..12).to_a
@@ -241,21 +242,21 @@ photo_urls = [
 
 
 #PHOTOS
-# Property.all.each do |property|
-#     5.times do |i|
-#         file = URI.open(photo_urls.sample)
-#         property.photos.attach(io: file, filename: "photo_#{i}.jpg")
-#     end
-# end
+Property.all.each do |property|
+    5.times do |i|
+        file = URI.open(photo_urls.sample)
+        property.photos.attach(io: file, filename: "photo_#{i}.jpg")
+    end
+end
 
 
 
-# User.create(email: 'DemoUser@gmail.com', password: 'Demouser', name: 'Demo User')
+User.create(email: 'DemoUser@gmail.com', password: 'Demouser', name: 'Demo User')
 
-# demo = User.find_by(name: 'Demo User')
+demo = User.find_by(name: 'Demo User')
 
-# Reservation.create(user_id: demo.id, property_id: Property.first.id, start_date: Time.new(2021,2,3).to_date, end_date: Time.new(2021,2,6).to_date)
-# Reservation.create(user_id: demo.id, property_id: Property.second.id, start_date: Time.new(2021,3,4).to_date, end_date: Time.new(2021,3,7).to_date)
-# Reservation.create(user_id: demo.id, property_id: Property.third.id, start_date: Time.new(2021,4,5).to_date, end_date: Time.new(2021,4,7).to_date)
-# Reservation.create(user_id: demo.id, property_id: Property.fourth.id, start_date: Time.new(2021,5,8).to_date, end_date: Time.new(2021,5,10).to_date)
+Reservation.create(user_id: demo.id, property_id: Property.first.id, start_date: Time.new(2021,2,3).to_date, end_date: Time.new(2021,2,6).to_date)
+Reservation.create(user_id: demo.id, property_id: Property.second.id, start_date: Time.new(2021,3,4).to_date, end_date: Time.new(2021,3,7).to_date)
+Reservation.create(user_id: demo.id, property_id: Property.third.id, start_date: Time.new(2021,4,5).to_date, end_date: Time.new(2021,4,7).to_date)
+Reservation.create(user_id: demo.id, property_id: Property.fourth.id, start_date: Time.new(2021,5,8).to_date, end_date: Time.new(2021,5,10).to_date)
 

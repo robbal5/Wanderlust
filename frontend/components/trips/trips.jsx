@@ -42,7 +42,7 @@ class Trips extends React.Component {
         let filtered_reservations = this.state.view == 'upcoming' ? Object.values(this.props.reservations).filter(res => new Date(res.endDate) > new Date()) :
             Object.values(this.props.reservations).filter(res => new Date(res.endDate) < new Date())
 
-        if (Object.values(this.props.reservations).length < 1) {
+        if (filtered_reservations.length < 1) {
             return (
                 <div className='trips-page'>
                     <nav className='trips-header-nav'>
@@ -53,7 +53,7 @@ class Trips extends React.Component {
                         <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
                         <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
                     </nav>
-                    <p className='no-trips-text'>No trips planned yet!</p>
+                    <p className='no-trips-text'>{this.state.view == 'upcoming' ?'No trips planned yet!' : "No previous trips, let's book your next adventure!"}</p>
                 </div>
             )
         }
