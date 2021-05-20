@@ -34,11 +34,11 @@ amenities = ['Appliances', 'Iron', 'Dishwasher', 'Utilities',
 # california = State.create(name: 'California')
 
 #Cities
-# chicago = City.create(name: 'Chicago', state_id: illinois.id, lat: 41.8865, lng: -87.64264)
-# new_york_city = City.create(name: 'New York', state_id: new_york.id, lat: 40.73331, lng: -73.9893)
-# san_francisco = City.create(name: 'San Francisco', state_id: california.id, lat: 37.78632, lng: -122.42043)
+# chicago = City.create(name: 'Chicago', state_id: illinois.id, lat: 41.88325, lng: -87.71274)
+# new_york_city = City.create(name: 'New York', state_id: new_york.id, lat: 40.742556, lng: -73.99018)
+# san_francisco = City.create(name: 'San Francisco', state_id: california.id, lat: 37.73546, lng: -122.44649)
 # san_diego = City.create(name: 'San Diego', state_id: california.id)
-# miami = City.create(name: 'Miami', state_id: florida.id, lat: 25.76802, lng: -80.19409)
+# miami = City.create(name: 'Miami', state_id: florida.id, lat: 25.78548, lng: -80.2648)
 # newark = City.create(name: 'Newark', state_id: new_york.id)
 # charlotte = City.create(name: 'Charlotte', state_id: illinois.id)
 # middleton = City.create(name: 'Middleton', state_id: florida.id)
@@ -74,9 +74,9 @@ addresses = []
 #     address.city_id = chicago.id
 #     address.street_address = Faker::Address.street_address
 #     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/10
-#     address.lat = 41.8865 + (rand_dec * [1,-1].sample)
-#     address.lng = -87.64264 + (rand_dec * [1,-1].sample)
+#     rand_dec = rand/20
+#     address.lat = 41.88325 + (rand_dec * [1,-1].sample)
+#     address.lng = -87.71274 + (rand_dec * [1,-1].sample)
 #     addresses << address
 # end
 #San Francisco
@@ -85,9 +85,9 @@ addresses = []
 #     address.city_id = san_francisco.id
 #     address.street_address = Faker::Address.street_address
 #     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/10
-#     address.lat = 37.78632 + (rand_dec * [1,-1].sample)
-#     address.lng = -122.42043 + (rand_dec * [1,-1].sample)
+#     rand_dec = rand/20
+#     address.lat = 37.73546 + (rand_dec * [1,-1].sample)
+#     address.lng = -122.44649 + (rand_dec * [1,-1].sample)
 #     addresses << address
 # end
 
@@ -97,9 +97,9 @@ addresses = []
 #     address.city_id = miami.id
 #     address.street_address = Faker::Address.street_address
 #     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/10
-#     address.lat = 40.73331 + (rand_dec * [1,-1].sample)
-#     address.lng = -80.19409 + (rand_dec * [1,-1].sample)
+#     rand_dec = rand/20
+#     address.lat = 25.78548 + (rand_dec * [1,-1].sample)
+#     address.lng = -80.2648 + (rand_dec * [1,-1].sample)
 #     addresses << address
 # end
 
@@ -109,9 +109,9 @@ addresses = []
 #     address.city_id = new_york_city.id
 #     address.street_address = Faker::Address.street_address
 #     address.zip_code = Faker::Address.zip_code
-#     rand_dec = rand/10
-#     address.lat = 25.76802 + (rand_dec * [1,-1].sample)
-#     address.lng = -73.9893 + (rand_dec * [1,-1].sample)
+#     rand_dec = rand/20
+#     address.lat = 40.742556 + (rand_dec * [1,-1].sample)
+#     address.lng = -73.99018 + (rand_dec * [1,-1].sample)
 #     addresses << address
 # end
 
@@ -160,7 +160,7 @@ amenity_ids = Amenity.pluck(:id)
  
 # PropAmenities
 # property_ids.each do |p_id|
-#     7.times do
+#     10.times do
 #         PropertyAmenity.create({property_id:p_id, amenity_id: amenity_ids.sample})
 #     end
 # end
@@ -244,8 +244,8 @@ photo_urls = [
 
 # demo = User.find_by(name: 'Demo User')
 
-# Reservation.create(user_id: demo.id, property_id: Property.first.id, start_date: Time.new(2021,2,3).to_date, end_date: Time.new(2001,2,6).to_date)
-# Reservation.create(user_id: demo.id, property_id: Property.second.id, start_date: Time.new(2021,3,4).to_date, end_date: Time.new(2001,3,7).to_date)
-# Reservation.create(user_id: demo.id, property_id: Property.third.id, start_date: Time.new(2021,4,5).to_date, end_date: Time.new(2001,4,7).to_date)
-# Reservation.create(user_id: demo.id, property_id: Property.fourth.id, start_date: Time.new(2021,5,8).to_date, end_date: Time.new(2001,5,10).to_date)
+# Reservation.create(user_id: demo.id, property_id: Property.first.id, start_date: Time.new(2021,2,3).to_date, end_date: Time.new(2021,2,6).to_date)
+# Reservation.create(user_id: demo.id, property_id: Property.second.id, start_date: Time.new(2021,3,4).to_date, end_date: Time.new(2021,3,7).to_date)
+# Reservation.create(user_id: demo.id, property_id: Property.third.id, start_date: Time.new(2021,4,5).to_date, end_date: Time.new(2021,4,7).to_date)
+# Reservation.create(user_id: demo.id, property_id: Property.fourth.id, start_date: Time.new(2021,5,8).to_date, end_date: Time.new(2021,5,10).to_date)
 
