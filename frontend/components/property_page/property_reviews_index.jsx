@@ -21,7 +21,7 @@ class PropertyReviewsIndex extends React.Component {
                     <button className='create-review-button' onClick={ this.props.currentUser ? () => this.props.openModal('review') : () => this.props.openModal('login')}>Write a review</button>
                 </div>
                 <ul className='property-reviews-list'>
-                    {Object.values(reviews).slice(0,6).map((review,idx) => {
+                    {Object.values(reviews).map((review,idx) => {
                         return <PropertyReviewsIndexItem key={idx} review={review} currentUser={this.props.currentUser} />
                     })}
                 </ul>

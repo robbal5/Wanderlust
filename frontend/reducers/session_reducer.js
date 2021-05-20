@@ -1,6 +1,6 @@
 import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS} from '../actions/session/session_actions'
 import {RECEIVE_PROPERTY} from '../actions/property/properties_actions';
-import {RECEIVE_REVIEWS} from '../actions/review/review_actions'
+import {RECEIVE_REVIEWS, RECEIVE_REVIEW} from '../actions/review/review_actions'
 import {RECEIVE_RESERVATION} from '../actions/reservations/reservation_actions'
 
 
@@ -10,6 +10,7 @@ const _newSess = {
     recentCitySearchIds: []
 }
 const SessionReducer = (state=_newSess, action) => {
+    
     Object.freeze(state)
     let newState = { ...state };
     switch (action.type) {
@@ -24,9 +25,9 @@ const SessionReducer = (state=_newSess, action) => {
             let newRes = Object.assign({}, oldRes, {[action.reservation.reservation.id]: action.reservation.reservation})
             newState.currentProperty.reservations = newRes;
             return newState;
-        case RECEIVE_REVIEWS:
+        case RECEIVE_REVIEW:
             let oldRevs = newState.currentProperty.reviews;
-            let newRevs = Object.assign({}, oldRevs, {[action.reviews.id]:action.reviews});
+            let newRevs = Object.assign({}, oldRevs, {[action.review.id]:action.review});
             newState.currentProperty.reviews = newRevs;
             return newState;
         default:
