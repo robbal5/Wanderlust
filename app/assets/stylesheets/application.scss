@@ -693,13 +693,17 @@ div.user-panel-options{
     display: flex;
     width: 40%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;;
     min-width: 350px;
+    p {
+        height: 100%;
+    }
 }
 
 .property-header-bar {
     display: flex; 
     justify-content: space-between;
+    align-items: flex-start;
     margin-top: 10px;
 }
 
