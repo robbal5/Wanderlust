@@ -48,7 +48,7 @@ class ReservationCalendar extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger;
+        
         if (this.props.currentUser) {
             e.preventDefault()
             this.setState({

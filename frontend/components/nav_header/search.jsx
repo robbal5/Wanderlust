@@ -20,7 +20,7 @@ class Search extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger;
+        
         let search = this.state.searchValue
         
         search  = search.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
