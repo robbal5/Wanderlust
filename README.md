@@ -1,11 +1,11 @@
-#Wanderlust
+# Wanderlust
 
 ## Overview
  Wanderlust is an AirBnb clone with primary features including:
-*User Authentication
-*Search
-*Review and Ratings tracking
-*Bookings Management
+* User Authentication
+* Search
+* Review and Ratings tracking
+* Bookings Management
 
 Technologies
  
