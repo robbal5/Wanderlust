@@ -28,7 +28,7 @@ class PropertiesPaneIndex extends React.Component {
                 {Object.values(this.props.properties).map(((property,idx) => {
                     const address = addresses[property.addressId]
                     
-                    return <PropertiesPaneIndexItem key={idx} property={property} address={address} city={this.props.cities[address.cityId]} />
+                    return <PropertiesPaneIndexItem key={property.id} property={property} address={address} city={this.props.cities[address.cityId]} />
                 }))}
             </div>
         )

@@ -17,9 +17,10 @@ class PropertiesPaneHeader extends React.Component {
     
 
     componentWillUnmount() {
-        this.closeClick()
-        // document.removeEventListener('click', this.closeClick)
-    }
+        this.setState = (state, callback) => {
+            return;
+        };   
+     }
 
     onClick(field) {
         return (e) => {
