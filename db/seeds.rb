@@ -254,8 +254,8 @@ User.create(email: 'DemoUser@gmail.com', password: 'Demouser', name: 'Demo User'
 
 demo = User.find_by(name: 'Demo User')
 
-Reservation.create(user_id: demo.id, property_id: Property.first.id, start_date: Time.new(2021,2,3).to_date, end_date: Time.new(2021,2,6).to_date)
-Reservation.create(user_id: demo.id, property_id: Property.second.id, start_date: Time.new(2021,3,4).to_date, end_date: Time.new(2021,3,7).to_date)
-Reservation.create(user_id: demo.id, property_id: Property.third.id, start_date: Time.new(2021,4,5).to_date, end_date: Time.new(2021,4,7).to_date)
-Reservation.create(user_id: demo.id, property_id: Property.fourth.id, start_date: Time.new(2021,5,8).to_date, end_date: Time.new(2021,5,10).to_date)
+Reservation.create(user_id: demo.id, guests:4, property_id: Property.first.id, start_date: Time.new(2021,2,3).to_date, end_date: Time.new(2021,2,6).to_date)
+Reservation.create(user_id: demo.id, guests:3, property_id: Property.second.id, start_date: Time.new(2021,3,4).to_date, end_date: Time.new(2021,3,7).to_date)
+Reservation.create(user_id: demo.id, guests:4, property_id: Property.third.id, start_date: Time.new(2021,4,5).to_date, end_date: Time.new(2021,4,7).to_date)
+Reservation.create(user_id: demo.id, guests:2, property_id: Property.fourth.id, start_date: Time.new(2021,5,8).to_date, end_date: Time.new(2021,5,10).to_date)
 
