@@ -5,9 +5,9 @@ class Api::PropertiesController < ApplicationController
         filters = filter_params
         
         if valid_searches(filters['cityFilter'].downcase, filters['placeFilter'].downcase)
-            @properties = Property.filtered_properties(filters)
+            @properties = Property.includes(:reviews).with_attached_photos.filtered_properties(filters)
         else
-            @properties = Property.with_attached_photos.all
+            @properties = Property.includes(:reviews).with_attached_photos.all
         end
         @addresses = Address.all
         render :index

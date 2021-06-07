@@ -19,9 +19,9 @@ class PropertiesIntro extends React.Component {
             <div className='property-intro'>
                 <p className='property-intro-subtext'>{typeOfPlace} in {this.props.city.name}</p>
                 <p className='property-intro-name'>{name}</p>
-                <p className='property-intro-subtext'>{' ' +numberOfGuests} {numberOfGuests > 1 ? ' guests' : ' guest'},
-                                                        {' ' +numberOfBedrooms} {numberOfBedrooms > 1 ? ' bedrooms' : ' bedroom'}, 
-                                                        {' ' +numberOfBeds} {numberOfBeds > 1 ? ' beds' : ' bed'},
+                <p className='property-intro-subtext'>{' ' + numberOfGuests} {numberOfGuests > 1 ? ' guests' : ' guest'} ·
+                                                        {' ' + numberOfBedrooms} {numberOfBedrooms > 1 ? ' bedrooms' : ' bedroom'} ·
+                                                        {' ' + numberOfBeds} {numberOfBeds > 1 ? ' beds' : ' bed'} ·
                                                         {' ' +numberOfBathrooms} {numberOfBathrooms > 1 ? ' bathrooms' : ' bathroom'}</p>
                 <p className='property-intro-price'><span>${price} </span>/night</p>
             </div>

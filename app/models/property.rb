@@ -49,15 +49,15 @@ class Property < ApplicationRecord
         
         if city_name == ''
             if type_of_place == ''
-                Property.all
+                Property.joins(:reviews).all
             else
-                Property.where(type_of_place: type_of_place)
+                Property.joins(:reviews).where(type_of_place: type_of_place)
             end
         else
             if type_of_place == ''
-                Property.where(address_id: address_ids)
+                Property.joins(:reviews).where(address_id: address_ids)
             else
-                Property.where(address_id: address_ids).where(type_of_place: type_of_place)
+                Property.joins(:reviews).where(address_id: address_ids).where(type_of_place: type_of_place)
             end
             
         end
