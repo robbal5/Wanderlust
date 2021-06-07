@@ -174,6 +174,7 @@ html {
 .nav-header {
     display: flex;
     justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     height: 85px;
@@ -196,6 +197,7 @@ html {
     display: flex;
     align-items:center;
     justify-content: flex-start;
+    padding-left: 75px;
     /* width: 20%; */
 }
 
@@ -306,6 +308,7 @@ div.user-panel {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 75px;
 
     a {
         width: 30%;
@@ -399,7 +402,7 @@ div.user-panel-options{
     position: absolute;
     width: 350px;
     top:100px;
-    left: 125px;
+    left: 75px;
     font-size: 40px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -409,7 +412,7 @@ div.user-panel-options{
 .intro-image-button {
     position: absolute;
     top: 210px;
-    left: 125px;
+    left: 75px;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 20px;
@@ -426,18 +429,20 @@ div.user-panel-options{
 
 }
 .popular-text {
+    margin-left: 75px;
     font-size: 30px;
     padding-bottom: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 50px;
 }
 .cities-container {
-    padding-left: 50px;
+    padding-left: 35px;
     display: flex;
+    justify-content: space-around;
+    padding-right: 75px;
 }
 .city-container {
-    width: 25%;
-    cursor: pointer;
+    width: 24%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -456,11 +461,20 @@ div.user-panel-options{
 }
 
 .explore-nearby-item-image {
-    height: 225px;
-    width: 225px;
+    cursor: pointer;
+    height: 250px;
+    width: 250px;
+    min-height: 200px;
+    min-width: 200px;
     display: inline-block;
     border-radius: 10px;
     box-shadow: 5px 5px 5px gray;
+    transition: 0.5s;
+    
+    &:hover {
+        box-shadow: 10px 10px 10px gray;
+        transition: 0.5s;
+    }
 }
 
 .city-name {
@@ -501,18 +515,21 @@ div.user-panel-options{
 }
 
 .live-anywhere-section {
-    padding-left: 50px;
+    padding-left: 75px;
     display: flex;
+    justify-content: space-between;
+    // width: 100%;
+    padding-right: 75px;
 }
 
 .live-anywhere-header {
     font-size: 30px;
     padding-bottom: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 50px;
+    margin-left: 75px;
 }
 .live-anywhere-container {
-    width: 33%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     
@@ -520,21 +537,24 @@ div.user-panel-options{
 
 .live-anywhere-text {
     display: inline-block;
-    width: 200px;
+    width: 80%;
     vertical-align:top;
     font-size: 24px;
     margin-top: 10px;
     margin-left: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 75%;
 }
 
 .live-anywhere-image {
     height: auto;
-    width: 95%;
+    width: 80%;
     height: 90%;
     display: inline-block;
     border-radius: 10px;
     box-shadow: 5px 5px 5px gray;
+    
 }
 
 //Properties Pane
