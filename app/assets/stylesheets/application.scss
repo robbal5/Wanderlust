@@ -227,6 +227,7 @@ html {
     position: relative;
     padding: 10px 0 10px 0;
     box-shadow: 1px 1px 1px $heading_color;
+
     
     
 }
@@ -314,10 +315,12 @@ div.user-panel {
         width: 30%;
         height: 30px;
         color: gray;
+        cursor: auto;
         i {
             width: 30%;
             height: 30px;
             color: gray;
+            cursor: pointer;
             &:hover {
                 color: darkslategray;
                 transition: 0.3s;
@@ -357,28 +360,38 @@ button.colored {
 
 div.user-panel-options{
     // display: none;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: 250px;
     background-color: white;
     color: $font_color;
     position: absolute;
-    right: 20px;
+    right: 70px;
     top: 25px;
     box-shadow: 2px 2px 2px gray;
+
+    button:first-child {
+        margin-top: 10px;
+    }
+
+    button:last-child {
+        margin-bottom: 10px;
+    }
 
 }
 
 .user-panel-button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 10px;
+    padding: 15px;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .user-panel-button:hover {
     color:$section_color;
     font-weight: 500;
+    background-color: rgb(238, 238, 238);
 }
 .user-panel-name {
     height: 100%;
@@ -502,7 +515,7 @@ div.user-panel-options{
     position: absolute;
     width: 450px;
     top:20px;
-    left: 55%;
+    left: 50%;
     font-size: 40px;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -537,7 +550,7 @@ div.user-panel-options{
 
 .live-anywhere-text {
     display: inline-block;
-    width: 80%;
+    width: 90%;
     vertical-align:top;
     font-size: 24px;
     margin-top: 10px;
@@ -549,7 +562,7 @@ div.user-panel-options{
 
 .live-anywhere-image {
     height: auto;
-    width: 80%;
+    width: 90%;
     height: 90%;
     display: inline-block;
     border-radius: 10px;

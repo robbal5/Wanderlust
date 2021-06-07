@@ -17,7 +17,7 @@ class UserPanel extends React.Component {
         
         e.preventDefault();
         this.setState({
-            showDropdown: true
+            showDropdown: !this.state.showDropdown
         }, document.addEventListener('click', this.closeDropdown) )
         e.stopPropagation()
     }
