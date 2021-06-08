@@ -9,7 +9,7 @@ class PropertiesPaneHeader extends React.Component {
             cityDropdown: false,
             placeDropdown: false,
         }
-
+        this.onClick = this.onClick.bind(this)
         this.clearFilters = this.clearFilters.bind(this)
         this.onSelection = this.onSelection.bind(this)
     }
@@ -23,15 +23,20 @@ class PropertiesPaneHeader extends React.Component {
      }
 
     onClick(field) {
+        debugger;
+        const that = this;
         return (e) => {
-            this.setState({
+            debugger;
+            let newVal = !that.state[field]
+            that.setState({
                 cityDropdown: false,
                 placeDropdown: false,
             })
-            e.preventDefault();
-            this.setState({[field]: true},
-            document.addEventListener('click', this.closeClick(field))
+            that.setState({[field]: newVal},
+            document.addEventListener('click', that.closeClick(field))
             )
+            
+            e.preventDefault();
             e.stopPropagation()
         }
     }
