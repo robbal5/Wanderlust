@@ -179,7 +179,7 @@ html {
     position: fixed;
     height: 85px;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     background-color: white;
     border-top: -20px;
     box-shadow: 2px 2px 2px lightgray;
@@ -690,15 +690,7 @@ div.user-panel-options{
     margin-bottom: 10px;
 }
 
-.property-intro-price {
-    text-align: right;
-    font-weight: bold;
-    width: 95%;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
 
-}
 
 //PROPERTIES PAGE
 
@@ -1443,4 +1435,22 @@ div.user-panel-options{
 }
 .properties-image-left-arrow {
     left: 3%;
+}
+
+//POST FEEDBACK
+
+.property-intro-footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+    margin-left: 10px;
+}
+
+.property-intro-price {
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 10px;
+
 }

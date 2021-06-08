@@ -13,7 +13,7 @@ class PropertiesIntro extends React.Component {
         }
 
         
-        const {typeOfPlace, name, numberOfBedrooms, numberOfBathrooms, numberOfBeds, numberOfGuests, price} = property
+        const {typeOfPlace, name, numberOfBedrooms, numberOfBathrooms, numberOfBeds, numberOfGuests, price, numReviews, reviewAvg} = property
         
         return (
             <div className='property-intro'>
@@ -23,7 +23,11 @@ class PropertiesIntro extends React.Component {
                                                         {' ' + numberOfBedrooms} {numberOfBedrooms > 1 ? ' bedrooms' : ' bedroom'} ·
                                                         {' ' + numberOfBeds} {numberOfBeds > 1 ? ' beds' : ' bed'} ·
                                                         {' ' +numberOfBathrooms} {numberOfBathrooms > 1 ? ' bathrooms' : ' bathroom'}</p>
-                <p className='property-intro-price'><span>${price} </span>/night</p>
+                <div className='property-intro-footer'>
+                    <p className='property-intro-reviews'><i className='fa fa-star review-stars'></i> {reviewAvg.toFixed(2)} ({numReviews} reviews)</p>
+                    <p className='property-intro-price'><span>${price} </span>/night</p>
+                </div>
+                
             </div>
         )
     }
