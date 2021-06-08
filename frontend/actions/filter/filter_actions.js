@@ -23,8 +23,13 @@ export const clearFilter = () => {
 export const updateFilter = (filter, value, zoom, lat, lng) => (dispatch, getState) => { 
     
     if (filter == 'cityFilter') {
+        if (value != ''){
         value = ['Chicago', 'Miami', 'New York', 'San Francisco'].includes(value) ? value : '';
         dispatch(changeLocation({ lat, lng }, zoom));
+        }
+        else {
+            dispatch(resetLocation())
+        }
     }
     dispatch(changeFilter(filter, value));
     

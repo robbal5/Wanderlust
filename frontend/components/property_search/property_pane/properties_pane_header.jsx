@@ -9,9 +9,11 @@ class PropertiesPaneHeader extends React.Component {
             cityDropdown: false,
             placeDropdown: false,
         }
-        this.onClick = this.onClick.bind(this)
-        this.clearFilters = this.clearFilters.bind(this)
-        this.onSelection = this.onSelection.bind(this)
+        this.onClick = this.onClick.bind(this);
+        this.clearFilters = this.clearFilters.bind(this);
+        this.onSelection = this.onSelection.bind(this);
+        this.clearCityFilter = this.clearCityFilter.bind(this);
+        this.clearPlaceFilter = this.clearPlaceFilter.bind(this);
     }
 
     
@@ -26,14 +28,14 @@ class PropertiesPaneHeader extends React.Component {
         debugger;
         const that = this;
         return (e) => {
-            debugger;
+            
             let newVal = !that.state[field]
             that.setState({
                 cityDropdown: false,
                 placeDropdown: false,
             })
             that.setState({[field]: newVal},
-            document.addEventListener('click', that.closeClick(field))
+                document.addEventListener('click', that.closeClick(field))
             )
             
             e.preventDefault();
@@ -53,8 +55,24 @@ class PropertiesPaneHeader extends React.Component {
         }
     }
 
+    clearCityFilter(e) {
+        e.preventDefault();
+        this.setState({
+            cityFilter: ''
+        })
+        this.props.updateFilter('cityFilter', '')
+    }
+
+    clearPlaceFilter(e) {
+        e.preventDefault();
+        this.setState({
+            placeFilter: ''
+        })
+        this.props.updateFilter('placeFilter', '')
+    }
+
     clearFilters(e) {
-        e.preventDefault;
+        e.preventDefault();
         this.setState({
             cityFilter: '',
             placeFilter: '',
@@ -89,6 +107,7 @@ class PropertiesPaneHeader extends React.Component {
                     <button className='filter-option' onClick={this.onSelection('cityFilter', updateFilter)} value='Miami'>Miami</button>
                     <button className='filter-option' onClick={this.onSelection('cityFilter', updateFilter)} value='New York'>New York</button>
                     <button className='filter-option' onClick={this.onSelection('cityFilter', updateFilter)} value='San Francisco'>San Francisco</button>
+                    <button className='filter-option' onClick={this.clearCityFilter} value='Clear'>Clear</button>
                 </nav>
             )
         }
@@ -99,6 +118,7 @@ class PropertiesPaneHeader extends React.Component {
                     <button className='filter-option' onClick={this.onSelection('placeFilter', updateFilter)} value='Entire place'>Entire place</button>
                     <button className='filter-option' onClick={this.onSelection('placeFilter', updateFilter) } value='Private room'>Private room</button>
                     <button className='filter-option' onClick={this.onSelection('placeFilter', updateFilter) } value='Hotel room'>Hotel room</button>
+                    <button className='filter-option' onClick={this.clearPlaceFilter} value='Clear'>Clear</button>
                 </nav>
             )
         }
