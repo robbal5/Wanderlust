@@ -269,6 +269,7 @@ html {
     li {
         background-color: white;
         padding: 10px;
+        cursor: pointer;
         
         &:hover {
             color: $section_color;
@@ -1004,6 +1005,7 @@ div.user-panel-options{
     align-items: center;
     padding-left: 5px;
     position: relative;
+    cursor: pointer;
 }
 
 .marker-header {
@@ -1484,4 +1486,12 @@ div.user-panel-options{
     font-weight: bold;
     margin-bottom: 10px;
 
+}
+
+.suggested-searches {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(177, 177, 177);
+    font-style: italic;
+    margin-bottom: 10px;
 }

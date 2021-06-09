@@ -14,6 +14,7 @@ class MarkerManager {
         
         
         + '</div>'
+        google.maps.InfoWindow.prototype.isOpen = false;
         const infoWindow = new google.maps.InfoWindow({
             content: content
         })
@@ -24,17 +25,36 @@ class MarkerManager {
             
         })
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+
+        marker.addListener('click', () => {
+            let listener, infoWindowDOM;
+            if (infoWindow.isOpen) {
+                infoWindow.isOpen = false;
+                infoWindow.close(this.map, marker)
+                google.maps.events.remove(listener)
+            } else {
+                infoWindow.isOpen = true;
+                infoWindow.open(this.map, marker)
+                setTimeout( () => {
+                    infoWindowDOM = document.querySelector('.marker-info')
+                    listener = google.maps.event.addDomListener(infoWindowDOM, "click", () => {
+                    this.handleClick(marker.propertyId)
+                    })
+                }, 400);
+            }
+        });
+
         marker.addListener('mouseover', () => {
-            infoWindow.open(this.map, marker)
             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
-        })
+        });
+
         marker.addListener('mouseout', () => {
-            infoWindow.close(this.map, marker)
             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
-        })
-        marker.addListener('click', (e) => {
-            this.handleClick(marker.propertyId)
-        })
+        });
+
+        // marker.addListener('click', (e) => {
+        //     this.handleClick(marker.propertyId)
+        // })
         
 
         // marker.addListener('click', () => this.handleClick(property))
