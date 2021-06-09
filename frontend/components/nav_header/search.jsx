@@ -17,6 +17,7 @@ class Search extends React.Component {
     componentDidMount() {
         this.props.requestCities();
         this.props.requestStates();
+        this.props.requestProperties(this.props.filters);
     }
 
     handleSubmit(e) {
