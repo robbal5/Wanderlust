@@ -16,7 +16,14 @@ class PropertiesPaneHeader extends React.Component {
         this.clearPlaceFilter = this.clearPlaceFilter.bind(this);
     }
 
-    
+    componentDidUpdate(prevProps) {
+        if (prevProps.filters != this.props.filters) {
+            this.setState({
+                cityFilter: this.props.filters['cityFilter'],
+                placeFilter: this.props.filters['placeFilter'],
+            })
+        }
+    }
 
     componentWillUnmount() {
         this.setState = (state, callback) => {
@@ -25,7 +32,7 @@ class PropertiesPaneHeader extends React.Component {
      }
 
     onClick(field) {
-        debugger;
+        
         const that = this;
         return (e) => {
             

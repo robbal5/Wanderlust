@@ -11,8 +11,8 @@ const PropertiesReducer = (state = {}, action) => {
             }else {
                 return action.payload.properties;
             }
-        case RECEIVE_PROPERTY:
-            return Object.assign({}, state, { [action.payload.property.id]: action.payload.property })
+        // case RECEIVE_PROPERTY:
+        //     return Object.assign({}, state, { [action.payload.property.id]: action.payload.property })
         case RECEIVE_RESERVATIONS:
             return Object.assign({}, state, action.payload.properties)
         // case RECEIVE_PROPERTY:

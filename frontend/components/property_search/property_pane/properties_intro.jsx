@@ -14,7 +14,7 @@ class PropertiesIntro extends React.Component {
 
         
         const {typeOfPlace, name, numberOfBedrooms, numberOfBathrooms, numberOfBeds, numberOfGuests, price, numReviews, reviewAvg} = property
-        
+        debugger;
         return (
             <div className='property-intro'>
                 <p className='property-intro-subtext'>{typeOfPlace} in {this.props.city.name}</p>
