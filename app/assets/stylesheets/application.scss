@@ -1063,9 +1063,17 @@ div.user-panel-options{
 
 } 
 .property-reservation-input-label {
+    margin-top: 20px;
     width: 100%;
     padding: 5px 10px 5px 0px;
-    position: relative;
+}
+
+.property-reservation-input-label-submit {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 10px 5px 0px;
+    display: flex;
+    justify-content: center;
 }
 
 .property-reservation-input {
@@ -1081,16 +1089,20 @@ div.user-panel-options{
 }
 
 .property-reservation-submit {
+    font-weight: 700;
     border-radius: 20px;
-    padding: 5px 10px 5px 10px;
+    padding: 10px;
     border: gray solid 1px;
     background-color: white;
     min-width: 60px;
-    text-align: right;
-    position: absolute;
-    right: 0px;
+    
+    margin: auto;
+    // position: absolute;
+    // right: 0px;
     cursor: pointer;
     // margin-left: 50%;
+    width: 50%;
+    text-align: center;
 
     &:hover {
         background-color: $section_color;
