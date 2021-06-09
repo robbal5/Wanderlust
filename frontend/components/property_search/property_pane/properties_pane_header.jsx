@@ -105,6 +105,7 @@ class PropertiesPaneHeader extends React.Component {
     }
 
     render() {
+        debugger;
         const {updateFilter} = this.props
 
         const cityFilterMenu = () => {
