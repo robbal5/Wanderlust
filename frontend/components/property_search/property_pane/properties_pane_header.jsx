@@ -16,11 +16,17 @@ class PropertiesPaneHeader extends React.Component {
         this.clearPlaceFilter = this.clearPlaceFilter.bind(this);
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps, prevState) {
         if (prevProps.filters != this.props.filters) {
             this.setState({
                 cityFilter: this.props.filters['cityFilter'],
                 placeFilter: this.props.filters['placeFilter'],
+            })
+        }
+        if (prevState == this.state) {
+            this.setState({
+                cityDropdown: false,
+                placeDropdown: false
             })
         }
     }
@@ -35,32 +41,32 @@ class PropertiesPaneHeader extends React.Component {
         
         const that = this;
         return (e) => {
-            
+
             let newVal = !that.state[field]
             that.setState({
                 cityDropdown: false,
                 placeDropdown: false,
             })
-            that.setState({[field]: newVal},
-                document.addEventListener('click', that.closeClick(field))
+            that.setState({[field]: newVal}
+                // document.addEventListener('click', that.closeClick(field))
             )
             
             e.preventDefault();
-            e.stopPropagation()
-        }
-    }
-
-    closeClick(field) {
-        return (e) => {
-            e.preventDefault();
-            this.setState({
-                [field]: false
-            }, () => {
-                document.removeEventListener('click', this.closeClick)
-            })
             e.stopPropagation();
         }
     }
+
+    // closeClick(field) {
+    //     return (e) => {
+    //         e.preventDefault();
+    //         this.setState({
+    //             [field]: false
+    //         }, () => {
+    //             document.removeEventListener('click', this.closeClick)
+    //         })
+    //         e.stopPropagation();
+    //     }
+    // }
 
     clearCityFilter(e) {
         e.preventDefault();
@@ -105,7 +111,7 @@ class PropertiesPaneHeader extends React.Component {
     }
 
     render() {
-        debugger;
+        
         const {updateFilter} = this.props
 
         const cityFilterMenu = () => {
@@ -135,6 +141,7 @@ class PropertiesPaneHeader extends React.Component {
             
                 <div className = 'properties-pane-header'>
                 <h2 className='properties-pane-header-text'>{this.state.cityFilter === '' ? 'Entire property list' : 'Stays in ' + this.state.cityFilter}</h2>
+                    {this.state.cityFilter === '' ? <p className='suggested-searches'>Try searching for New York, San Francisco, Chicago, or Miami</p> : null }
                     <form className='properties-pane-header-filter-form'>
                    
                         <div className='filter-buttons'>

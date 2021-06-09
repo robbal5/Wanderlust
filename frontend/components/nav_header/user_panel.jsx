@@ -40,7 +40,7 @@ class UserPanel extends React.Component {
     }
 
     onClick(e) {
-        debugger;
+        
         e.preventDefault();
         this.props.logout();
         this.props.history.push('/');
