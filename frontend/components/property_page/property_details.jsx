@@ -1,7 +1,7 @@
 import React from 'react';
 import PropertyMains from './property_mains';
 import PropertyAmenitiesIndex from './property_amenities_index';
-import PropertyReviewsIndex from './property_reviews_index';
+import PropertyReviewsIndexContainer from './property_reviews_index_container';
 import PropertyLocation from './property_location';
 import PropertyCalendar from './property_calendar'
 import ReservationCalendar from './reservation_calendar'
@@ -21,7 +21,7 @@ class PropertyDetails extends React.Component {
                     </div>
                     <ReservationCalendar openModal={this.props.openModal} createReservation={this.props.createReservation} currentUser = {this.props.currentUser} property = {this.props.currentProperty.property} reservations={this.props.currentProperty.reservations} />
                 </div>
-                <PropertyReviewsIndex deleteReview={this.props.deleteReview} currentUser={this.props.currentUser} openModal = {this.props.openModal} reviews={this.props.reviews}/>
+                <PropertyReviewsIndexContainer currentUser={this.props.currentUser} openModal = {this.props.openModal}/>
                 <PropertyLocation address={this.props.currentProperty.address} />
             </div>
         )

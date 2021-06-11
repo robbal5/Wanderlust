@@ -7,7 +7,8 @@ import {RECEIVE_RESERVATION} from '../actions/reservations/reservation_actions'
 const _newSess = {
     id: null,
     recentPropertyViewIds: [],
-    recentCitySearchIds: []
+    recentCitySearchIds: [],
+    actionOccurred: false
 }
 const SessionReducer = (state=_newSess, action) => {
     
@@ -29,9 +30,11 @@ const SessionReducer = (state=_newSess, action) => {
             let oldRevs = newState.currentProperty.reviews;
             let newRevs = Object.assign({}, oldRevs, {[action.review.id]:action.review});
             newState.currentProperty.reviews = newRevs;
+            newState.actionOccurred = !newState.actionOccurred;
             return newState;
         case REMOVE_REVIEW:
             delete newState.currentProperty.reviews[action.review.id];
+            newState.actionOccurred = !newState.actionOccurred;
             return newState;
         case CHANGE_REVIEW:
             newState.currentProperty.reviews[action.review.id] = action.review;
