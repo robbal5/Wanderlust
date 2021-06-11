@@ -11,6 +11,14 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def update
+
+    end
+
+    def destroy
+
+    end
+
     private
 
    def review_params

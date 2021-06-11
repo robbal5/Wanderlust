@@ -21,7 +21,7 @@ class PropertyDetails extends React.Component {
                     </div>
                     <ReservationCalendar openModal={this.props.openModal} createReservation={this.props.createReservation} currentUser = {this.props.currentUser} property = {this.props.currentProperty.property} reservations={this.props.currentProperty.reservations} />
                 </div>
-                <PropertyReviewsIndex currentUser={this.props.currentUser} openModal = {this.props.openModal} reviews={this.props.currentProperty.reviews}/>
+                <PropertyReviewsIndex currentUser={this.props.currentUser} openModal = {this.props.openModal} reviews={this.props.reviews}/>
                 <PropertyLocation address={this.props.currentProperty.address} />
             </div>
         )

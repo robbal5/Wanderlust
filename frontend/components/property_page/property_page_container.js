@@ -6,9 +6,11 @@ import {createReservation} from '../../actions/reservations/reservation_actions'
 
 
 const mSTP = (state, ownProps) => {
-    
+    let currentProperty = state.session.currentProperty;
+    let reviews = currentProperty ? currentProperty.reviews : [];
     return {
-        currentProperty: state.session.currentProperty,
+        currentProperty: currentProperty,
+        reviews: reviews,
         cities: state.entities.cities,
         states: state.entities.states,
         currentUser: state.session.id

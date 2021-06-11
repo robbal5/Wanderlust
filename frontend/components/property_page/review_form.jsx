@@ -75,25 +75,27 @@ class ReviewForm extends React.Component {
                     <p className='modal-header review-modal-header'>Review of {this.props.property.name}</p>
                     <strong onClick={this.props.closeModal} className="close-x"> <i className='fa fa-times'></i> </strong>
                     <br />
-                    <label className='login-label' onMouseOut={this.handleSet}>Rating:
-                        <div className='review-stars-container'>
-                        {[...Array(5)].map((n, idx) => {
-                        return <i className='review-star fa fa-star'
-                            key={idx + 1}
-                            data-rating={idx + 1}
-                            onClick={this.handleClick}
-                            onMouseOver={this.handleHover}>
-                        </i>
-                    })}
-                        </div>
-                        {/* <input type="number" min='1' max='5' value={this.state.rating} onChange={this.update('rating')} className='login-input' /> */}
-                    </label>
-                    <label className='login-label'>Review:
-                        <textarea onChange={this.update('review')} value={this.state.review} className='create-review-text login-input' ></textarea>
-                    </label>
+                    <div className='review-rating-stars'>
+                        <label className='login-label review-label' onMouseOut={this.handleSet}>Rating:</label>
+                            <div className='review-stars-container'>
+                            {[...Array(5)].map((n, idx) => {
+                                return <i className='review-star fa fa-star'
+                                    key={idx + 1}
+                                    data-rating={idx + 1}
+                                    onClick={this.handleClick}
+                                    onMouseOver={this.handleHover}>
+                                </i>
+                            })}
+                            </div>
+                            {/* <input type="number" min='1' max='5' value={this.state.rating} onChange={this.update('rating')} className='login-input' /> */}
+                        
+                    </div>
+                    <label className='login-label review-label'>Review:</label>
+                    <textarea onChange={this.update('review')} value={this.state.review} className='create-review-text login-input' ></textarea>
+                    
                     
 
-                    <input type="submit" className='session-submit' value='Create' />
+                    <input type="submit" className='session-submit review-submit' value='Publish' />
                 </form>
             </div>
         )

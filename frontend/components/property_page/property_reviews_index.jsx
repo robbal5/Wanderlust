@@ -3,18 +3,24 @@ import PropertyReviewsIndexItem from './property_reviews_index_item'
 class PropertyReviewsIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            reviews: props.reviews
+        }
         
     }
 
     componentDidUpdate(prevProps) {
+        debugger;
         if (prevProps.reviews != this.props.reviews) {
-
+            this.setState( {
+                reviews: this.props.reviews
+            })
         }
     }
 
     render() {
-
-        const{reviews} = this.props;
+        debugger;
+        const{reviews} = this.state;
         let total = 0;
         Object.values(reviews).forEach(rev => total += rev.rating)
         let number = Object.values(reviews).length
@@ -31,7 +37,7 @@ class PropertyReviewsIndex extends React.Component {
                     <button className='create-review-button' onClick={ this.props.currentUser ? () => this.props.openModal('review') : () => this.props.openModal('login')}>Write a review</button>
                 </div>
                 <ul className='property-reviews-list'>
-                    {Object.values(reviews).map((review,idx) => {
+                    {Object.values(reviews).slice(0,8).map((review,idx) => {
                         return <PropertyReviewsIndexItem key={review.id} review={review} currentUser={this.props.currentUser} />
                     })}
                 </ul>
