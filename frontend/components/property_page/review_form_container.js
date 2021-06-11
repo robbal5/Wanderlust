@@ -1,7 +1,7 @@
 import ReviewForm from './review_form'
 import {connect} from 'react-redux'
 import { openModal, closeModal } from '../../actions/modal/modal_actions';
-import { createReview } from '../../actions/review/review_actions'
+import { createReview  } from '../../actions/review/review_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     return {
     closeModal: () => dispatch(closeModal()),
-    createReview: (review) => dispatch(createReview(review))
+    createReview: (review) => dispatch(createReview(review)),
+
     }
 }
 

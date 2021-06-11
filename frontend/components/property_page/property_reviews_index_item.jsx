@@ -3,6 +3,13 @@ import React from 'react';
 class PropertyReviewsIndexItem extends React.Component {
     constructor(props) {
         super(props)
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
+    handleDelete(e) {
+        
+        let review = this.props.review;
+        this.props.deleteReview(review);
     }
 
     render() {
@@ -20,7 +27,7 @@ class PropertyReviewsIndexItem extends React.Component {
             <li className='property-review'>
                 <div className='review-header'>
                     <h3 className='review-writer'><i className="fas fa-user-circle"> </i>{'   ' + review.name}</h3>
-                    {this.props.currentUser == review.userId ? <div><p className='review-edit'>Edit</p> <p className='review-edit'>Delete</p> </div>  : null}
+                    {this.props.currentUser == review.userId ? <div><p className='review-edit'>Edit</p> <p className='review-edit' onClick={this.handleDelete}>Delete</p> </div>  : null}
                 </div>
                 <p className='review-date'>{month} {year}</p>
                 <p className='review-stars'>

@@ -3,7 +3,7 @@ import PropertyPage from './property_page';
 import { requestProperty } from '../../actions/property/properties_actions'
 import {openModal} from '../../actions/modal/modal_actions'
 import {createReservation} from '../../actions/reservations/reservation_actions'
-
+import { deleteReview } from '../../actions/review/review_actions'
 
 const mSTP = (state, ownProps) => {
     let currentProperty = state.session.currentProperty;
@@ -22,7 +22,8 @@ const mDTP = (dispatch) => {
     return {
         requestProperty: (property_id) => dispatch(requestProperty(property_id)),
         openModal: modal => dispatch(openModal(modal)),
-        createReservation: reservation => dispatch(createReservation(reservation))
+        createReservation: reservation => dispatch(createReservation(reservation)),
+        deleteReview: (review) => dispatch(deleteReview(review))
         
     }
 }

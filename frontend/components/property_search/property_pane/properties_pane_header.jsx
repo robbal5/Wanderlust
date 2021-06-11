@@ -102,7 +102,7 @@ class PropertiesPaneHeader extends React.Component {
             this.setState({
                 [field]: search
             })
-            debugger;
+            
             let city = Object.values(this.props.cities).filter(option => option.name == search)[0]
             if (city) {
                 updateFilter('cityFilter', search, 12, city.lat, city.lng)

@@ -21,7 +21,7 @@ class PropertyPage extends React.Component {
         }
        
         
-        const {currentProperty, cities, states, openModal, currentUser, createReservation, reviews} = this.props;
+        const {currentProperty, cities, states, openModal, currentUser, createReservation, reviews, deleteReview} = this.props;
         const city = cities[currentProperty.address.cityId]
         
         return (
@@ -29,7 +29,7 @@ class PropertyPage extends React.Component {
                 
                 <PropertyHeader currentProperty={currentProperty} city= {city} state = {states[city.stateId]} />
                 <PropertyPhotos photoUrls = {currentProperty.property.photoUrls} />
-                <PropertyDetails reviews={reviews} openModal={openModal} createReservation={createReservation} currentUser={currentUser} openModal= {openModal} currentProperty={currentProperty}/>
+                <PropertyDetails deleteReview={deleteReview} reviews={reviews} openModal={openModal} createReservation={createReservation} currentUser={currentUser} openModal= {openModal} currentProperty={currentProperty}/>
                 <PropertyReservation reservations={currentProperty.reservations}/>
             </div>
         )

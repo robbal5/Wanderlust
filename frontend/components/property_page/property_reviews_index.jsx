@@ -19,7 +19,7 @@ class PropertyReviewsIndex extends React.Component {
     }
 
     render() {
-        debugger;
+        
         const{reviews} = this.state;
         let total = 0;
         Object.values(reviews).forEach(rev => total += rev.rating)
@@ -38,7 +38,7 @@ class PropertyReviewsIndex extends React.Component {
                 </div>
                 <ul className='property-reviews-list'>
                     {Object.values(reviews).slice(0,8).map((review,idx) => {
-                        return <PropertyReviewsIndexItem key={review.id} review={review} currentUser={this.props.currentUser} />
+                        return <PropertyReviewsIndexItem key={review.id} review={review} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} />
                     })}
                 </ul>
             </div>

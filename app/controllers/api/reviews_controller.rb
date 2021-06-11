@@ -16,6 +16,15 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
+        
+        @user = User.find(params[:user_id])
+        @review = Review.find(params[:id])
+        if @review
+            @review.destroy
+            render :show
+        else
+            render json: ['No matching review found'], status: 401
+        end
 
     end
 
