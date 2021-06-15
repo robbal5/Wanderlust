@@ -11,6 +11,29 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find(params[:user_id])
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            render :show
+        else
+            render json: ['Update has failed'], status: 401
+        end
+    end
+
+    def destroy
+        
+        @user = User.find(params[:user_id])
+        @review = Review.find(params[:id])
+        if @review
+            @review.destroy
+            render :show
+        else
+            render json: ['No matching review found'], status: 401
+        end
+
+    end
+
     private
 
    def review_params

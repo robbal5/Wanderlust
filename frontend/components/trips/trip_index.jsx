@@ -41,7 +41,7 @@ class TripIndex extends React.Component {
                             <p>{reservation.guests ? reservation.guests + (reservation.guests > 1 ? ' guests': ' guest') : 'No guest restriction'}</p>
                         </div>
                     </div>
-                    {this.props.status == 'upcoming' ? <button className='trip-index-delete' onClick={this.handleDelete}>Delete</button> : null }
+                    {this.props.status == 'upcoming' ? <button className='trip-index-delete' onClick={this.handleDelete}>Cancel</button> : null }
                     
                 </div>
             

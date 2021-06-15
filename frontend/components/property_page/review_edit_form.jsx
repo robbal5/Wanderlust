@@ -1,14 +1,15 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 
 
-class ReviewForm extends React.Component {
+class ReviewEditForm extends React.Component {
     constructor(props) {
+        
         super(props)
         this.state = {
-            review: '',
-            rating: 0,
+            reviewId:this.props.review.id,
+            review: this.props.review.review,
+            rating: this.props.review.rating,
             user_id: this.props.userId,
             property_id: this.props.property.id
         }
@@ -17,15 +18,20 @@ class ReviewForm extends React.Component {
         this.handleHover = this.handleHover.bind(this)
     }
 
+    componentDidMount() {
+        this.handleSet()
+    }
+
     handleSet = e => {
+        
         let node = ReactDOM.findDOMNode(this)
         let reviewStars = node.getElementsByClassName('review-star');
-        
+
         Array.from(reviewStars).forEach((star) => {
             star.style.color =
-            this.state.rating >= star.dataset.rating ? 'orange' : 'gray';
+                this.state.rating >= star.dataset.rating ? 'orange' : 'gray';
         })
-    } 
+    }
 
     handleHover = e => {
         
@@ -47,9 +53,9 @@ class ReviewForm extends React.Component {
     }
 
     handleSubmit(e) {
-        
+
         e.preventDefault()
-        this.props.createReview(this.state)
+        this.props.updateReview(this.state)
         this.props.closeModal()
     }
 
@@ -75,8 +81,8 @@ class ReviewForm extends React.Component {
                     <p className='modal-header review-modal-header'>Review of {this.props.property.name}</p>
                     <strong onClick={this.props.closeModal} className="close-x"> <i className='fa fa-times'></i> </strong>
                     <br />
-                    <div className='review-rating-stars'>
-                        <label className='login-label review-label' >Rating:</label>
+                    <div className='review-rating-stars' >
+                        <label className='login-label review-label'>Rating:</label>
                         <div onMouseOut={this.handleSet} className='review-stars-container'>
                             {[...Array(5)].map((n, idx) => {
                                 return <i className='review-star fa fa-star'
@@ -86,14 +92,14 @@ class ReviewForm extends React.Component {
                                     onMouseOver={this.handleHover}>
                                 </i>
                             })}
-                            </div>
-                            {/* <input type="number" min='1' max='5' value={this.state.rating} onChange={this.update('rating')} className='login-input' /> */}
-                        
+                        </div>
+                        {/* <input type="number" min='1' max='5' value={this.state.rating} onChange={this.update('rating')} className='login-input' /> */}
+
                     </div>
                     <label className='login-label review-label'>Review:</label>
                     <textarea onChange={this.update('review')} value={this.state.review} className='create-review-text login-input' ></textarea>
-                    
-                    
+
+
 
                     <input type="submit" className='session-submit review-submit' value='Publish' />
                 </form>
@@ -104,4 +110,4 @@ class ReviewForm extends React.Component {
 }
 
 
-export default ReviewForm;
+export default ReviewEditForm;

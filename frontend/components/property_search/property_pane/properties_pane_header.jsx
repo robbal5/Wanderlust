@@ -102,9 +102,13 @@ class PropertiesPaneHeader extends React.Component {
             this.setState({
                 [field]: search
             })
-            updateFilter(field, e.currentTarget.value)
+            
             let city = Object.values(this.props.cities).filter(option => option.name == search)[0]
-            this.props.updateFilter('cityFilter', search, 12, city.lat, city.lng)
+            if (city) {
+                updateFilter('cityFilter', search, 12, city.lat, city.lng)
+            } else {
+                updateFilter(field, e.currentTarget.value)
+            }
             
         }
         
