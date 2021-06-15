@@ -10,7 +10,7 @@ class PropertyReviewsIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger;
+        
         if (prevProps.reviews != this.props.reviews) {
             this.setState( {
                 reviews: this.props.reviews
@@ -38,7 +38,7 @@ class PropertyReviewsIndex extends React.Component {
                 </div>
                 <ul className='property-reviews-list'>
                     {Object.values(reviews).slice(0,8).map((review,idx) => {
-                        return <PropertyReviewsIndexItem key={review.id} review={review} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} />
+                        return <PropertyReviewsIndexItem key={review.id} review={review} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} openModal={this.props.openModal}/>
                     })}
                 </ul>
             </div>

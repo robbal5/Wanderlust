@@ -4,7 +4,8 @@ import {closeModal} from '../../actions/modal/modal_actions'
 
 const mSTP = (state) => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal.type,
+        modalData: state.ui.modal.data
     }
 }
 

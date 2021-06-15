@@ -2,6 +2,8 @@ import React from 'react';
 import LoginFormContainer from '../session_form/login_form_container'
 import SignupFormContainer from '../session_form/signup_form_container'
 import ReviewFormContainer from '../property_page/review_form_container'
+import ReviewEditFormContainer from '../property_page/review_edit_form_container';
+
 
 
 class Modal extends React.Component {
@@ -29,6 +31,10 @@ class Modal extends React.Component {
                 break;
             case 'review':
                 component = <ReviewFormContainer />
+                break;
+            case 'review-edit':
+                component = <ReviewEditFormContainer reviewId = {this.props.modalData}/>
+            
                 break;
             default:
                 return null;

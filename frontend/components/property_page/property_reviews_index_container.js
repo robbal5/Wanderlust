@@ -1,6 +1,8 @@
 import PropertyReviewsIndex from './property_reviews_index'
 import { connect } from 'react-redux'
 import { deleteReview } from '../../actions/review/review_actions'
+import { openModal } from '../../actions/modal/modal_actions'
+
 
 
 const mSTP = (state, ownProps) => {
@@ -14,7 +16,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-        deleteReview: (review) => dispatch(deleteReview(review))
+        deleteReview: (review) => dispatch(deleteReview(review)),
+        openModal: (modal, data) => dispatch(openModal(modal, data))
+        
     }
 }
 
