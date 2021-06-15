@@ -76,8 +76,8 @@ class ReviewForm extends React.Component {
                     <strong onClick={this.props.closeModal} className="close-x"> <i className='fa fa-times'></i> </strong>
                     <br />
                     <div className='review-rating-stars'>
-                        <label className='login-label review-label' onMouseOut={this.handleSet}>Rating:</label>
-                            <div className='review-stars-container'>
+                        <label className='login-label review-label' >Rating:</label>
+                        <div onMouseOut={this.handleSet} className='review-stars-container'>
                             {[...Array(5)].map((n, idx) => {
                                 return <i className='review-star fa fa-star'
                                     key={idx + 1}
