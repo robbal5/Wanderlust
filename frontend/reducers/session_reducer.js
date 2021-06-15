@@ -11,7 +11,7 @@ const _newSess = {
     actionOccurred: false
 }
 const SessionReducer = (state=_newSess, action) => {
-    debugger;
+    
     Object.freeze(state)
     let newState = { ...state };
     switch (action.type) {
@@ -40,7 +40,7 @@ const SessionReducer = (state=_newSess, action) => {
             newState.currentProperty.reviews[action.review.id] = action.review;
             return newState;
         default:
-            debugger;
+            
             return newState;
     }
    
