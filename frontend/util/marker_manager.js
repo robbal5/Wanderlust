@@ -7,7 +7,7 @@ class MarkerManager {
     }
 
     createMarkerFromAddress(newProp) {
-        debugger;
+        
         const position = new google.maps.LatLng(newProp.address.lat, newProp.address.lng)
         const content = `<div class="marker-info ${'num'+newProp.id}">` + `<img src=${newProp.property.photoUrls[0]} class='marker-photo' />` +
         `<h1 class='marker-header'>${newProp.property.name}</h1>` +
