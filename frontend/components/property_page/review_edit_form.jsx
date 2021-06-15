@@ -18,8 +18,12 @@ class ReviewEditForm extends React.Component {
         this.handleHover = this.handleHover.bind(this)
     }
 
+    componentDidMount() {
+        this.handleSet()
+    }
+
     handleSet = e => {
-        debugger;
+        
         let node = ReactDOM.findDOMNode(this)
         let reviewStars = node.getElementsByClassName('review-star');
 

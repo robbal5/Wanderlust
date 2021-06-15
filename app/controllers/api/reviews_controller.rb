@@ -12,7 +12,13 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-
+        @user = User.find(params[:user_id])
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            render :show
+        else
+            render json: ['Update has failed'], status: 401
+        end
     end
 
     def destroy
