@@ -42,7 +42,7 @@ export const createReview = (review) => (dispatch) => {
 
 export const updateReview = (review) => (dispatch) => {
     return APIReviewUtil.updateReview(review)
-    .then(rev => dispatch(changeReview(rev)))
+    .then(rev => dispatch(receiveReview(rev)))
 }
 
 export const deleteReview = (review) => (dispatch) => {
