@@ -7,8 +7,9 @@ class MarkerManager {
     }
 
     createMarkerFromAddress(newProp) {
+        debugger;
         const position = new google.maps.LatLng(newProp.address.lat, newProp.address.lng)
-        const content = '<div class="marker-info">' + `<img src=${newProp.property.photoUrls[0]} class='marker-photo' />` +
+        const content = `<div class="marker-info ${'num'+newProp.id}">` + `<img src=${newProp.property.photoUrls[0]} class='marker-photo' />` +
         `<h1 class='marker-header'>${newProp.property.name}</h1>` +
             `<div class='marker-baseline'> <p>$${newProp.property.price} / night</p> <p> ${newProp.property.typeOfPlace}</p></div>`
         
@@ -36,7 +37,7 @@ class MarkerManager {
                 infoWindow.isOpen = true;
                 infoWindow.open(this.map, marker)
                 setTimeout( () => {
-                    infoWindowDOM = document.querySelector('.marker-info')
+                    infoWindowDOM = document.querySelector(`.${'num'+newProp.id}`)
                     listener = google.maps.event.addDomListener(infoWindowDOM, "click", () => {
                     this.handleClick(marker.propertyId)
                     })
