@@ -19,7 +19,7 @@ Link: [Wanderlust](https://wanderlust-aa.herokuapp.com/?#/)
 
 ## User Authentication
 
-Users are able to provide basic information to create an account on Wanderlust. A demo user feature is also included to allow users to access the full functionality of the site without needing to provide personal information. Current functionality restricts bookings and reviews to only signed in users, the remainder of the site is functionally available.
+Users are able to provide basic information to create an account on Wanderlust. A demo user feature is also included to allow users to access the full functionality of the site without needing to provide personal information. Current functionality restricts bookings and reviews to only signed in users, while the remainder of the site is fully functional.
 
 ## Search/Google Maps
 
@@ -35,7 +35,7 @@ Signed in users can create and edit reviews for properties. These reviews are vi
 
 ![Screenshot](Booking.gif)
 
-Signed in users can create and manage bookings across properties on the site. The booking feature incorporates a third party calendar software to allow for seamless date ranges to be selected and managed in the creation process. Bookings take into account existing reservations against a given property, so properties are not able to be double booked. Each user has a trips page where they can manage their upcoming reservations, as well as view any past trips they had taken.
+Signed in users can create and manage bookings across properties on the site. The booking feature incorporates a third party calendar library to allow for seamless date ranges to be selected and managed in the creation process. Bookings take into account existing reservations against a given property, so properties are not able to be double booked. Each user has a trips page where they can manage their upcoming reservations, as well as view any past trips they have taken.
 
 ## Technical Challenges
 
